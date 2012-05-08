@@ -9,7 +9,7 @@ a simple search engine, while the front-end (i.e. the part that
 performs the actual searches and displays the results to the visitor)
 is separate. Alida will provide the following functionality:
 
-1. Data retrieval (i.e. web crawling).
+1. Data retrieval (web crawling).
 2. Storage (storing the crawled pages).
 3. Scraping (extracting interesting bits and pieces from documents).
 4. Indexing (storing the end result in a searchable index).
@@ -55,7 +55,7 @@ All code is covered by the `Apache License, version 2.0`_.
 .. _`EuroClojure 2012`: http://euroclojure.com/2012/
 .. _`Apache CouchDB`: http://couchdb.apache.org/
 .. _`Apache Lucene`: http://lucene.apache.org/core/
-.. _`clj-http`: https://github.comdakrone/clj-http
+.. _`clj-http`: https://github.com/dakrone/clj-http
 .. _`Apache HttpClient`: http://hc.apache.org/httpcomponents-client-ga/index.html
 .. _`Clutch`: https://github.com/clojure-clutch/clutch
 .. _`Enlive`: https://github.com/cgrand/enlive
