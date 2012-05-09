@@ -8,5 +8,6 @@
                  [enlive "1.0.0-SNAPSHOT"]
                  [org.jsoup/jsoup "1.6.1"]
                  [com.ashafa/clutch "0.4.0-SNAPSHOT"]]
-  :dev-dependencies [[radagast "1.1.0"]]
+  :dev-dependencies [[clj-http-fake "0.3.0"]
+                     [radagast "1.1.0"]]
   :plugins [[lein-swank "1.4.4"]])
