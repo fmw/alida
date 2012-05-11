@@ -36,6 +36,7 @@
 (deftest test-get-links
   (let [html (slurp "resources/test-data/dummy-shop/whisky.html")]
     (is (= (get-links html [:a])
+           (get-links html [:a] nil)
            #{"clynelish.html"
              "/en/About.html"
              "/products/pipe-tobacco.html"

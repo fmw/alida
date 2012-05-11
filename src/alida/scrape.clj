@@ -35,7 +35,7 @@
   (e.g. [:a]) in the given string. Optionally also accepts
   a third argument containing a regular expression pattern
   to filter the output."
-  ([s selector]
-     (get-links-enlive s selector))
-  ([s selector pattern]
-     (filter #(re-matches pattern %) (get-links-enlive s selector))))
+  [s selector & [pattern]]
+  (if pattern
+    (filter #(re-matches pattern %) (get-links-enlive s selector))
+    (get-links-enlive s selector)))
