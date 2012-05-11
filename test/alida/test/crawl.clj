@@ -70,3 +70,13 @@
          "http://www.dummyhealthfoodstore.com/blackwoods-flake.html"
          "http://www.dummyhealthfoodstore.com/navy-rolls.html"
          "http://www.dummyhealthfoodstore.com/london-mixture.html")))
+
+(deftest test-get-absolute-uri
+  (are [base-uri link expected-uri]
+       (= (get-absolute-uri base-uri link) expected-uri)
+       "http://www.dummyhealthfoodstore.com/index.html"
+       "/products/whisky.html"
+       "http://www.dummyhealthfoodstore.com/products/whisky.html"
+       "http://www.dummyhealthfoodstore.com/products/whisky.html"
+       "../brora.html"
+       "http://www.dummyhealthfoodstore.com/brora.html"))
