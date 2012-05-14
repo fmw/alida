@@ -67,11 +67,13 @@
    the uri (:uri) and a crawl timestamp (:crawled-at).
 
    Each selector in the selectors sequence is a map with at least a
-   :selector key mapped to an Enlive selector vector. The :filter
-   key is optional and maps to a regular expression pattern that
-   is matched against the links to filter them. The :next key maps
-   to the sequence of selectors that is used to extract links from
-   pages matched by the current selector.
+   :selector key mapped to an Enlive selector vector. The :filter key
+   is optional and maps to a regular expression pattern that is
+   matched against the links to filter them. The :path-filter key is
+   similar to the :filter key, but is only matched against the path
+   segment of the links. The :next key maps to the sequence of
+   selectors that is used to extract links from pages matched by the
+   current selector.
 
    The directed-crawl fn is a good match for a relatively small,
    targeted crawl against a single hostname. Call separately for
