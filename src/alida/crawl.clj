@@ -64,7 +64,8 @@
    sequence of selectors to extract links to other pages that are to
    be crawled with. Runs in a separate thread, through a future.
    Returns a sequence of clj-http request maps, with added keys for
-   the uri (:uri) and a crawl timestamp (:crawled-at).
+   the uri (:uri), a crawl timestamp (:crawled-at) and the document
+   :type (crawled-page).
 
    Each selector in the selectors sequence is a map with at least a
    :selector key mapped to an Enlive selector vector. The :filter key
@@ -97,6 +98,7 @@
                                                              selectors))
                    (conj crawled-links uri)
                    (conj results (assoc req
+                                   :type "crawled-page"
                                    :uri uri
                                    :crawled-at (make-timestamp))))))
         results))))

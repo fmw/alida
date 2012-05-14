@@ -156,13 +156,15 @@
         (sort-by
          :uri
          (map (fn [uri]
-                (zipmap [:uri
+                (zipmap [:type
+                         :uri
                          :crawled-at
                          :trace-redirects
                          :status
                          :headers
                          :body]
-                        [uri
+                        ["crawled-page"
+                         uri
                          "2012-05-13T21:52:58.114Z"
                          [uri]
                          200
