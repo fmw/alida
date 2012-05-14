@@ -18,37 +18,88 @@
   (:use [clojure.test]
         [alida.scrape] :reload))
 
+(deftest test-get-absolute-uri
+  (are [base-uri link expected-uri]
+       (= (get-absolute-uri base-uri link) expected-uri)
+       "http://www.dummyhealthfoodstore.com/index.html"
+       "/products/whisky.html"
+       "http://www.dummyhealthfoodstore.com/products/whisky.html"
+       "http://www.dummyhealthfoodstore.com/products/whisky.html"
+       "../brora.html"
+       "http://www.dummyhealthfoodstore.com/brora.html"))
+
+(deftest test-get-uri-segments
+  (is (= (get-uri-segments "http://www.dummyhealthfoodstore.com/brora.html")
+         {:scheme "http://"
+          :host "www.dummyhealthfoodstore.com"
+          :path "/brora.html"})))
+
 (deftest test-get-links-enlive
   (let [html (slurp "resources/test-data/dummy-shop/whisky.html")]
-    (is (= (get-links-enlive html [:a])
-           #{"clynelish.html"
-             "/en/About.html"
-             "/products/pipe-tobacco.html"
-             "ardbeg.html"
-             "brora.html"
-             "/nl"
-             "/"
-             "/en/Contact.html"
-             "/products/whisky.html"
-             "port-ellen.html"
-             "macallan.html"}))))
+    (is (= (get-links-enlive "http://www.dummyhealthfoodstore.com/index.html"
+                             html
+                             [:a])
+           #{"http://www.dummyhealthfoodstore.com/clynelish.html"
+             "http://www.dummyhealthfoodstore.com/en/About.html"
+             "http://www.dummyhealthfoodstore.com/products/pipe-tobacco.html"
+             "http://www.dummyhealthfoodstore.com/ardbeg.html"
+             "http://www.dummyhealthfoodstore.com/brora.html"
+             "http://www.dummyhealthfoodstore.com/nl"
+             "http://www.dummyhealthfoodstore.com/"
+             "http://www.dummyhealthfoodstore.com/en/Contact.html"
+             "http://www.dummyhealthfoodstore.com/products/whisky.html"
+             "http://www.dummyhealthfoodstore.com/port-ellen.html"
+             "http://www.dummyhealthfoodstore.com/macallan.html"}))))
 
 (deftest test-get-links
-  (let [html (slurp "resources/test-data/dummy-shop/whisky.html")]
-    (is (= (get-links html [:a])
-           (get-links html [:a] nil)
-           #{"clynelish.html"
-             "/en/About.html"
-             "/products/pipe-tobacco.html"
-             "ardbeg.html"
-             "brora.html"
-             "/nl"
-             "/"
-             "/en/Contact.html"
-             "/products/whisky.html"
-             "port-ellen.html"
-             "macallan.html"}))
+  (let [html (slurp "resources/test-data/dummy-shop/whisky.html")
+        index-html (slurp "resources/test-data/dummy-shop/index.html")]
+    (is (= (get-links "http://www.dummyhealthfoodstore.com/" html [:a])
+           (get-links "http://www.dummyhealthfoodstore.com/" html [:a] nil)
+           #{"http://www.dummyhealthfoodstore.com/clynelish.html"
+             "http://www.dummyhealthfoodstore.com/en/About.html"
+             "http://www.dummyhealthfoodstore.com/products/pipe-tobacco.html"
+             "http://www.dummyhealthfoodstore.com/ardbeg.html"
+             "http://www.dummyhealthfoodstore.com/brora.html"
+             "http://www.dummyhealthfoodstore.com/nl"
+             "http://www.dummyhealthfoodstore.com/"
+             "http://www.dummyhealthfoodstore.com/en/Contact.html"
+             "http://www.dummyhealthfoodstore.com/products/whisky.html"
+             "http://www.dummyhealthfoodstore.com/port-ellen.html"
+             "http://www.dummyhealthfoodstore.com/macallan.html"}))
 
-    (is (= (get-links html [:a] #"^/products.+")
-           ["/products/pipe-tobacco.html"
-            "/products/whisky.html"]))))
+    (is (= (get-links "http://www.dummyhealthfoodstore.com/"
+                      html
+                      [:a]
+                      {:path-filter #"^/products.+"})
+           ["http://www.dummyhealthfoodstore.com/products/pipe-tobacco.html"
+            "http://www.dummyhealthfoodstore.com/products/whisky.html"]))
+
+    (is (= (get-links "http://www.dummyhealthfoodstore.com/"
+                      index-html
+                      [:a])
+           #{"http://www.vixu.com/"
+             "http://www.dummyhealthfoodstore.com/en/Contact.html"
+             "http://www.dummyhealthfoodstore.com/products/pipe-tobacco.html"
+             "http://www.dummyhealthfoodstore.com/nl"
+             "http://www.dummyhealthfoodstore.com/"
+             "http://www.dummyhealthfoodstore.com/products/whisky.html"
+             "http://www.dummyhealthfoodstore.com/en/About.html"}))
+
+    (is (= (get-links "http://www.dummyhealthfoodstore.com/"
+                      index-html
+                      [:a]
+                      {:filter #"http://www.vixu.com.*"})
+           (get-links "http://www.dummyhealthfoodstore.com/"
+                      index-html
+                      [:a]
+                      {:filter #"http://www.vixu.com.*"
+                       :path-filter #"/"})
+           ["http://www.vixu.com/"]))
+
+    (is (= (get-links "http://www.dummyhealthfoodstore.com/"
+                      index-html
+                      [:a]
+                      {:path-filter #"/"})
+           ["http://www.vixu.com/"
+            "http://www.dummyhealthfoodstore.com/"]))))
