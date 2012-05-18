@@ -15,45 +15,35 @@
 ;; limitations under the License.
 
 (ns alida.scrape
-  (:require [net.cgrand.enlive-html :as enlive])
+  (:require [net.cgrand.enlive-html :as enlive]
+            [alida.util :as util])
   (:import [java.io StringReader]
-           [org.jsoup Jsoup]
-           [java.net URL]))
-
-(defn get-absolute-uri
-  "Returns the absolute URI of a link using the provided current-uri."
-  [current-uri link]
-  (str (URL. (URL. current-uri) link)))
-
-(defn get-uri-segments [uri]
-  "Returns a map with the :scheme, :host and :path for the given URI."
-  (zipmap [:scheme :host :path]
-          (rest (first (re-seq #"^([^/]+\/{2})([^/]+)(\/{1}.*)" uri)))))
+           [org.jsoup Jsoup]))
 
 (defn get-links-enlive
   "Returns the set of unique href attribute values from
   the elements that match the provided enlive selector
-  (e.g. [:a]) in the given string using the base-uri
+  (e.g. [:a]) in the given string using the current-uri
   value to turn the links into absolute URIs."
-  [base-uri s selector]
+  [current-uri s selector]
   (into #{}
-        (map #(get-absolute-uri base-uri (:href (:attrs %)))
+        (map #(util/get-absolute-uri current-uri (:href (:attrs %)))
              (enlive/select (enlive/html-resource (StringReader. s))
                             selector))))
 
 (defn get-links
   "Returns the set of unique href attribute values from the elements
   that match the provided enlive selector (e.g. [:a]) in the given
-  string using the provided base-uri to turn the links into absolute
+  string using the provided current-uri to turn the links into absolute
   URIs. Optionally also accepts a map with filters as a third argument,
   which supports :filter (ran over the absolute URI, including
   the hostname and scheme) and :path-filter (only ran over the
   path segment of the URI). "
-  [base-uri
+  [current-uri
    s
    selector
    & [filters]]
-  (let [links (get-links-enlive base-uri s selector)]
+  (let [links (get-links-enlive current-uri s selector)]
     (if (empty? filters)
       links
       (loop [filtered-links links
@@ -66,8 +56,19 @@
                      #(re-matches filter-pattern %)
                      (= filter-name :path-filter)
                      #(re-matches filter-pattern
-                                  (:path (get-uri-segments %))))
+                                  (:path (util/get-uri-segments %))))
                     filtered-links)
                    filtered-links)
                  (rest filter-pairs))
           filtered-links)))))
+
+(defn get-links-jsoup
+  "Returns a set of absolute URIs for all links in a given html string
+   using the provided current-uri as a base. This fn provides less
+   control than the get-links-enlive fn, but offers much better
+   performance."
+  [current-uri html]
+  (into #{}
+        (map (fn [element]
+               (util/get-absolute-uri current-uri (.attr element "href")))
+             (.select (Jsoup/parse html) "a[href]"))))

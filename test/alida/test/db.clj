@@ -15,12 +15,14 @@
 ;; limitations under the License.
 
 (ns alida.test.db
-  (:use [alida.db] :reload
-        [clojure.test]
-        [clj-http.fake])
+  (:use [clojure.test]
+        [clj-http.fake]
+        [alida.test.helpers :only [with-test-db +test-db+ +test-server+]]
+        [alida.db] :reload)
   (:require [clojure.data.json :as json]
             [clj-http.client :as http-client]
             [com.ashafa.clutch :as clutch]
+            [alida.util :as util]
             [alida.test.crawl :as test-crawl]
             [alida.crawl :as crawl]))
 
@@ -38,15 +40,9 @@
    #"^[\d]{4}-[\d]{2}-[\d]{2}T[\d]{2}:[\d]{2}:[\d]{2}\.[\d]{1,4}Z"
    s))
 
-(defn random-lower-case-string [length]
-  ;; to include uppercase
-  ;; (let [ascii-codes (concat (range 48 58) (range 66 91) (range 97 123))])
-  (let [ascii-codes (concat (range 48 58) (range 97 123))]
-    (apply str (repeatedly length #(char (rand-nth ascii-codes))))))
-
 (def dummy-crawled-pages
   (with-fake-routes test-crawl/dummy-routes
-    (with-redefs [crawl/make-timestamp #(str "2012-05-13T21:52:58.114Z")]
+    (with-redefs [util/make-timestamp #(str "2012-05-13T21:52:58.114Z")]
       @(crawl/directed-crawl
         0
         "http://www.dummyhealthfoodstore.com/index.html"
@@ -54,13 +50,8 @@
           :path-filter #"^/products.+"
           :next [{:selector [[:div#content] [:a]]}]}]))))
 
-(def +test-db+ (str "alida-test-" (random-lower-case-string 20)))
-(def +test-server+ "http://localhost:5984/")
-
 (defn database-fixture [f]
-  (clutch/get-database +test-db+)
-  (f)
-  (clutch/delete-database  +test-db+))
+  (with-test-db (f)))
 
 (use-fixtures :each database-fixture)
 
@@ -79,3 +70,48 @@
     (add-batched-documents +test-db+ dummy-crawled-pages))
 
   (is (= (:doc_count (clutch/database-info +test-db+)) 13)))
+
+(deftest test-store-page
+  (let [{:keys [_id _rev score crawled-at uri type headers body]}
+        (store-page +test-db+
+                    "http://www.vixu.com/"
+                    {:headers {:foo "bar"}
+                     :body "..."}
+                    1.0)]
+    (is (couchdb-id? _id))
+    (is (couchdb-rev? _rev))
+    (is (= score 1.0))
+    (is (iso-date? crawled-at))
+    (is (= uri "http://www.vixu.com/"))
+    (is (= type "crawled-page"))
+    (is (= headers {:foo "bar"}))
+    (is (= body "..."))))
+
+(deftest test-get-page
+  (do
+    (create-views +test-db+))
+  
+  (let [p1 (store-page +test-db+
+                       "http://www.vixu.com/"
+                       {:headers {:foo "bar"}
+                        :body "p1"}
+                       1)
+        p2 (store-page +test-db+
+                       "http://www.vixu.com/"
+                       {:headers {:foo "bar"}
+                        :body "p2"}
+                       1)
+        p3 (store-page +test-db+
+                       "http://www.vixu.com/en/pricing.html"
+                       {:headers {:foo "bar"}
+                        :body "p3"}
+                       1)]
+
+    (is (= (get-page +test-db+
+                     "http://www.vixu.com/")
+           p2))
+
+    (is (= (vec (get-page-history +test-db+
+                                  "http://www.vixu.com/"
+                                  10))
+           [p2 p1]))))

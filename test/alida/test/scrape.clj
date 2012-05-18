@@ -18,27 +18,27 @@
   (:use [clojure.test]
         [alida.scrape] :reload))
 
-(deftest test-get-absolute-uri
-  (are [base-uri link expected-uri]
-       (= (get-absolute-uri base-uri link) expected-uri)
-       "http://www.dummyhealthfoodstore.com/index.html"
-       "/products/whisky.html"
-       "http://www.dummyhealthfoodstore.com/products/whisky.html"
-       "http://www.dummyhealthfoodstore.com/products/whisky.html"
-       "../brora.html"
-       "http://www.dummyhealthfoodstore.com/brora.html"))
-
-(deftest test-get-uri-segments
-  (is (= (get-uri-segments "http://www.dummyhealthfoodstore.com/brora.html")
-         {:scheme "http://"
-          :host "www.dummyhealthfoodstore.com"
-          :path "/brora.html"})))
-
 (deftest test-get-links-enlive
   (let [html (slurp "resources/test-data/dummy-shop/whisky.html")]
     (is (= (get-links-enlive "http://www.dummyhealthfoodstore.com/index.html"
                              html
                              [:a])
+           #{"http://www.dummyhealthfoodstore.com/clynelish.html"
+             "http://www.dummyhealthfoodstore.com/en/About.html"
+             "http://www.dummyhealthfoodstore.com/products/pipe-tobacco.html"
+             "http://www.dummyhealthfoodstore.com/ardbeg.html"
+             "http://www.dummyhealthfoodstore.com/brora.html"
+             "http://www.dummyhealthfoodstore.com/nl"
+             "http://www.dummyhealthfoodstore.com/"
+             "http://www.dummyhealthfoodstore.com/en/Contact.html"
+             "http://www.dummyhealthfoodstore.com/products/whisky.html"
+             "http://www.dummyhealthfoodstore.com/port-ellen.html"
+             "http://www.dummyhealthfoodstore.com/macallan.html"}))))
+
+(deftest test-get-links-jsoup
+  (let [html (slurp "resources/test-data/dummy-shop/whisky.html")]
+    (is (= (get-links-jsoup "http://www.dummyhealthfoodstore.com/index.html"
+                            html)
            #{"http://www.dummyhealthfoodstore.com/clynelish.html"
              "http://www.dummyhealthfoodstore.com/en/About.html"
              "http://www.dummyhealthfoodstore.com/products/pipe-tobacco.html"
