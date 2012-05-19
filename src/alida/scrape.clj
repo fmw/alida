@@ -72,3 +72,13 @@
         (map (fn [element]
                (util/get-absolute-uri current-uri (.attr element "href")))
              (.select (Jsoup/parse html) "a[href]"))))
+
+(defn #^String html-to-plaintext
+  "Returns the plaintext value of the provided HTML string.
+
+   This function only returns the actual text of the page. This
+   doesn't include attribute values like image titles. See the
+   vix/lucene/distill-plaintext fn for an example of a function that
+   also includes img attributes."
+  [html]
+  (.text (Jsoup/parse html)))

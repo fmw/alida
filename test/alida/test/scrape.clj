@@ -103,3 +103,14 @@
                       {:path-filter #"/"})
            ["http://www.vixu.com/"
             "http://www.dummyhealthfoodstore.com/"]))))
+
+(deftest test-html-to-plaintext
+  (is (= (html-to-plaintext
+          (slurp "resources/test-data/dummy-shop/index.html"))
+         (str "Dummy Shop Dummy Shop Search Nederlands "
+              "Home Whisky Pipe Tobacco About Contact "
+              "Welcome to the Dummy Health Food Store! "
+              "This health food dummy store only sells whisky "
+              "and pipe tobacco! "
+              "Powered by Vixu.com "
+              "© 2012, Dummy Store Incorporated. All rights reserved."))))
