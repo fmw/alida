@@ -1,0 +1,2238 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 19 0 R
+ /F4 20 0 R
+ /F5 22 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Annot.NUMBER1': class PDFDictionary 
+4 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (mailto:fmw@vixu.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 76.57
+ 196.6949
+ 144.5
+ 208.6949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER2': class PDFDictionary 
+5 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (https://github.com/fmw/alida) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 35.46
+ 178.6949
+ 159.4
+ 190.6949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page1': class PDFPage 
+6 0 obj
+% Page dictionary
+<< /Annots [ 4 0 R
+ 5 0 R ]
+ /Contents 39 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page2': class PDFPage 
+7 0 obj
+% Page dictionary
+<< /Contents 40 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Annot.NUMBER3': class PDFDictionary 
+8 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://nutch.apache.org/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 97.37
+ 175.6949
+ 202.44
+ 187.6949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER4': class PDFDictionary 
+9 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (https://github.com/internetarchive/heritrix3) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 66.22
+ 157.6949
+ 251.85
+ 169.6949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER5': class PDFDictionary 
+10 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://scrapy.org/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 65.68
+ 121.6949
+ 140.16
+ 133.6949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER6': class PDFDictionary 
+11 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://wwwsearch.sourceforge.net/mechanize/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 82.91
+ 103.6949
+ 285.77
+ 115.6949 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER7': class PDFDictionary 
+12 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://www.gnu.org/software/wget/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 55.68
+ 67.69488
+ 206.3
+ 79.69488 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER8': class PDFDictionary 
+13 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://www.httrack.com/page/1/en/index.html) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 72.89
+ 49.69488
+ 269.64
+ 61.69488 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page3': class PDFPage 
+14 0 obj
+% Page dictionary
+<< /Annots [ 8 0 R
+ 9 0 R
+ 10 0 R
+ 11 0 R
+ 12 0 R
+ 13 0 R ]
+ /Contents 41 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page4': class PDFPage 
+15 0 obj
+% Page dictionary
+<< /Contents 42 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page5': class PDFPage 
+16 0 obj
+% Page dictionary
+<< /Contents 43 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page6': class PDFPage 
+17 0 obj
+% Page dictionary
+<< /Contents 44 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page7': class PDFPage 
+18 0 obj
+% Page dictionary
+<< /Contents 45 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'F3': class PDFType1Font 
+19 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F4': class PDFType1Font 
+20 0 obj
+% Font Courier-Oblique
+<< /BaseFont /Courier-Oblique
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page8': class PDFPage 
+21 0 obj
+% Page dictionary
+<< /Contents 46 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'F5': class PDFType1Font 
+22 0 obj
+% Font Courier-Bold
+<< /BaseFont /Courier-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F5
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page9': class PDFPage 
+23 0 obj
+% Page dictionary
+<< /Contents 47 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page10': class PDFPage 
+24 0 obj
+% Page dictionary
+<< /Contents 48 0 R
+ /MediaBox [ 0
+ 0
+ 453.5433
+ 255.1181 ]
+ /Parent 38 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R25': class PDFCatalog 
+25 0 obj
+% Document Root
+<< /Outlines 27 0 R
+ /PageLabels 49 0 R
+ /PageMode /UseNone
+ /Pages 38 0 R
+ /Type /Catalog >>
+endobj
+% 'R26': class PDFInfo 
+26 0 obj
+<< /Author ()
+ /CreationDate (D:20120519005729-01'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (ReportLab PDF Library - www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title () >>
+endobj
+% 'R27': class PDFOutlines 
+27 0 obj
+<< /Count 10
+ /First 28 0 R
+ /Last 37 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+28 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Next 29 0 R
+ /Parent 27 0 R
+ /Title (Building a search engine with Clojure) >>
+endobj
+% 'Outline.1': class OutlineEntryObject 
+29 0 obj
+<< /Dest [ 7 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Next 30 0 R
+ /Parent 27 0 R
+ /Prev 28 0 R
+ /Title (What does a search engine need to do?) >>
+endobj
+% 'Outline.2': class OutlineEntryObject 
+30 0 obj
+<< /Dest [ 14 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Next 31 0 R
+ /Parent 27 0 R
+ /Prev 29 0 R
+ /Title (Popular open source crawlers) >>
+endobj
+% 'Outline.3': class OutlineEntryObject 
+31 0 obj
+<< /Dest [ 15 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Next 32 0 R
+ /Parent 27 0 R
+ /Prev 30 0 R
+ /Title (Web crawling process) >>
+endobj
+% 'Outline.4': class OutlineEntryObject 
+32 0 obj
+<< /Dest [ 16 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Next 33 0 R
+ /Parent 27 0 R
+ /Prev 31 0 R
+ /Title (Crawling approaches) >>
+endobj
+% 'Outline.5': class OutlineEntryObject 
+33 0 obj
+<< /Dest [ 17 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Next 34 0 R
+ /Parent 27 0 R
+ /Prev 32 0 R
+ /Title (Roll your own crawler in Clojure) >>
+endobj
+% 'Outline.6': class OutlineEntryObject 
+34 0 obj
+<< /Dest [ 18 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Next 35 0 R
+ /Parent 27 0 R
+ /Prev 33 0 R
+ /Title (Crawling considerations) >>
+endobj
+% 'Outline.7': class OutlineEntryObject 
+35 0 obj
+<< /Dest [ 21 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Next 36 0 R
+ /Parent 27 0 R
+ /Prev 34 0 R
+ /Title (Directed crawl) >>
+endobj
+% 'Outline.8': class OutlineEntryObject 
+36 0 obj
+<< /Dest [ 23 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Next 37 0 R
+ /Parent 27 0 R
+ /Prev 35 0 R
+ /Title (Weighted crawling scoring  functions) >>
+endobj
+% 'Outline.9': class OutlineEntryObject 
+37 0 obj
+<< /Dest [ 24 0 R
+ /XYZ
+ 6
+ 234.9449
+ 0 ]
+ /Parent 27 0 R
+ /Prev 36 0 R
+ /Title (Weighted crawl function) >>
+endobj
+% 'R38': class PDFPages 
+38 0 obj
+% page tree
+<< /Count 10
+ /Kids [ 6 0 R
+ 7 0 R
+ 14 0 R
+ 15 0 R
+ 16 0 R
+ 17 0 R
+ 18 0 R
+ 21 0 R
+ 23 0 R
+ 24 0 R ]
+ /Type /Pages >>
+endobj
+% 'R39': class PDFStream 
+39 0 obj
+% page stream
+<< /Length 509 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Building a search engine with Clojure) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 195.9449 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Filip de Waard \() Tj 0 0 .501961 rg (fmw@vixu.com) Tj 0 0 0 rg (\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 177.9449 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Code: ) Tj 0 0 .501961 rg (https://github.com/fmw/alida) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 177.9449 cm
+Q
+ 
+endstream
+endobj
+% 'R40': class PDFStream 
+40 0 obj
+% page stream
+<< /Length 2145 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (What does a search engine need to do?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 201.9449 cm
+Q
+q
+1 0 0 1 6 201.9449 cm
+Q
+q
+1 0 0 1 6 189.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (data retrieval \(crawling\),) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 183.9449 cm
+Q
+q
+1 0 0 1 6 171.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (data storage \(optional\),) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 165.9449 cm
+Q
+q
+1 0 0 1 6 153.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (data extraction \(scraping\),) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 147.9449 cm
+Q
+q
+1 0 0 1 6 135.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (indexing,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 129.9449 cm
+Q
+q
+1 0 0 1 6 117.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (search,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 111.9449 cm
+Q
+q
+1 0 0 1 6 99.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (presentation.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 99.94488 cm
+Q
+q
+1 0 0 1 6 99.94488 cm
+Q
+ 
+endstream
+endobj
+% 'R41': class PDFStream 
+41 0 obj
+% page stream
+<< /Length 2817 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Popular open source crawlers) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 195.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Java:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 189.9449 cm
+Q
+q
+1 0 0 1 6 189.9449 cm
+Q
+q
+1 0 0 1 6 177.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Apache Nutch: ) Tj 0 0 .501961 rg (http://nutch.apache.org/) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 171.9449 cm
+Q
+q
+1 0 0 1 6 159.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Heritrix: ) Tj 0 0 .501961 rg (https://github.com/internetarchive/heritrix3) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 159.9449 cm
+Q
+q
+1 0 0 1 6 141.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Python:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 135.9449 cm
+Q
+q
+1 0 0 1 6 135.9449 cm
+Q
+q
+1 0 0 1 6 123.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Scrapy: ) Tj 0 0 .501961 rg (http://scrapy.org/) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 117.9449 cm
+Q
+q
+1 0 0 1 6 105.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Mechanize: ) Tj 0 0 .501961 rg (http://wwwsearch.sourceforge.net/mechanize/) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 105.9449 cm
+Q
+q
+1 0 0 1 6 87.94488 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Other:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 81.94488 cm
+Q
+q
+1 0 0 1 6 81.94488 cm
+Q
+q
+1 0 0 1 6 69.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (wget: ) Tj 0 0 .501961 rg (http://www.gnu.org/software/wget/) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 63.94488 cm
+Q
+q
+1 0 0 1 6 51.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (HTTrack: ) Tj 0 0 .501961 rg (http://www.httrack.com/page/1/en/index.html) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 51.94488 cm
+Q
+q
+1 0 0 1 6 51.94488 cm
+Q
+ 
+endstream
+endobj
+% 'R42': class PDFStream 
+42 0 obj
+% page stream
+<< /Length 2449 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Web crawling process) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 201.9449 cm
+Q
+q
+1 0 0 1 6 201.9449 cm
+Q
+q
+1 0 0 1 6 189.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Download a seed page,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 183.9449 cm
+Q
+q
+1 0 0 1 6 171.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (store page \(optional\),) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 165.9449 cm
+Q
+q
+1 0 0 1 6 153.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (extract links,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 147.9449 cm
+Q
+q
+1 0 0 1 6 135.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (4.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (filter links,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 129.9449 cm
+Q
+q
+1 0 0 1 6 117.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (5.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (download next page,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 111.9449 cm
+Q
+q
+1 0 0 1 6 99.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (6.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (determine relevance,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 93.94488 cm
+Q
+q
+1 0 0 1 6 81.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (7.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (repeat the steps for every relevant link.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 81.94488 cm
+Q
+q
+1 0 0 1 6 81.94488 cm
+Q
+ 
+endstream
+endobj
+% 'R43': class PDFStream 
+43 0 obj
+% page stream
+<< /Length 2374 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Crawling approaches) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 195.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Brute force:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 189.9449 cm
+Q
+q
+1 0 0 1 6 189.9449 cm
+Q
+q
+1 0 0 1 6 177.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (crawl and process everything you can get your hands on.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 177.9449 cm
+Q
+q
+1 0 0 1 6 159.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Directed crawling:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 153.9449 cm
+Q
+q
+1 0 0 1 6 153.9449 cm
+Q
+q
+1 0 0 1 6 141.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (specifically tell the crawler where to go.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 141.9449 cm
+Q
+q
+1 0 0 1 6 123.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Weighted crawling:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 117.9449 cm
+Q
+q
+1 0 0 1 6 117.9449 cm
+Q
+q
+1 0 0 1 6 105.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (start the crawler with a seed URI,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 99.94488 cm
+Q
+q
+1 0 0 1 6 87.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (run a scoring function over every new page,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 81.94488 cm
+Q
+q
+1 0 0 1 6 69.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (use the score to decide how to continue.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 69.94488 cm
+Q
+q
+1 0 0 1 6 69.94488 cm
+Q
+ 
+endstream
+endobj
+% 'R44': class PDFStream 
+44 0 obj
+% page stream
+<< /Length 3069 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Roll your own crawler in Clojure) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 195.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Leverage existing libraries:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 189.9449 cm
+Q
+q
+1 0 0 1 6 189.9449 cm
+Q
+q
+1 0 0 1 6 177.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (clj-http \(wrapper for Apache HttpComponents\),) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 171.9449 cm
+Q
+q
+1 0 0 1 6 159.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Enlive \(selector-based data extraction & templating\),) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 153.9449 cm
+Q
+q
+1 0 0 1 6 141.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Jsoup \(Java HTML parser\),) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 135.9449 cm
+Q
+q
+1 0 0 1 6 123.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Apache Lucene \(search and indexing library written in Java\).) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 123.9449 cm
+Q
+q
+1 0 0 1 6 105.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Prototype:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 99.94488 cm
+Q
+q
+1 0 0 1 6 99.94488 cm
+Q
+q
+1 0 0 1 6 87.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (CouchDB through Clutch.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 87.94488 cm
+Q
+q
+1 0 0 1 6 69.94488 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Recommended for production:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 63.94488 cm
+Q
+q
+1 0 0 1 6 63.94488 cm
+Q
+q
+1 0 0 1 6 51.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Apache Hadoop for distributed crawling,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 45.94488 cm
+Q
+q
+1 0 0 1 6 33.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Apache HBase and/or HDFS for storage.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 33.94488 cm
+Q
+q
+1 0 0 1 6 33.94488 cm
+Q
+ 
+endstream
+endobj
+% 'R45': class PDFStream 
+45 0 obj
+% page stream
+<< /Length 2917 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Crawling considerations) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 195.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Being polite:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 189.9449 cm
+Q
+q
+1 0 0 1 6 189.9449 cm
+Q
+q
+1 0 0 1 6 177.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (respect robots.txt,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 171.9449 cm
+Q
+q
+1 0 0 1 6 159.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (delay between requests.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 159.9449 cm
+Q
+q
+1 0 0 1 6 141.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Dealing anti-crawling measures and non-standard content:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 135.9449 cm
+Q
+q
+1 0 0 1 6 135.9449 cm
+Q
+q
+1 0 0 1 6 123.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (headless browser for dynamic content \(Selenium has good Clojure support\),) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 117.9449 cm
+Q
+q
+1 0 0 1 6 105.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (use OCR for images \(e.g. tesseract-ocr\),) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 99.94488 cm
+Q
+q
+1 0 0 1 6 87.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (be aware of blocking through the user-agent header,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 81.94488 cm
+Q
+q
+1 0 0 1 6 69.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (don't get trapped in a loop,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 63.94488 cm
+Q
+q
+1 0 0 1 6 51.94488 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (use a service like Amazon EC2 to recycle IP addresses.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 51.94488 cm
+Q
+q
+1 0 0 1 6 51.94488 cm
+Q
+ 
+endstream
+endobj
+% 'R46': class PDFStream 
+46 0 obj
+% page stream
+<< /Length 2724 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Directed crawl) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 201.9449 cm
+Q
+q
+1 0 0 1 6 201.9449 cm
+Q
+q
+1 0 0 1 6 189.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Follow all links that start with "/en" on the seed page,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 183.9449 cm
+Q
+q
+1 0 0 1 6 171.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (only follow the external links in the content div on those pages,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 165.9449 cm
+Q
+q
+1 0 0 1 6 153.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (there is no :next key for that level, so the crawl stops there.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 153.9449 cm
+Q
+q
+1 0 0 1 6 63.66253 cm
+q
+q
+.965755 0 0 .965755 0 0 cm
+q
+1 0 0 1 6.6 6.83403 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 456 84 re B*
+Q
+q
+BT 1 0 0 1 0 62 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (directed-crawl) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; be nice and wait 1 second between requests) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg  T* (                 ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]) Tj  T* (                   ) Tj .098039 .090196 .486275 rg (:path-filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^/en.*") Tj 0 0 0 rg  T* (                   ) Tj .098039 .090196 .486275 rg (:next) Tj 0 0 0 rg ( ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([[) Tj .098039 .090196 .486275 rg (:div) Tj .4 .4 .4 rg (#) Tj .098039 .090196 .486275 rg (content) Tj 0 0 0 rg (]) Tj ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]]) Tj  T* (                           ) Tj .098039 .090196 .486275 rg (:filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^\(http://www.vixu.com/.*\){0}.*") Tj 0 0 0 rg (}]}]\)\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 6 55.66253 cm
+Q
+ 
+endstream
+endobj
+% 'R47': class PDFStream 
+47 0 obj
+% page stream
+<< /Length 2048 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Weighted crawling scoring functions) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 183.9449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 10.19433 Tw (Example page-scoring-fn that counts the number of occurrences of the string) Tj T* 0 Tw ("website-management" on every requested page:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 138.7449 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 440.3433 36 re B*
+Q
+q
+BT 1 0 0 1 0 14 Tm 12 TL /F3 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (defn ) Tj /F3 10 Tf .098039 .090196 .486275 rg (page-scoring-fn) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (uri) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (request) Tj 0 0 0 rg (]) Tj  T* (  ) Tj (\() Tj 0 .501961 0 rg (count ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (re-seq ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("website-management") Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (:body) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (request) Tj 0 0 0 rg (\)\)\)\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 6 118.7449 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Example link-checker-fn that limits the crawl to Vixu.com:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 73.54488 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 440.3433 36 re B*
+Q
+q
+BT 1 0 0 1 0 14 Tm 12 TL /F3 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (defn ) Tj /F3 10 Tf .098039 .090196 .486275 rg (link-checker-fn) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (uri) Tj 0 0 0 rg (]) Tj  T* (  ) Tj (\() Tj 0 .501961 0 rg (not ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (nil? ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (re-matches ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^http://www.vixu.com/.*") Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (uri) Tj 0 0 0 rg (\)\)\)\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 6 65.54488 cm
+Q
+ 
+endstream
+endobj
+% 'R48': class PDFStream 
+48 0 obj
+% page stream
+<< /Length 2927 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 213.9449 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Weighted crawl function) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 201.9449 cm
+Q
+q
+1 0 0 1 6 201.9449 cm
+Q
+q
+1 0 0 1 6 189.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (recursively follows links,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 183.9449 cm
+Q
+q
+1 0 0 1 6 171.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (crawls external links in a new thread,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 165.9449 cm
+Q
+q
+1 0 0 1 6 153.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (saves the page to the database if the result from the page-scoring-fn is positive,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 147.9449 cm
+Q
+q
+1 0 0 1 6 135.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (doesn't follow links from a page when the page-scoring-fn returns a negative value,) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 129.9449 cm
+Q
+q
+1 0 0 1 6 117.9449 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (only follows links if calling link-checker-fn on them returns true.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 6 117.9449 cm
+Q
+q
+1 0 0 1 6 36.74488 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 440.3433 72 re B*
+Q
+q
+BT 1 0 0 1 0 50 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (weighted-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("alida") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; database) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; delay in ms) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; seed-uri) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (page-scoring-fn) Tj 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (link-checker-fn) Tj 0 0 0 rg (\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+ 
+endstream
+endobj
+% 'R49': class PDFPageLabels 
+49 0 obj
+% Document Root
+<< /Nums [ 0
+ 50 0 R
+ 1
+ 51 0 R
+ 2
+ 52 0 R
+ 3
+ 53 0 R
+ 4
+ 54 0 R
+ 5
+ 55 0 R
+ 6
+ 56 0 R
+ 7
+ 57 0 R
+ 8
+ 58 0 R
+ 9
+ 59 0 R ] >>
+endobj
+% 'R50': class PDFPageLabel 
+50 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+% 'R51': class PDFPageLabel 
+51 0 obj
+% None
+<< /S /D
+ /St 2 >>
+endobj
+% 'R52': class PDFPageLabel 
+52 0 obj
+% None
+<< /S /D
+ /St 3 >>
+endobj
+% 'R53': class PDFPageLabel 
+53 0 obj
+% None
+<< /S /D
+ /St 4 >>
+endobj
+% 'R54': class PDFPageLabel 
+54 0 obj
+% None
+<< /S /D
+ /St 5 >>
+endobj
+% 'R55': class PDFPageLabel 
+55 0 obj
+% None
+<< /S /D
+ /St 6 >>
+endobj
+% 'R56': class PDFPageLabel 
+56 0 obj
+% None
+<< /S /D
+ /St 7 >>
+endobj
+% 'R57': class PDFPageLabel 
+57 0 obj
+% None
+<< /S /D
+ /St 8 >>
+endobj
+% 'R58': class PDFPageLabel 
+58 0 obj
+% None
+<< /S /D
+ /St 9 >>
+endobj
+% 'R59': class PDFPageLabel 
+59 0 obj
+% None
+<< /S /D
+ /St 10 >>
+endobj
+xref
+0 60
+0000000000 65535 f
+0000000113 00000 n
+0000000260 00000 n
+0000000425 00000 n
+0000000612 00000 n
+0000000843 00000 n
+0000001069 00000 n
+0000001376 00000 n
+0000001669 00000 n
+0000001906 00000 n
+0000002163 00000 n
+0000002395 00000 n
+0000002652 00000 n
+0000002898 00000 n
+0000003141 00000 n
+0000003485 00000 n
+0000003765 00000 n
+0000004045 00000 n
+0000004325 00000 n
+0000004607 00000 n
+0000004769 00000 n
+0000004945 00000 n
+0000005227 00000 n
+0000005397 00000 n
+0000005678 00000 n
+0000005959 00000 n
+0000006118 00000 n
+0000006366 00000 n
+0000006492 00000 n
+0000006682 00000 n
+0000006887 00000 n
+0000007084 00000 n
+0000007273 00000 n
+0000007461 00000 n
+0000007662 00000 n
+0000007854 00000 n
+0000008037 00000 n
+0000008242 00000 n
+0000008403 00000 n
+0000008591 00000 n
+0000009198 00000 n
+0000011442 00000 n
+0000014358 00000 n
+0000016906 00000 n
+0000019379 00000 n
+0000022547 00000 n
+0000025563 00000 n
+0000028386 00000 n
+0000030533 00000 n
+0000033563 00000 n
+0000033773 00000 n
+0000033850 00000 n
+0000033927 00000 n
+0000034004 00000 n
+0000034081 00000 n
+0000034158 00000 n
+0000034235 00000 n
+0000034312 00000 n
+0000034389 00000 n
+0000034466 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\011\025K]5W&m\230\276\213\035Y\216:\301) (\011\025K]5W&m\230\276\213\035Y\216:\301)] 
+
+ /Info 26 0 R
+ /Root 25 0 R
+ /Size 60 >>
+startxref
+34514
+%%EOF

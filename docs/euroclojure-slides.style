@@ -1,0 +1,20 @@
+{"pageSetup": {"width": "16cm",
+               "height": "9cm",
+               "margin-top": "0cm",
+               "margin-bottom": "0cm",
+               "margin-left": "0cm",
+               "margin-right": "0cm",
+               "margin-gutter": "0cm",
+               "spacing-header": "5mm",
+               "spacing-footer": "5mm"}}
+
+#styles": [["item_list", {"parent": "bodytext",
+#                           "spaceBefore": 0,
+#                           "commands": [[ "VALIGN",
+#                                          [ 0, 0 ],
+#                                          [ -1, -1 ],
+#                                          "TOP" ], 
+#                                        [ "RIGHTPADDING",
+#                                          [ 0, 0 ],
+#                                          [ 1, -1 ], 0 ] ],
+#                           "colWidths": ["20pt",null]}]]
