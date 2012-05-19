@@ -33,46 +33,57 @@
      "views"
      (clutch/view-server-fns
       :cljs
-      {:pages {:map (fn [doc]
-                      (if (= (aget doc "type") "crawled-page")
-                        (js/emit (to-array
-                                  [(aget doc "uri")
-                                   (aget doc "crawl-tag")
-                                   (aget doc "crawled-at")])
-                                 doc)))}}))))
+      {:pages
+       {:map (fn [doc]
+               (if (= (aget doc "type") "crawled-page")
+                 (js/emit (to-array
+                           [(aget doc "uri")
+                            (aget doc "crawl-tag")
+                            (aget doc "crawled-at")])
+                          doc)))}
+       :pages-by-crawl-tag-and-timestamp
+       {:map (fn [doc]
+               (if (= (aget doc "type") "crawled-page")
+                 (js/emit (to-array
+                           [(aget doc "crawl-tag")
+                            (aget doc "crawl-timestamp")
+                            (aget doc "uri")
+                            (aget doc "crawled-at")])
+                           doc)))}}))))
 
-(defn add-batched-documents [database documents]
-  "Adds provided documents to database."
-  (clutch/bulk-update database documents))
+ (defn add-batched-documents [database documents]
+   "Adds provided documents to database."
+   (clutch/bulk-update database documents))
 
-(defn store-page
-  "Stores the given request object in CouchDB with the provided uri
-  and score values."
-  [database crawl-tag uri request score]
-  (clutch/put-document database
-                       (assoc request
-                         :type "crawled-page"
-                         :crawl-tag crawl-tag
-                         :uri uri
-                         :crawled-at (util/make-timestamp)
-                         :score score)))
+ (defn store-page
+   "Stores the given request object in CouchDB with the provided uri
+   and score values."
+   [database crawl-tag crawl-timestamp uri request score]
+   (clutch/put-document database
+                        (assoc request
+                          :type "crawled-page"
+                          :crawl-tag crawl-tag
+                          :crawl-timestamp crawl-timestamp
+                          :uri uri
+                          :crawled-at (util/make-timestamp)
+                          :score score)))
 
-(defn get-page-history
-  "Returns limit versions of the crawl history for the page with the
-   provided uri in the provided database that has the right crawl-tag."
-  [database crawl-tag uri limit]
-  (let [{:keys [scheme host path]} (util/get-uri-segments uri)]
-    (map :value
-         (clutch/get-view database
-                          "views"
-                          "pages"
-                          {:startkey [uri crawl-tag {}]
-                           :endkey [uri crawl-tag]
-                           :limit limit
-                           :descending true}))))
+ (defn get-page-history
+   "Returns limit versions of the crawl history for the page with the
+    provided uri in the provided database that has the right crawl-tag."
+   [database crawl-tag uri limit]
+   (let [{:keys [scheme host path]} (util/get-uri-segments uri)]
+     (map :value
+          (clutch/get-view database
+                           "views"
+                           "pages"
+                           {:startkey [uri crawl-tag {}]
+                            :endkey [uri crawl-tag]
+                            :limit limit
+                            :descending true}))))
 
-(defn get-page
-  "Returns the most recently crawed page for uri in database with
-  the given crawl-tag."
-  [database crawl-tag uri]
-  (first (get-page-history database crawl-tag uri 1)))
+ (defn get-page
+   "Returns the most recently crawed page for uri in database with
+   the given crawl-tag."
+   [database crawl-tag uri]
+   (first (get-page-history database crawl-tag uri 1)))

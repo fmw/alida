@@ -217,6 +217,7 @@
          (map (fn [uri]
                 (zipmap [:type
                          :crawl-tag
+                         :crawl-timestamp
                          :uri
                          :crawled-at
                          :trace-redirects
@@ -225,6 +226,7 @@
                          :body]
                         ["crawled-page"
                          "test-directed-crawl"
+                         "2012-05-13T21:52:58.114Z"
                          uri
                          "2012-05-13T21:52:58.114Z"
                          [uri]
@@ -290,6 +292,7 @@
                                       page)]
                         {:type "crawled-page"
                          :crawl-tag "test-weighted-crawl"
+                         :crawl-timestamp "2012-05-13T21:52:58.114Z"
                          :status 200
                          :score (float 0.1)
                          :trace-redirects [uri]
@@ -352,6 +355,7 @@
                                       page)]
                         {:type "crawled-page"
                          :crawl-tag "test-weighted-crawl"
+                         :crawl-timestamp "2012-05-13T21:52:58.114Z"
                          :status 200
                          :score (float 0.1)
                          :trace-redirects [uri]
@@ -418,6 +422,7 @@
                                       page)]
                         {:type "crawled-page"
                          :crawl-tag "test-weighted-crawl"
+                         :crawl-timestamp "2012-05-13T21:52:58.114Z"
                          :status 200
                          :score (float 0.1)
                          :trace-redirects [uri]
@@ -477,6 +482,7 @@
                                       page)]
                         {:type "crawled-page"
                          :crawl-tag "test-weighted-crawl"
+                         :crawl-timestamp "2012-05-13T21:52:58.114Z"
                          :status 200
                          :score (float 0.1)
                          :trace-redirects [uri]

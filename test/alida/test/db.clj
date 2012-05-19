@@ -73,9 +73,19 @@
   (is (= (:doc_count (clutch/database-info +test-db+)) 13)))
 
 (deftest test-store-page
-  (let [{:keys [_id _rev score crawled-at uri type crawl-tag headers body]}
+  (let [{:keys [_id
+                _rev
+                score
+                crawled-at
+                uri
+                type
+                crawl-tag
+                crawl-timestamp
+                headers
+                body]}
         (store-page +test-db+
                     "store-page-test"
+                    "2012-05-13T21:52:58.114Z"
                     "http://www.vixu.com/"
                     {:headers {:foo "bar"}
                      :body "..."}
@@ -87,6 +97,7 @@
     (is (= uri "http://www.vixu.com/"))
     (is (= type "crawled-page"))
     (is (= crawl-tag "store-page-test"))
+    (is (= crawl-timestamp "2012-05-13T21:52:58.114Z"))
     (is (= headers {:foo "bar"}))
     (is (= body "..."))))
 
@@ -96,18 +107,21 @@
   
   (let [p1 (store-page +test-db+
                        "get-page-test"
+                       "2012-05-13T21:52:58.114Z"
                        "http://www.vixu.com/"
                        {:headers {:foo "bar"}
                         :body "p1"}
                        1)
         p2 (store-page +test-db+
                        "get-page-test"
+                       "2012-05-13T21:52:58.114Z"
                        "http://www.vixu.com/"
                        {:headers {:foo "bar"}
                         :body "p2"}
                        1)
         p3 (store-page +test-db+
                        "get-page-test"
+                       "2012-05-13T21:52:58.114Z"
                        "http://www.vixu.com/en/pricing.html"
                        {:headers {:foo "bar"}
                         :body "p3"}

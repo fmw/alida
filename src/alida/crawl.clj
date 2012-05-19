@@ -109,25 +109,27 @@
    that would generate."
   [crawl-tag sleep-for seed-uri initial-selectors]
   (future
-    (loop [todo-links [{:uri seed-uri :selectors initial-selectors}]
-           crawled-links #{}
-           results []]
-      (if-let [{:keys [uri selectors]} (first todo-links)]
-        (if (contains? crawled-links uri)
-          (recur (rest todo-links) crawled-links results)
-          (let [req (get-page uri)]
-            (Thread/sleep sleep-for)
-            (recur (concat (rest todo-links)
-                           (get-crawlable-links-for-document uri
-                                                             req
-                                                             selectors))
-                   (conj crawled-links uri)
-                   (conj results (assoc req
-                                   :type "crawled-page"
-                                   :crawl-tag crawl-tag
-                                   :uri uri
-                                   :crawled-at (util/make-timestamp))))))
-        results))))
+    (let [crawl-timestamp (util/make-timestamp)]
+      (loop [todo-links [{:uri seed-uri :selectors initial-selectors}]
+             crawled-links #{}
+             results []]
+        (if-let [{:keys [uri selectors]} (first todo-links)]
+          (if (contains? crawled-links uri)
+            (recur (rest todo-links) crawled-links results)
+            (let [req (get-page uri)]
+              (Thread/sleep sleep-for)
+              (recur (concat (rest todo-links)
+                             (get-crawlable-links-for-document uri
+                                                               req
+                                                               selectors))
+                     (conj crawled-links uri)
+                     (conj results (assoc req
+                                     :type "crawled-page"
+                                     :crawl-tag crawl-tag
+                                     :crawl-timestamp crawl-timestamp
+                                     :uri uri
+                                     :crawled-at (util/make-timestamp))))))
+          results)))))
 
 (defn weighted-crawl
   "Crawling fn that stores results tagged with the crawl-tag directly
@@ -161,36 +163,48 @@
    Apache Nutch or a custom implementation on top of e.g. Apache
    Hadoop and HDFS/HBase, but the essential implementation would
    be similar to what this function does."
-  [database crawl-tag sleep-for seed-uri page-scoring-fn & [link-checker-fn]]
+  [database
+   crawl-tag
+   sleep-for
+   seed-uri
+   page-scoring-fn
+   & [link-checker-fn crawl-timestamp-]]
   (future
-    (loop [todo-links [seed-uri]
-           crawled-links #{}]
-      (when-let [active-uri (first todo-links)]
-        (if (and (not (contains? crawled-links active-uri))
-                 (or (not link-checker-fn) (link-checker-fn active-uri))
-                 (not (crawled-in-last-hour? (db/get-page database
-                                                          crawl-tag
-                                                          active-uri))))
-          (if (same-domain? active-uri seed-uri)
-            (if-let [req (get-page active-uri)]
+    (let [timestamp (or crawl-timestamp- (util/make-timestamp))]
+      (loop [todo-links [seed-uri]
+             crawled-links #{}]
+        (when-let [active-uri (first todo-links)]
+          (if (and (not (contains? crawled-links active-uri))
+                   (or (not link-checker-fn) (link-checker-fn active-uri))
+                   (not (crawled-in-last-hour? (db/get-page database
+                                                            crawl-tag
+                                                            active-uri))))
+            (if (same-domain? active-uri seed-uri)
+              (if-let [req (get-page active-uri)]
+                (do
+                  (Thread/sleep sleep-for)
+                  (let [score (page-scoring-fn active-uri req)]
+                    (when (pos? score)
+                      (db/store-page database
+                                     crawl-tag
+                                     timestamp
+                                     active-uri
+                                     req
+                                     score))
+                    (recur (if (neg? score)
+                             (rest todo-links)
+                             (concat (rest todo-links)
+                                     (scrape/get-links-jsoup active-uri
+                                                             (:body req))))
+                           (conj crawled-links active-uri))))
+                (recur (rest todo-links) (conj crawled-links active-uri)))
               (do
-                (Thread/sleep sleep-for)
-                (let [score (page-scoring-fn active-uri req)]
-                  (when (pos? score)
-                    (db/store-page database crawl-tag active-uri req score))
-                  (recur (if (neg? score)
-                           (rest todo-links)
-                           (concat (rest todo-links)
-                                   (scrape/get-links-jsoup active-uri
-                                                           (:body req))))
-                         (conj crawled-links active-uri))))
-              (recur (rest todo-links) (conj crawled-links active-uri)))
-            (do
-              (weighted-crawl database
-                              crawl-tag
-                              sleep-for
-                              active-uri
-                              page-scoring-fn
-                              link-checker-fn)
-              (recur (rest todo-links) (conj crawled-links active-uri))))
-          (recur (rest todo-links) (conj crawled-links active-uri)))))))
+                (weighted-crawl database
+                                crawl-tag
+                                sleep-for
+                                active-uri
+                                page-scoring-fn
+                                link-checker-fn
+                                timestamp)
+                (recur (rest todo-links) (conj crawled-links active-uri))))
+            (recur (rest todo-links) (conj crawled-links active-uri))))))))
