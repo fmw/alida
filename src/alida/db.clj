@@ -87,3 +87,34 @@
    the given crawl-tag."
    [database crawl-tag uri]
    (first (get-page-history database crawl-tag uri 1)))
+
+(defn get-pages-for-crawl-tag-and-timestamp
+  "Returns a collection of limit number of pages in the given database
+   with the provided crawl tag and limited to the provided
+   crawl-timestamp. Optionally also accepts a startkey and
+   startkey_docid for pagination."
+  [database
+   crawl-tag
+   crawl-timestamp
+   limit
+   & [start-uri start-timestamp startkey_docid]]
+  (let [docs (map :value
+                  (clutch/get-view database
+                                   "views"
+                                   "pages-by-crawl-tag-and-timestamp"
+                                   {:startkey [crawl-tag
+                                               crawl-timestamp
+                                               (or start-uri {})
+                                               (or start-timestamp {})]
+                                    :endkey [crawl-tag crawl-timestamp]
+                                    ;;:startkey_docid (or startkey_docid)
+                                    :limit (inc limit)
+                                    :descending true}))
+        last-doc (last docs)]
+    (if (or (nil? limit) (<= (count docs) limit))
+      {:next nil
+       :documents docs}
+      {:next {:uri (:uri last-doc)
+              :timestamp (:crawled-at last-doc)
+              :id (:_id last-doc)}
+       :documents (butlast docs)})))

@@ -137,3 +137,67 @@
                                   "http://www.vixu.com/"
                                   10))
            [p2 p1]))))
+
+(deftest test-get-pages-for-crawl-tag-and-timestamp
+  (create-views +test-db+)
+  (let [[p1a p2a p3a p4a p5a p6a p7a p8a p9a p10a]
+        (map #(store-page +test-db+
+                          "get-pages-for-crawl-tag-and-timestamp-test"
+                          "2012-05-13T21:52:58.114Z"
+                          (str "http://www.vixu.com/p" (inc %))
+                          {:headers {:foo "bar"}
+                           :body (str "p" (inc %))}
+                          1)
+             (range 10))
+        [p1b p2b p3b p4b p5b p6b p7b p8b p9b p10b]
+        (map #(store-page +test-db+
+                          "get-pages-for-crawl-tag-and-timestamp-test"
+                          "2012-05-19T04:18:50.678Z"
+                          (str "http://www.vixu.com/p" (inc %))
+                          {:headers {:foo "bar"}
+                           :body (str "p" (inc %))}
+                          1)
+             (range 10))]
+
+    (is (= (count
+            (:documents
+             (get-pages-for-crawl-tag-and-timestamp
+              +test-db+
+              "get-pages-for-crawl-tag-and-timestamp-test"
+              "2012-05-13T21:52:58.114Z"
+              100)))
+           10))
+
+    (is (= (count
+            (:documents
+             (get-pages-for-crawl-tag-and-timestamp
+              +test-db+
+              "get-pages-for-crawl-tag-and-timestamp-test"
+              "2012-05-19T04:18:50.678Z"
+              100)))
+           10))
+
+    (let [pages-a-result-1 (get-pages-for-crawl-tag-and-timestamp
+                            +test-db+
+                            "get-pages-for-crawl-tag-and-timestamp-test"
+                            "2012-05-13T21:52:58.114Z"
+                            5)]
+      (is (= (count (:documents pages-a-result-1)) 5))
+      (is (= (sort-by :uri (:documents pages-a-result-1))
+             [p5a p6a p7a p8a p9a]))
+      (is (= (:next pages-a-result-1) {:uri (:uri p4a)
+                                       :timestamp (:crawled-at p4a)
+                                       :id (:_id p4a)}))
+
+      (let [pages-a-result-2 (get-pages-for-crawl-tag-and-timestamp
+                              +test-db+
+                              "get-pages-for-crawl-tag-and-timestamp-test"
+                              "2012-05-13T21:52:58.114Z"
+                              5
+                              (:uri (:next pages-a-result-1))
+                              (:timestamp (:next pages-a-result-1))
+                              (:id (:next pages-a-result-1)))]
+        (is (= (count (:documents pages-a-result-2)) 5))
+        (is (= (sort-by :uri (:documents pages-a-result-2))
+               [p1a p10a p2a p3a p4a]))
+        (is (= (:next pages-a-result-2) nil))))))
