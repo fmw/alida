@@ -83,12 +83,13 @@
 ;;TODO: implement support for e.g. 404
 
 (defn directed-crawl
-  "Crawls a set of pages, given sleep-for (delay between requests in
-   milliseconds), a seed-uri string (e.g. http://www.vixu.com/) and a
-   sequence of selectors to extract links to other pages that are to
-   be crawled with. Runs in a separate thread, through a future.
-   Returns a sequence of clj-http request maps, with added keys for
-   the uri (:uri), a crawl timestamp (:crawled-at) and the document
+  "Crawls a set of pages, given a tag to distinguish the particular
+   crawl job, sleep-for (delay between requests in milliseconds), a
+   seed-uri string (e.g. http://www.vixu.com/) and a sequence of
+   selectors to extract links to other pages that are to be crawled
+   with. Runs in a separate thread, through a future.  Returns a
+   sequence of clj-http request maps, with added keys for the
+   uri (:uri), a crawl timestamp (:crawled-at) and the document
    :type (crawled-page).
 
    Each selector in the selectors sequence is a map with at least a
@@ -106,7 +107,7 @@
    crawling or gathering large sets of pages (e.g. the whole of
    Wikipedia), because of the potentially huge results sequence
    that would generate."
-  [sleep-for seed-uri initial-selectors]
+  [crawl-tag sleep-for seed-uri initial-selectors]
   (future
     (loop [todo-links [{:uri seed-uri :selectors initial-selectors}]
            crawled-links #{}
@@ -123,24 +124,25 @@
                    (conj crawled-links uri)
                    (conj results (assoc req
                                    :type "crawled-page"
+                                   :crawl-tag crawl-tag
                                    :uri uri
                                    :crawled-at (util/make-timestamp))))))
         results))))
 
 (defn weighted-crawl
-  "Crawling fn that stores results directly into the provided database,
-   pauses between requests to the same host for sleep-for seconds and
-   starts with the seed-uri. The page-scoring-fn should accept the
-   active uri and clj-http request map as its only arguments and
-   determines how the crawler will treat the active page. The
-   page-scoring-fn should return a positive number if it is relevant,
-   zero if it isn't interesting enough to store but still worth
-   following links from and a negative number if it should be ignored
-   altogether. Also accepts a link-checker-fn as an optional fifth
-   argument, which should return a boolean value or nil. The
-   link-checker-fn is useful to filter the crawling process on a URI
-   basis (e.g. to limit the crawl to a specific domain or subset of
-   pages with a marker in the URI to check for).
+  "Crawling fn that stores results tagged with the crawl-tag directly
+   into the provided database, pauses between requests to the same
+   host for sleep-for seconds and starts with the seed-uri. The
+   page-scoring-fn should accept the active uri and clj-http request
+   map as its only arguments and determines how the crawler will treat
+   the active page. The page-scoring-fn should return a positive
+   number if it is relevant, zero if it isn't interesting enough to
+   store but still worth following links from and a negative number if
+   it should be ignored altogether. Also accepts a link-checker-fn as
+   an optional fifth argument, which should return a boolean value or
+   nil. The link-checker-fn is useful to filter the crawling process
+   on a URI basis (e.g. to limit the crawl to a specific domain or
+   subset of pages with a marker in the URI to check for).
 
    This fn is a starting point for a more scalable crawling mechanism.
    It spawns a new thread for every domain that is being
@@ -159,7 +161,7 @@
    Apache Nutch or a custom implementation on top of e.g. Apache
    Hadoop and HDFS/HBase, but the essential implementation would
    be similar to what this function does."
-  [database sleep-for seed-uri page-scoring-fn & [link-checker-fn]]
+  [database crawl-tag sleep-for seed-uri page-scoring-fn & [link-checker-fn]]
   (future
     (loop [todo-links [seed-uri]
            crawled-links #{}]
@@ -167,6 +169,7 @@
         (if (and (not (contains? crawled-links active-uri))
                  (or (not link-checker-fn) (link-checker-fn active-uri))
                  (not (crawled-in-last-hour? (db/get-page database
+                                                          crawl-tag
                                                           active-uri))))
           (if (same-domain? active-uri seed-uri)
             (if-let [req (get-page active-uri)]
@@ -174,7 +177,7 @@
                 (Thread/sleep sleep-for)
                 (let [score (page-scoring-fn active-uri req)]
                   (when (pos? score)
-                    (db/store-page database active-uri req score))
+                    (db/store-page database crawl-tag active-uri req score))
                   (recur (if (neg? score)
                            (rest todo-links)
                            (concat (rest todo-links)
@@ -184,6 +187,7 @@
               (recur (rest todo-links) (conj crawled-links active-uri)))
             (do
               (weighted-crawl database
+                              crawl-tag
                               sleep-for
                               active-uri
                               page-scoring-fn

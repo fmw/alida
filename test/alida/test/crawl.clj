@@ -194,14 +194,16 @@
        (=
         (sort-by
          :uri
-         @(directed-crawl 0
+         @(directed-crawl "test-directed-crawl"
+                          0
                           "http://www.dummyhealthfoodstore.com/index.html"
                           [{:selector [:ul#menu :a]
                             :path-filter #"^/products.+"
                             :next [{:selector [[:div#content] [:a]]}]}]))
         (sort-by
          :uri
-         @(directed-crawl 0
+         @(directed-crawl "test-directed-crawl"
+                          0
                           "http://www.dummyhealthfoodstore.com/index.html"
                           [{:selector [:ul#menu :a]
                             :path-filter #"^/products.+"
@@ -214,6 +216,7 @@
          :uri
          (map (fn [uri]
                 (zipmap [:type
+                         :crawl-tag
                          :uri
                          :crawled-at
                          :trace-redirects
@@ -221,6 +224,7 @@
                          :headers
                          :body]
                         ["crawled-page"
+                         "test-directed-crawl"
                          uri
                          "2012-05-13T21:52:58.114Z"
                          [uri]
@@ -238,6 +242,7 @@
                  (map
                   :crawled-at
                   @(directed-crawl
+                    "test-directed-crawl"
                     100
                     "http://www.dummyhealthfoodstore.com/index.html"
                     [{:selector [:ul#menu :a]
@@ -268,6 +273,7 @@
                    (nil?
                     (re-matches #"http://www.deeply-nested.*" uri))))]
             @(weighted-crawl +test-db+
+                             "test-weighted-crawl"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
                              page-scoring-fn
@@ -283,6 +289,7 @@
                                       "resources/test-data/deeply-nested/"
                                       page)]
                         {:type "crawled-page"
+                         :crawl-tag "test-weighted-crawl"
                          :status 200
                          :score (float 0.1)
                          :trace-redirects [uri]
@@ -328,6 +335,7 @@
                     0 ;; don't store if the title is "Nested 0"
                     (float 0.1)))]
             @(weighted-crawl +test-db+
+                             "test-weighted-crawl"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
                              page-scoring-fn)
@@ -343,6 +351,7 @@
                                       "resources/test-data/deeply-nested/"
                                       page)]
                         {:type "crawled-page"
+                         :crawl-tag "test-weighted-crawl"
                          :status 200
                          :score (float 0.1)
                          :trace-redirects [uri]
@@ -392,6 +401,7 @@
                     -0.1))]
                
             @(weighted-crawl +test-db+
+                             "test-weighted-crawl"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
                              page-scoring-fn)
@@ -407,6 +417,7 @@
                                       "resources/test-data/deeply-nested/"
                                       page)]
                         {:type "crawled-page"
+                         :crawl-tag "test-weighted-crawl"
                          :status 200
                          :score (float 0.1)
                          :trace-redirects [uri]
@@ -448,6 +459,7 @@
                     false))]
                
             @(weighted-crawl +test-db+
+                             "test-weighted-crawl"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
                              page-scoring-fn
@@ -464,6 +476,7 @@
                                       "resources/test-data/deeply-nested/"
                                       page)]
                         {:type "crawled-page"
+                         :crawl-tag "test-weighted-crawl"
                          :status 200
                          :score (float 0.1)
                          :trace-redirects [uri]
@@ -489,11 +502,13 @@
                 (float 0.1))]
                
           @(weighted-crawl +test-db+
+                           "test-weighted-crawl"
                            0
                            "http://www.deeply-nested-dummy.com/index.html"
                            page-scoring-fn)
 
           @(weighted-crawl +test-db+
+                           "test-weighted-crawl"
                            0
                            "http://www.deeply-nested-dummy.com/index.html"
                            page-scoring-fn)
@@ -508,6 +523,7 @@
                 (float 0.1))]
                
           @(weighted-crawl +test-db+
+                           "test-weighted-crawl"
                            100
                            "http://www.deeply-nested-dummy.com/index.html"
                            page-scoring-fn)
@@ -553,6 +569,7 @@
                 (float 0.1))]
                
           @(weighted-crawl +test-db+
+                           "test-weighted-crawl"
                            0
                            "http://www.dummyhealthfoodstore.com/index.html"
                            page-scoring-fn)

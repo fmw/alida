@@ -89,7 +89,7 @@ Being polite:
 - respect robots.txt,
 - delay between requests.
 
-Dealing anti-crawling measures and non-standard content:
+Dealing with anti-crawling measures and non-standard content:
 
 - headless browser for dynamic content (Selenium has good Clojure support),
 - use OCR for images (e.g. tesseract-ocr),
@@ -107,7 +107,8 @@ Directed crawl
 
 .. code-block:: clojure
 
-   @(directed-crawl 1000 ;; be nice and wait 1 second between requests
+   @(directed-crawl "external-links"
+                    1000 ;; be nice and wait 1 second between requests
                     "http://www.vixu.com/"
                     [{:selector [:a]
                       :path-filter #"^/en.*"
@@ -148,6 +149,7 @@ Weighted crawl function
 .. code-block:: clojure
 
    @(weighted-crawl "alida" ;; database
+                    "website-management-crawl"
                     1000 ;; delay in ms
                     "http://www.vixu.com/" ;; seed-uri
                     page-scoring-fn

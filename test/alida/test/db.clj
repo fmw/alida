@@ -40,16 +40,6 @@
    #"^[\d]{4}-[\d]{2}-[\d]{2}T[\d]{2}:[\d]{2}:[\d]{2}\.[\d]{1,4}Z"
    s))
 
-(def dummy-crawled-pages
-  (with-fake-routes test-crawl/dummy-routes
-    (with-redefs [util/make-timestamp #(str "2012-05-13T21:52:58.114Z")]
-      @(crawl/directed-crawl
-        0
-        "http://www.dummyhealthfoodstore.com/index.html"
-        [{:selector [:ul#menu :a]
-          :path-filter #"^/products.+"
-          :next [{:selector [[:div#content] [:a]]}]}]))))
-
 (defn database-fixture [f]
   (with-test-db (f)))
 
@@ -63,6 +53,17 @@
                                 +test-db+
                                 "/_design/views")))))))
 
+(def dummy-crawled-pages
+  (with-fake-routes test-crawl/dummy-routes
+    (with-redefs [util/make-timestamp #(str "2012-05-13T21:52:58.114Z")]
+      @(crawl/directed-crawl
+        "fake-routes"
+        0
+        "http://www.dummyhealthfoodstore.com/index.html"
+        [{:selector [:ul#menu :a]
+          :path-filter #"^/products.+"
+          :next [{:selector [[:div#content] [:a]]}]}]))))
+
 (deftest test-add-batched-documents
   (is (= (:doc_count (clutch/database-info +test-db+)) 0))
 
@@ -72,8 +73,9 @@
   (is (= (:doc_count (clutch/database-info +test-db+)) 13)))
 
 (deftest test-store-page
-  (let [{:keys [_id _rev score crawled-at uri type headers body]}
+  (let [{:keys [_id _rev score crawled-at uri type crawl-tag headers body]}
         (store-page +test-db+
+                    "store-page-test"
                     "http://www.vixu.com/"
                     {:headers {:foo "bar"}
                      :body "..."}
@@ -84,6 +86,7 @@
     (is (iso-date? crawled-at))
     (is (= uri "http://www.vixu.com/"))
     (is (= type "crawled-page"))
+    (is (= crawl-tag "store-page-test"))
     (is (= headers {:foo "bar"}))
     (is (= body "..."))))
 
@@ -92,26 +95,31 @@
     (create-views +test-db+))
   
   (let [p1 (store-page +test-db+
+                       "get-page-test"
                        "http://www.vixu.com/"
                        {:headers {:foo "bar"}
                         :body "p1"}
                        1)
         p2 (store-page +test-db+
+                       "get-page-test"
                        "http://www.vixu.com/"
                        {:headers {:foo "bar"}
                         :body "p2"}
                        1)
         p3 (store-page +test-db+
+                       "get-page-test"
                        "http://www.vixu.com/en/pricing.html"
                        {:headers {:foo "bar"}
                         :body "p3"}
                        1)]
 
     (is (= (get-page +test-db+
+                     "get-page-test"
                      "http://www.vixu.com/")
            p2))
 
     (is (= (vec (get-page-history +test-db+
+                                  "get-page-test"
                                   "http://www.vixu.com/"
                                   10))
            [p2 p1]))))

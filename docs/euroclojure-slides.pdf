@@ -384,7 +384,7 @@ endobj
 % 'R26': class PDFInfo 
 26 0 obj
 << /Author ()
- /CreationDate (D:20120519005729-01'00')
+ /CreationDate (D:20120519034201-01'00')
  /Creator (\(unspecified\))
  /Keywords ()
  /Producer (ReportLab PDF Library - www.reportlab.com)
@@ -1521,7 +1521,7 @@ endobj
 % 'R45': class PDFStream 
 45 0 obj
 % page stream
-<< /Length 2917 >>
+<< /Length 2922 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -1595,7 +1595,7 @@ q
 1 0 0 1 6 141.9449 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Dealing anti-crawling measures and non-standard content:) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Dealing with anti-crawling measures and non-standard content:) Tj T* ET
 Q
 Q
 q
@@ -1733,7 +1733,7 @@ endobj
 % 'R46': class PDFStream 
 46 0 obj
 % page stream
-<< /Length 2724 >>
+<< /Length 2809 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -1821,7 +1821,7 @@ q
 1 0 0 1 6 153.9449 cm
 Q
 q
-1 0 0 1 6 63.66253 cm
+1 0 0 1 6 52.07347 cm
 q
 q
 .965755 0 0 .965755 0 0 cm
@@ -1831,17 +1831,17 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 456 84 re B*
+n -6 -6 456 96 re B*
 Q
 q
-BT 1 0 0 1 0 62 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (directed-crawl) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; be nice and wait 1 second between requests) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg  T* (                 ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]) Tj  T* (                   ) Tj .098039 .090196 .486275 rg (:path-filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^/en.*") Tj 0 0 0 rg  T* (                   ) Tj .098039 .090196 .486275 rg (:next) Tj 0 0 0 rg ( ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([[) Tj .098039 .090196 .486275 rg (:div) Tj .4 .4 .4 rg (#) Tj .098039 .090196 .486275 rg (content) Tj 0 0 0 rg (]) Tj ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]]) Tj  T* (                           ) Tj .098039 .090196 .486275 rg (:filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^\(http://www.vixu.com/.*\){0}.*") Tj 0 0 0 rg (}]}]\)\)) Tj T* ET
+BT 1 0 0 1 0 74 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (directed-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("external-links") Tj 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; be nice and wait 1 second between requests) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg  T* (                 ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]) Tj  T* (                   ) Tj .098039 .090196 .486275 rg (:path-filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^/en.*") Tj 0 0 0 rg  T* (                   ) Tj .098039 .090196 .486275 rg (:next) Tj 0 0 0 rg ( ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([[) Tj .098039 .090196 .486275 rg (:div) Tj .4 .4 .4 rg (#) Tj .098039 .090196 .486275 rg (content) Tj 0 0 0 rg (]) Tj ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]]) Tj  T* (                           ) Tj .098039 .090196 .486275 rg (:filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^\(http://www.vixu.com/.*\){0}.*") Tj 0 0 0 rg (}]}]\)\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 6 55.66253 cm
+1 0 0 1 6 44.07347 cm
 Q
  
 endstream
@@ -1921,7 +1921,7 @@ endobj
 % 'R48': class PDFStream 
 48 0 obj
 % page stream
-<< /Length 2927 >>
+<< /Length 3022 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -2057,7 +2057,7 @@ q
 1 0 0 1 6 117.9449 cm
 Q
 q
-1 0 0 1 6 36.74488 cm
+1 0 0 1 6 24.74488 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -2067,10 +2067,10 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 440.3433 72 re B*
+n -6 -6 440.3433 84 re B*
 Q
 q
-BT 1 0 0 1 0 50 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (weighted-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("alida") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; database) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; delay in ms) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; seed-uri) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (page-scoring-fn) Tj 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (link-checker-fn) Tj 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 62 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (weighted-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("alida") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; database) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("website-management-crawl") Tj 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; delay in ms) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; seed-uri) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (page-scoring-fn) Tj 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (link-checker-fn) Tj 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 Q
@@ -2211,28 +2211,28 @@ xref
 0000016906 00000 n
 0000019379 00000 n
 0000022547 00000 n
-0000025563 00000 n
-0000028386 00000 n
-0000030533 00000 n
-0000033563 00000 n
-0000033773 00000 n
-0000033850 00000 n
-0000033927 00000 n
-0000034004 00000 n
-0000034081 00000 n
-0000034158 00000 n
-0000034235 00000 n
-0000034312 00000 n
-0000034389 00000 n
-0000034466 00000 n
+0000025568 00000 n
+0000028476 00000 n
+0000030623 00000 n
+0000033748 00000 n
+0000033958 00000 n
+0000034035 00000 n
+0000034112 00000 n
+0000034189 00000 n
+0000034266 00000 n
+0000034343 00000 n
+0000034420 00000 n
+0000034497 00000 n
+0000034574 00000 n
+0000034651 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\011\025K]5W&m\230\276\213\035Y\216:\301) (\011\025K]5W&m\230\276\213\035Y\216:\301)] 
+ [(P\266\207\312^\226\037\035#=H>\210\032_y) (P\266\207\312^\226\037\035#=H>\210\032_y)] 
 
  /Info 26 0 R
  /Root 25 0 R
  /Size 60 >>
 startxref
-34514
+34699
 %%EOF
