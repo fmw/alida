@@ -107,7 +107,7 @@
                                                (or start-uri {})
                                                (or start-timestamp {})]
                                     :endkey [crawl-tag crawl-timestamp]
-                                    ;;:startkey_docid (or startkey_docid)
+                                    :startkey_docid startkey_docid
                                     :limit (inc limit)
                                     :descending true}))
         last-doc (last docs)]
