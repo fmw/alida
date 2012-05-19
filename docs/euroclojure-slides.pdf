@@ -384,7 +384,7 @@ endobj
 % 'R26': class PDFInfo 
 26 0 obj
 << /Author ()
- /CreationDate (D:20120519034201-01'00')
+ /CreationDate (D:20120519034711-01'00')
  /Creator (\(unspecified\))
  /Keywords ()
  /Producer (ReportLab PDF Library - www.reportlab.com)
@@ -1733,7 +1733,7 @@ endobj
 % 'R46': class PDFStream 
 46 0 obj
 % page stream
-<< /Length 2809 >>
+<< /Length 2889 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -1834,7 +1834,7 @@ q
 n -6 -6 456 96 re B*
 Q
 q
-BT 1 0 0 1 0 74 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (directed-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("external-links") Tj 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; be nice and wait 1 second between requests) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg  T* (                 ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]) Tj  T* (                   ) Tj .098039 .090196 .486275 rg (:path-filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^/en.*") Tj 0 0 0 rg  T* (                   ) Tj .098039 .090196 .486275 rg (:next) Tj 0 0 0 rg ( ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([[) Tj .098039 .090196 .486275 rg (:div) Tj .4 .4 .4 rg (#) Tj .098039 .090196 .486275 rg (content) Tj 0 0 0 rg (]) Tj ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]]) Tj  T* (                           ) Tj .098039 .090196 .486275 rg (:filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^\(http://www.vixu.com/.*\){0}.*") Tj 0 0 0 rg (}]}]\)\)) Tj T* ET
+BT 1 0 0 1 0 74 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (directed-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("external-links") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; crawl-tag) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; be nice and wait 1 second between requests) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg  T* (                 ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]) Tj  T* (                   ) Tj .098039 .090196 .486275 rg (:path-filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^/en.*") Tj 0 0 0 rg  T* (                   ) Tj .098039 .090196 .486275 rg (:next) Tj 0 0 0 rg ( ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([[) Tj .098039 .090196 .486275 rg (:div) Tj .4 .4 .4 rg (#) Tj .098039 .090196 .486275 rg (content) Tj 0 0 0 rg (]) Tj ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]]) Tj  T* (                           ) Tj .098039 .090196 .486275 rg (:filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^\(http://www.vixu.com/.*\){0}.*") Tj 0 0 0 rg (}]}]\)\)) Tj T* ET
 Q
 Q
 Q
@@ -1921,7 +1921,7 @@ endobj
 % 'R48': class PDFStream 
 48 0 obj
 % page stream
-<< /Length 3022 >>
+<< /Length 3102 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -2070,7 +2070,7 @@ q
 n -6 -6 440.3433 84 re B*
 Q
 q
-BT 1 0 0 1 0 62 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (weighted-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("alida") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; database) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("website-management-crawl") Tj 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; delay in ms) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; seed-uri) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (page-scoring-fn) Tj 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (link-checker-fn) Tj 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 62 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (weighted-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("alida") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; database) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("website-management-crawl") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; crawl-tag) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; delay in ms) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; seed-uri) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (page-scoring-fn) Tj 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (link-checker-fn) Tj 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 Q
@@ -2212,27 +2212,27 @@ xref
 0000019379 00000 n
 0000022547 00000 n
 0000025568 00000 n
-0000028476 00000 n
-0000030623 00000 n
-0000033748 00000 n
-0000033958 00000 n
-0000034035 00000 n
-0000034112 00000 n
-0000034189 00000 n
-0000034266 00000 n
-0000034343 00000 n
-0000034420 00000 n
-0000034497 00000 n
-0000034574 00000 n
-0000034651 00000 n
+0000028556 00000 n
+0000030703 00000 n
+0000033908 00000 n
+0000034118 00000 n
+0000034195 00000 n
+0000034272 00000 n
+0000034349 00000 n
+0000034426 00000 n
+0000034503 00000 n
+0000034580 00000 n
+0000034657 00000 n
+0000034734 00000 n
+0000034811 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(P\266\207\312^\226\037\035#=H>\210\032_y) (P\266\207\312^\226\037\035#=H>\210\032_y)] 
+ [(\271@\)\257y\0327\224\306\265nK\342\372\372\243) (\271@\)\257y\0327\224\306\265nK\342\372\372\243)] 
 
  /Info 26 0 R
  /Root 25 0 R
  /Size 60 >>
 startxref
-34699
+34859
 %%EOF
