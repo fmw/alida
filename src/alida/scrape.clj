@@ -108,7 +108,7 @@
 (defmethod get-trimmed-content :string [html selector]
   (get-trimmed-content (enlive/html-resource (StringReader. html)) selector))
 
-(defn full-scrape
+(defn extract-and-store-data
   "Processes crawl results with the provided crawl-tag and
    crawl-timestamp that are stored in the database by running
    scraping-fn over them. The scraping-fn should always return a map
