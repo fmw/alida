@@ -137,6 +137,7 @@
         (sort-by
          :uri
          @(directed-crawl "test-directed-crawl"
+                          "2012-05-13T21:52:58.114Z"
                           0
                           "http://www.dummyhealthfoodstore.com/index.html"
                           [{:selector [:ul#menu :a]
@@ -145,6 +146,7 @@
         (sort-by
          :uri
          @(directed-crawl "test-directed-crawl"
+                          "2012-05-13T21:52:58.114Z"
                           0
                           "http://www.dummyhealthfoodstore.com/index.html"
                           [{:selector [:ul#menu :a]
@@ -187,6 +189,7 @@
                   :crawled-at
                   @(directed-crawl
                     "test-directed-crawl"
+                    (util/make-timestamp)
                     100
                     "http://www.dummyhealthfoodstore.com/index.html"
                     [{:selector [:ul#menu :a]
@@ -218,6 +221,7 @@
                     (re-matches #"http://www.deeply-nested.*" uri))))]
             @(weighted-crawl +test-db+
                              "test-weighted-crawl"
+                             "2012-05-13T21:52:58.114Z"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
                              page-scoring-fn
@@ -281,6 +285,7 @@
                     (float 0.1)))]
             @(weighted-crawl +test-db+
                              "test-weighted-crawl"
+                             "2012-05-13T21:52:58.114Z"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
                              page-scoring-fn)
@@ -348,6 +353,7 @@
                
             @(weighted-crawl +test-db+
                              "test-weighted-crawl"
+                             "2012-05-13T21:52:58.114Z"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
                              page-scoring-fn)
@@ -407,6 +413,7 @@
                
             @(weighted-crawl +test-db+
                              "test-weighted-crawl"
+                             "2012-05-13T21:52:58.114Z"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
                              page-scoring-fn
@@ -451,12 +458,14 @@
                
           @(weighted-crawl +test-db+
                            "test-weighted-crawl"
+                           (util/make-timestamp)
                            0
                            "http://www.deeply-nested-dummy.com/index.html"
                            page-scoring-fn)
 
           @(weighted-crawl +test-db+
                            "test-weighted-crawl"
+                           (util/make-timestamp)
                            0
                            "http://www.deeply-nested-dummy.com/index.html"
                            page-scoring-fn)
@@ -472,6 +481,7 @@
                
           @(weighted-crawl +test-db+
                            "test-weighted-crawl"
+                           (util/make-timestamp)
                            100
                            "http://www.deeply-nested-dummy.com/index.html"
                            page-scoring-fn)
@@ -518,6 +528,7 @@
                
           @(weighted-crawl +test-db+
                            "test-weighted-crawl"
+                           (util/make-timestamp)
                            0
                            "http://www.dummyhealthfoodstore.com/index.html"
                            page-scoring-fn)

@@ -152,6 +152,7 @@
            +test-db+
            @(crawl/directed-crawl
              "extract-and-store-data-test"
+             "2012-05-19T22:08:56.250Z"
              0
              "http://www.dummyhealthfoodstore.com/index.html"
              [{:selector [:ul#menu :a]

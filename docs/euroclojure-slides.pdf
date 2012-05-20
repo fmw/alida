@@ -36,9 +36,9 @@ endobj
  0
  0 ]
  /Rect [ 76.57
- 196.6949
+ 281.7343
  144.5
- 208.6949 ]
+ 293.7343 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -51,9 +51,9 @@ endobj
  0
  0 ]
  /Rect [ 35.46
- 178.6949
+ 263.7343
  159.4
- 190.6949 ]
+ 275.7343 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -65,8 +65,8 @@ endobj
  /Contents 39 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -84,8 +84,8 @@ endobj
 << /Contents 40 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -106,9 +106,9 @@ endobj
  0
  0 ]
  /Rect [ 97.37
- 175.6949
+ 260.7343
  202.44
- 187.6949 ]
+ 272.7343 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -121,9 +121,9 @@ endobj
  0
  0 ]
  /Rect [ 66.22
- 157.6949
+ 242.7343
  251.85
- 169.6949 ]
+ 254.7343 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -136,9 +136,9 @@ endobj
  0
  0 ]
  /Rect [ 65.68
- 121.6949
+ 206.7343
  140.16
- 133.6949 ]
+ 218.7343 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -151,9 +151,9 @@ endobj
  0
  0 ]
  /Rect [ 82.91
- 103.6949
+ 188.7343
  285.77
- 115.6949 ]
+ 200.7343 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -166,9 +166,9 @@ endobj
  0
  0 ]
  /Rect [ 55.68
- 67.69488
+ 152.7343
  206.3
- 79.69488 ]
+ 164.7343 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -181,9 +181,9 @@ endobj
  0
  0 ]
  /Rect [ 72.89
- 49.69488
+ 134.7343
  269.64
- 61.69488 ]
+ 146.7343 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -199,8 +199,8 @@ endobj
  /Contents 41 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -218,8 +218,8 @@ endobj
 << /Contents 42 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -237,8 +237,8 @@ endobj
 << /Contents 43 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -256,8 +256,8 @@ endobj
 << /Contents 44 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -275,8 +275,8 @@ endobj
 << /Contents 45 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -312,8 +312,8 @@ endobj
 << /Contents 46 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -340,8 +340,8 @@ endobj
 << /Contents 47 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -359,8 +359,8 @@ endobj
 << /Contents 48 0 R
  /MediaBox [ 0
  0
- 453.5433
- 255.1181 ]
+ 510.2362
+ 340.1575 ]
  /Parent 38 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
@@ -384,7 +384,7 @@ endobj
 % 'R26': class PDFInfo 
 26 0 obj
 << /Author ()
- /CreationDate (D:20120519034711-01'00')
+ /CreationDate (D:20120520075657-01'00')
  /Creator (\(unspecified\))
  /Keywords ()
  /Producer (ReportLab PDF Library - www.reportlab.com)
@@ -403,7 +403,7 @@ endobj
 << /Dest [ 6 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Next 29 0 R
  /Parent 27 0 R
@@ -414,7 +414,7 @@ endobj
 << /Dest [ 7 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Next 30 0 R
  /Parent 27 0 R
@@ -426,7 +426,7 @@ endobj
 << /Dest [ 14 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Next 31 0 R
  /Parent 27 0 R
@@ -438,7 +438,7 @@ endobj
 << /Dest [ 15 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Next 32 0 R
  /Parent 27 0 R
@@ -450,7 +450,7 @@ endobj
 << /Dest [ 16 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Next 33 0 R
  /Parent 27 0 R
@@ -462,7 +462,7 @@ endobj
 << /Dest [ 17 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Next 34 0 R
  /Parent 27 0 R
@@ -474,7 +474,7 @@ endobj
 << /Dest [ 18 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Next 35 0 R
  /Parent 27 0 R
@@ -486,7 +486,7 @@ endobj
 << /Dest [ 21 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Next 36 0 R
  /Parent 27 0 R
@@ -498,7 +498,7 @@ endobj
 << /Dest [ 23 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Next 37 0 R
  /Parent 27 0 R
@@ -510,7 +510,7 @@ endobj
 << /Dest [ 24 0 R
  /XYZ
  6
- 234.9449
+ 319.9843
  0 ]
  /Parent 27 0 R
  /Prev 36 0 R
@@ -539,25 +539,25 @@ endobj
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 6 213.9449 cm
+1 0 0 1 6 298.9843 cm
 q
 BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Building a search engine with Clojure) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 195.9449 cm
+1 0 0 1 6 280.9843 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Filip de Waard \() Tj 0 0 .501961 rg (fmw@vixu.com) Tj 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 177.9449 cm
+1 0 0 1 6 262.9843 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Code: ) Tj 0 0 .501961 rg (https://github.com/fmw/alida) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 177.9449 cm
+1 0 0 1 6 262.9843 cm
 Q
  
 endstream
@@ -569,19 +569,19 @@ endobj
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 6 213.9449 cm
+1 0 0 1 6 298.9843 cm
 q
 BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (What does a search engine need to do?) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 201.9449 cm
+1 0 0 1 6 286.9843 cm
 Q
 q
-1 0 0 1 6 201.9449 cm
+1 0 0 1 6 286.9843 cm
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -602,10 +602,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 183.9449 cm
+1 0 0 1 6 268.9843 cm
 Q
 q
-1 0 0 1 6 171.9449 cm
+1 0 0 1 6 256.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -626,10 +626,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 165.9449 cm
+1 0 0 1 6 250.9843 cm
 Q
 q
-1 0 0 1 6 153.9449 cm
+1 0 0 1 6 238.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -650,10 +650,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 147.9449 cm
+1 0 0 1 6 232.9843 cm
 Q
 q
-1 0 0 1 6 135.9449 cm
+1 0 0 1 6 220.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -674,10 +674,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 129.9449 cm
+1 0 0 1 6 214.9843 cm
 Q
 q
-1 0 0 1 6 117.9449 cm
+1 0 0 1 6 202.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -698,10 +698,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 111.9449 cm
+1 0 0 1 6 196.9843 cm
 Q
 q
-1 0 0 1 6 99.94488 cm
+1 0 0 1 6 184.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -722,10 +722,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 99.94488 cm
+1 0 0 1 6 184.9843 cm
 Q
 q
-1 0 0 1 6 99.94488 cm
+1 0 0 1 6 184.9843 cm
 Q
  
 endstream
@@ -737,26 +737,26 @@ endobj
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 6 213.9449 cm
+1 0 0 1 6 298.9843 cm
 q
 BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Popular open source crawlers) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 195.9449 cm
+1 0 0 1 6 280.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Java:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 Q
 q
-1 0 0 1 6 177.9449 cm
+1 0 0 1 6 262.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -776,10 +776,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 171.9449 cm
+1 0 0 1 6 256.9843 cm
 Q
 q
-1 0 0 1 6 159.9449 cm
+1 0 0 1 6 244.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -799,23 +799,23 @@ q
 Q
 Q
 q
-1 0 0 1 6 159.9449 cm
+1 0 0 1 6 244.9843 cm
 Q
 q
-1 0 0 1 6 141.9449 cm
+1 0 0 1 6 226.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Python:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 135.9449 cm
+1 0 0 1 6 220.9843 cm
 Q
 q
-1 0 0 1 6 135.9449 cm
+1 0 0 1 6 220.9843 cm
 Q
 q
-1 0 0 1 6 123.9449 cm
+1 0 0 1 6 208.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -835,10 +835,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 117.9449 cm
+1 0 0 1 6 202.9843 cm
 Q
 q
-1 0 0 1 6 105.9449 cm
+1 0 0 1 6 190.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -858,23 +858,23 @@ q
 Q
 Q
 q
-1 0 0 1 6 105.9449 cm
+1 0 0 1 6 190.9843 cm
 Q
 q
-1 0 0 1 6 87.94488 cm
+1 0 0 1 6 172.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Other:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 81.94488 cm
+1 0 0 1 6 166.9843 cm
 Q
 q
-1 0 0 1 6 81.94488 cm
+1 0 0 1 6 166.9843 cm
 Q
 q
-1 0 0 1 6 69.94488 cm
+1 0 0 1 6 154.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -894,10 +894,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 63.94488 cm
+1 0 0 1 6 148.9843 cm
 Q
 q
-1 0 0 1 6 51.94488 cm
+1 0 0 1 6 136.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -917,10 +917,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 51.94488 cm
+1 0 0 1 6 136.9843 cm
 Q
 q
-1 0 0 1 6 51.94488 cm
+1 0 0 1 6 136.9843 cm
 Q
  
 endstream
@@ -932,19 +932,19 @@ endobj
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 6 213.9449 cm
+1 0 0 1 6 298.9843 cm
 q
 BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Web crawling process) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 201.9449 cm
+1 0 0 1 6 286.9843 cm
 Q
 q
-1 0 0 1 6 201.9449 cm
+1 0 0 1 6 286.9843 cm
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -965,10 +965,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 183.9449 cm
+1 0 0 1 6 268.9843 cm
 Q
 q
-1 0 0 1 6 171.9449 cm
+1 0 0 1 6 256.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -989,10 +989,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 165.9449 cm
+1 0 0 1 6 250.9843 cm
 Q
 q
-1 0 0 1 6 153.9449 cm
+1 0 0 1 6 238.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1013,10 +1013,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 147.9449 cm
+1 0 0 1 6 232.9843 cm
 Q
 q
-1 0 0 1 6 135.9449 cm
+1 0 0 1 6 220.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1037,10 +1037,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 129.9449 cm
+1 0 0 1 6 214.9843 cm
 Q
 q
-1 0 0 1 6 117.9449 cm
+1 0 0 1 6 202.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1061,10 +1061,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 111.9449 cm
+1 0 0 1 6 196.9843 cm
 Q
 q
-1 0 0 1 6 99.94488 cm
+1 0 0 1 6 184.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1085,10 +1085,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 93.94488 cm
+1 0 0 1 6 178.9843 cm
 Q
 q
-1 0 0 1 6 81.94488 cm
+1 0 0 1 6 166.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1109,10 +1109,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 81.94488 cm
+1 0 0 1 6 166.9843 cm
 Q
 q
-1 0 0 1 6 81.94488 cm
+1 0 0 1 6 166.9843 cm
 Q
  
 endstream
@@ -1124,26 +1124,26 @@ endobj
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 6 213.9449 cm
+1 0 0 1 6 298.9843 cm
 q
 BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Crawling approaches) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 195.9449 cm
+1 0 0 1 6 280.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Brute force:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 Q
 q
-1 0 0 1 6 177.9449 cm
+1 0 0 1 6 262.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1164,23 +1164,23 @@ q
 Q
 Q
 q
-1 0 0 1 6 177.9449 cm
+1 0 0 1 6 262.9843 cm
 Q
 q
-1 0 0 1 6 159.9449 cm
+1 0 0 1 6 244.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Directed crawling:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 153.9449 cm
+1 0 0 1 6 238.9843 cm
 Q
 q
-1 0 0 1 6 153.9449 cm
+1 0 0 1 6 238.9843 cm
 Q
 q
-1 0 0 1 6 141.9449 cm
+1 0 0 1 6 226.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1201,23 +1201,23 @@ q
 Q
 Q
 q
-1 0 0 1 6 141.9449 cm
+1 0 0 1 6 226.9843 cm
 Q
 q
-1 0 0 1 6 123.9449 cm
+1 0 0 1 6 208.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Weighted crawling:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 117.9449 cm
+1 0 0 1 6 202.9843 cm
 Q
 q
-1 0 0 1 6 117.9449 cm
+1 0 0 1 6 202.9843 cm
 Q
 q
-1 0 0 1 6 105.9449 cm
+1 0 0 1 6 190.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1238,10 +1238,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 99.94488 cm
+1 0 0 1 6 184.9843 cm
 Q
 q
-1 0 0 1 6 87.94488 cm
+1 0 0 1 6 172.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1262,10 +1262,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 81.94488 cm
+1 0 0 1 6 166.9843 cm
 Q
 q
-1 0 0 1 6 69.94488 cm
+1 0 0 1 6 154.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1286,10 +1286,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 69.94488 cm
+1 0 0 1 6 154.9843 cm
 Q
 q
-1 0 0 1 6 69.94488 cm
+1 0 0 1 6 154.9843 cm
 Q
  
 endstream
@@ -1301,26 +1301,26 @@ endobj
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 6 213.9449 cm
+1 0 0 1 6 298.9843 cm
 q
 BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Roll your own crawler in Clojure) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 195.9449 cm
+1 0 0 1 6 280.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Leverage existing libraries:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 Q
 q
-1 0 0 1 6 177.9449 cm
+1 0 0 1 6 262.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1341,10 +1341,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 171.9449 cm
+1 0 0 1 6 256.9843 cm
 Q
 q
-1 0 0 1 6 159.9449 cm
+1 0 0 1 6 244.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1364,10 +1364,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 153.9449 cm
+1 0 0 1 6 238.9843 cm
 Q
 q
-1 0 0 1 6 141.9449 cm
+1 0 0 1 6 226.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1388,10 +1388,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 135.9449 cm
+1 0 0 1 6 220.9843 cm
 Q
 q
-1 0 0 1 6 123.9449 cm
+1 0 0 1 6 208.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1412,23 +1412,23 @@ q
 Q
 Q
 q
-1 0 0 1 6 123.9449 cm
+1 0 0 1 6 208.9843 cm
 Q
 q
-1 0 0 1 6 105.9449 cm
+1 0 0 1 6 190.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Prototype:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 99.94488 cm
+1 0 0 1 6 184.9843 cm
 Q
 q
-1 0 0 1 6 99.94488 cm
+1 0 0 1 6 184.9843 cm
 Q
 q
-1 0 0 1 6 87.94488 cm
+1 0 0 1 6 172.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1449,23 +1449,23 @@ q
 Q
 Q
 q
-1 0 0 1 6 87.94488 cm
+1 0 0 1 6 172.9843 cm
 Q
 q
-1 0 0 1 6 69.94488 cm
+1 0 0 1 6 154.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Recommended for production:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 63.94488 cm
+1 0 0 1 6 148.9843 cm
 Q
 q
-1 0 0 1 6 63.94488 cm
+1 0 0 1 6 148.9843 cm
 Q
 q
-1 0 0 1 6 51.94488 cm
+1 0 0 1 6 136.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1486,10 +1486,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 45.94488 cm
+1 0 0 1 6 130.9843 cm
 Q
 q
-1 0 0 1 6 33.94488 cm
+1 0 0 1 6 118.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1510,10 +1510,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 33.94488 cm
+1 0 0 1 6 118.9843 cm
 Q
 q
-1 0 0 1 6 33.94488 cm
+1 0 0 1 6 118.9843 cm
 Q
  
 endstream
@@ -1525,26 +1525,26 @@ endobj
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 6 213.9449 cm
+1 0 0 1 6 298.9843 cm
 q
 BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Crawling considerations) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 195.9449 cm
+1 0 0 1 6 280.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Being polite:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 Q
 q
-1 0 0 1 6 177.9449 cm
+1 0 0 1 6 262.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1565,10 +1565,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 171.9449 cm
+1 0 0 1 6 256.9843 cm
 Q
 q
-1 0 0 1 6 159.9449 cm
+1 0 0 1 6 244.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1589,23 +1589,23 @@ q
 Q
 Q
 q
-1 0 0 1 6 159.9449 cm
+1 0 0 1 6 244.9843 cm
 Q
 q
-1 0 0 1 6 141.9449 cm
+1 0 0 1 6 226.9843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Dealing with anti-crawling measures and non-standard content:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 135.9449 cm
+1 0 0 1 6 220.9843 cm
 Q
 q
-1 0 0 1 6 135.9449 cm
+1 0 0 1 6 220.9843 cm
 Q
 q
-1 0 0 1 6 123.9449 cm
+1 0 0 1 6 208.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1626,10 +1626,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 117.9449 cm
+1 0 0 1 6 202.9843 cm
 Q
 q
-1 0 0 1 6 105.9449 cm
+1 0 0 1 6 190.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1650,10 +1650,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 99.94488 cm
+1 0 0 1 6 184.9843 cm
 Q
 q
-1 0 0 1 6 87.94488 cm
+1 0 0 1 6 172.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1674,10 +1674,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 81.94488 cm
+1 0 0 1 6 166.9843 cm
 Q
 q
-1 0 0 1 6 69.94488 cm
+1 0 0 1 6 154.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1698,10 +1698,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 63.94488 cm
+1 0 0 1 6 148.9843 cm
 Q
 q
-1 0 0 1 6 51.94488 cm
+1 0 0 1 6 136.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1722,10 +1722,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 51.94488 cm
+1 0 0 1 6 136.9843 cm
 Q
 q
-1 0 0 1 6 51.94488 cm
+1 0 0 1 6 136.9843 cm
 Q
  
 endstream
@@ -1733,23 +1733,23 @@ endobj
 % 'R46': class PDFStream 
 46 0 obj
 % page stream
-<< /Length 2889 >>
+<< /Length 3056 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 6 213.9449 cm
+1 0 0 1 6 298.9843 cm
 q
 BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Directed crawl) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 201.9449 cm
+1 0 0 1 6 286.9843 cm
 Q
 q
-1 0 0 1 6 201.9449 cm
+1 0 0 1 6 286.9843 cm
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1770,10 +1770,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 183.9449 cm
+1 0 0 1 6 268.9843 cm
 Q
 q
-1 0 0 1 6 171.9449 cm
+1 0 0 1 6 256.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1794,10 +1794,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 165.9449 cm
+1 0 0 1 6 250.9843 cm
 Q
 q
-1 0 0 1 6 153.9449 cm
+1 0 0 1 6 238.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1818,55 +1818,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 153.9449 cm
+1 0 0 1 6 238.9843 cm
 Q
 q
-1 0 0 1 6 52.07347 cm
-q
-q
-.965755 0 0 .965755 0 0 cm
-q
-1 0 0 1 6.6 6.83403 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 456 96 re B*
-Q
-q
-BT 1 0 0 1 0 74 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (directed-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("external-links") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; crawl-tag) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; be nice and wait 1 second between requests) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg  T* (                 ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]) Tj  T* (                   ) Tj .098039 .090196 .486275 rg (:path-filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^/en.*") Tj 0 0 0 rg  T* (                   ) Tj .098039 .090196 .486275 rg (:next) Tj 0 0 0 rg ( ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([[) Tj .098039 .090196 .486275 rg (:div) Tj .4 .4 .4 rg (#) Tj .098039 .090196 .486275 rg (content) Tj 0 0 0 rg (]) Tj ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]]) Tj  T* (                           ) Tj .098039 .090196 .486275 rg (:filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^\(http://www.vixu.com/.*\){0}.*") Tj 0 0 0 rg (}]}]\)\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 6 44.07347 cm
-Q
- 
-endstream
-endobj
-% 'R47': class PDFStream 
-47 0 obj
-% page stream
-<< /Length 2048 >>
-stream
-1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
-q
-1 0 0 1 6 213.9449 cm
-q
-BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Weighted crawling scoring functions) Tj T* ET
-Q
-Q
-q
-1 0 0 1 6 183.9449 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 10.19433 Tw (Example page-scoring-fn that counts the number of occurrences of the string) Tj T* 0 Tw ("website-management" on every requested page:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 6 138.7449 cm
+1 0 0 1 6 121.7843 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -1876,7 +1831,52 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 440.3433 36 re B*
+n -6 -6 497.0362 108 re B*
+Q
+q
+BT 1 0 0 1 0 86 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (directed-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("external-links") Tj 0 0 0 rg (      ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; crawl-tag) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj (\() Tj 0 0 1 rg (util/make-timestamp) Tj 0 0 0 rg (\)) Tj ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; crawl-timestamp) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; be nice and wait 1 second between requests) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg  T* (                 ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]) Tj  T* (                   ) Tj .098039 .090196 .486275 rg (:path-filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^/en.*") Tj 0 0 0 rg  T* (                   ) Tj .098039 .090196 .486275 rg (:next) Tj 0 0 0 rg ( ) Tj ([{) Tj .098039 .090196 .486275 rg (:selector) Tj 0 0 0 rg ( ) Tj ([[) Tj .098039 .090196 .486275 rg (:div) Tj .4 .4 .4 rg (#) Tj .098039 .090196 .486275 rg (content) Tj 0 0 0 rg (]) Tj ( ) Tj ([) Tj .098039 .090196 .486275 rg (:a) Tj 0 0 0 rg (]]) Tj  T* (                           ) Tj .098039 .090196 .486275 rg (:filter) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^\(http://www.vixu.com/.*\){0}.*") Tj 0 0 0 rg (}]}]\)\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 6 113.7843 cm
+Q
+ 
+endstream
+endobj
+% 'R47': class PDFStream 
+47 0 obj
+% page stream
+<< /Length 2047 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 6 298.9843 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Weighted crawling scoring functions) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 268.9843 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .925863 Tw (Example page-scoring-fn that counts the number of occurrences of the string "website-management" on every) Tj T* 0 Tw (requested page:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 6 223.7843 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 497.0362 36 re B*
 Q
 q
 BT 1 0 0 1 0 14 Tm 12 TL /F3 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (defn ) Tj /F3 10 Tf .098039 .090196 .486275 rg (page-scoring-fn) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (uri) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (request) Tj 0 0 0 rg (]) Tj  T* (  ) Tj (\() Tj 0 .501961 0 rg (count ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (re-seq ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("website-management") Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (:body) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (request) Tj 0 0 0 rg (\)\)\)\)) Tj T* ET
@@ -1886,14 +1886,14 @@ Q
 Q
 Q
 q
-1 0 0 1 6 118.7449 cm
+1 0 0 1 6 203.7843 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Example link-checker-fn that limits the crawl to Vixu.com:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 73.54488 cm
+1 0 0 1 6 158.5843 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -1903,7 +1903,7 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 440.3433 36 re B*
+n -6 -6 497.0362 36 re B*
 Q
 q
 BT 1 0 0 1 0 14 Tm 12 TL /F3 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (defn ) Tj /F3 10 Tf .098039 .090196 .486275 rg (link-checker-fn) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (uri) Tj 0 0 0 rg (]) Tj  T* (  ) Tj (\() Tj 0 .501961 0 rg (not ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (nil? ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (re-matches ) Tj .4 .4 .4 rg (#) Tj .729412 .129412 .129412 rg ("^http://www.vixu.com/.*") Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (uri) Tj 0 0 0 rg (\)\)\)\)) Tj T* ET
@@ -1913,7 +1913,7 @@ Q
 Q
 Q
 q
-1 0 0 1 6 65.54488 cm
+1 0 0 1 6 150.5843 cm
 Q
  
 endstream
@@ -1921,23 +1921,23 @@ endobj
 % 'R48': class PDFStream 
 48 0 obj
 % page stream
-<< /Length 3102 >>
+<< /Length 3324 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 6 213.9449 cm
+1 0 0 1 6 298.9843 cm
 q
 BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Weighted crawl function) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 201.9449 cm
+1 0 0 1 6 286.9843 cm
 Q
 q
-1 0 0 1 6 201.9449 cm
+1 0 0 1 6 286.9843 cm
 Q
 q
-1 0 0 1 6 189.9449 cm
+1 0 0 1 6 274.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1958,10 +1958,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 183.9449 cm
+1 0 0 1 6 268.9843 cm
 Q
 q
-1 0 0 1 6 171.9449 cm
+1 0 0 1 6 256.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1982,10 +1982,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 165.9449 cm
+1 0 0 1 6 250.9843 cm
 Q
 q
-1 0 0 1 6 153.9449 cm
+1 0 0 1 6 238.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -2006,10 +2006,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 147.9449 cm
+1 0 0 1 6 232.9843 cm
 Q
 q
-1 0 0 1 6 135.9449 cm
+1 0 0 1 6 220.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -2030,10 +2030,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 129.9449 cm
+1 0 0 1 6 214.9843 cm
 Q
 q
-1 0 0 1 6 117.9449 cm
+1 0 0 1 6 202.9843 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -2054,10 +2054,10 @@ q
 Q
 Q
 q
-1 0 0 1 6 117.9449 cm
+1 0 0 1 6 202.9843 cm
 Q
 q
-1 0 0 1 6 24.74488 cm
+1 0 0 1 6 97.78425 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -2067,10 +2067,10 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 440.3433 84 re B*
+n -6 -6 497.0362 96 re B*
 Q
 q
-BT 1 0 0 1 0 62 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (weighted-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("alida") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; database) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("website-management-crawl") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; crawl-tag) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; delay in ms) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; seed-uri) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (page-scoring-fn) Tj 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (link-checker-fn) Tj 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 74 Tm 12 TL /F3 10 Tf .098039 .090196 .486275 rg (@) Tj 0 0 0 rg (\() Tj 0 0 1 rg (weighted-crawl) Tj 0 0 0 rg ( ) Tj .729412 .129412 .129412 rg ("alida") Tj 0 0 0 rg (                    ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; database) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("website-management-crawl") Tj 0 0 0 rg ( ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; crawl-tag) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj (\() Tj 0 0 1 rg (util/make-timestamp) Tj 0 0 0 rg (\)) Tj (      ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; crawl-timestamp) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .4 .4 .4 rg (1000) Tj 0 0 0 rg (                       ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; delay in ms) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .729412 .129412 .129412 rg ("http://www.vixu.com/") Tj 0 0 0 rg (     ) Tj /F4 10 Tf .25098 .501961 .501961 rg (;; seed-uri) Tj /F3 10 Tf 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (page-scoring-fn) Tj 0 0 0 rg  T* (                 ) Tj .098039 .090196 .486275 rg (link-checker-fn) Tj 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 Q
@@ -2212,27 +2212,27 @@ xref
 0000019379 00000 n
 0000022547 00000 n
 0000025568 00000 n
-0000028556 00000 n
-0000030703 00000 n
-0000033908 00000 n
-0000034118 00000 n
-0000034195 00000 n
-0000034272 00000 n
-0000034349 00000 n
-0000034426 00000 n
-0000034503 00000 n
-0000034580 00000 n
-0000034657 00000 n
-0000034734 00000 n
-0000034811 00000 n
+0000028723 00000 n
+0000030869 00000 n
+0000034296 00000 n
+0000034506 00000 n
+0000034583 00000 n
+0000034660 00000 n
+0000034737 00000 n
+0000034814 00000 n
+0000034891 00000 n
+0000034968 00000 n
+0000035045 00000 n
+0000035122 00000 n
+0000035199 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\271@\)\257y\0327\224\306\265nK\342\372\372\243) (\271@\)\257y\0327\224\306\265nK\342\372\372\243)] 
+ [(cxK-\376\271\000\360nZ\005\325\300e*\030) (cxK-\376\271\000\360nZ\005\325\300e*\030)] 
 
  /Info 26 0 R
  /Root 25 0 R
  /Size 60 >>
 startxref
-34859
+35247
 %%EOF

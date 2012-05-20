@@ -107,7 +107,8 @@ Directed crawl
 
 .. code-block:: clojure
 
-   @(directed-crawl "external-links" ;; crawl-tag
+   @(directed-crawl "external-links"      ;; crawl-tag
+                    (util/make-timestamp) ;; crawl-timestamp
                     1000 ;; be nice and wait 1 second between requests
                     "http://www.vixu.com/"
                     [{:selector [:a]
@@ -148,9 +149,10 @@ Weighted crawl function
 
 .. code-block:: clojure
 
-   @(weighted-crawl "alida" ;; database
+   @(weighted-crawl "alida"                    ;; database
                     "website-management-crawl" ;; crawl-tag
-                    1000 ;; delay in ms
-                    "http://www.vixu.com/" ;; seed-uri
+                    (util/make-timestamp)      ;; crawl-timestamp 
+                    1000                       ;; delay in ms
+                    "http://www.vixu.com/"     ;; seed-uri
                     page-scoring-fn
                     link-checker-fn)

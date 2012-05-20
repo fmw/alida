@@ -58,6 +58,7 @@
     (with-redefs [util/make-timestamp #(str "2012-05-13T21:52:58.114Z")]
       @(crawl/directed-crawl
         "fake-routes"
+        "2012-05-13T21:52:58.114Z"
         0
         "http://www.dummyhealthfoodstore.com/index.html"
         [{:selector [:ul#menu :a]
