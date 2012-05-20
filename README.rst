@@ -1,3 +1,5 @@
+.. image:: https://secure.travis-ci.org/fmw/alida.png
+
 ================================================================
 Alida: a crawling, scraping and indexing tool written in Clojure
 ================================================================
