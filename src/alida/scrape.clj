@@ -15,7 +15,8 @@
 ;; limitations under the License.
 
 (ns alida.scrape
-  (:require [net.cgrand.enlive-html :as enlive]
+  (:require [clojure.string :as string]
+            [net.cgrand.enlive-html :as enlive]
             [alida.util :as util]
             [alida.db :as db])
   (:import [java.io StringReader]
@@ -83,6 +84,29 @@
    also includes img attributes."
   [html]
   (.text (Jsoup/parse html)))
+
+(defmulti get-trimmed-content
+  "Returns a string or sequence of strings (if multiple values are
+   found) given either a string containing html or the output of
+   Enlive's html-resource fn as the first argument and a selector
+   vector as the second argument."
+  (fn [page selector]
+    (cond
+     (string? page) :string
+     (seq? page) :enlive-resource)))
+
+(defmethod get-trimmed-content :enlive-resource [resource selector]
+  (let [selection (enlive/select resource selector)]
+    (cond
+     (= (count selection) 1)
+     (string/trim (apply str (:content (first selection))))
+     (> (count selection) 1)
+     (map (fn [node]
+            (string/trim (apply str (:content node))))
+          selection))))
+
+(defmethod get-trimmed-content :string [html selector]
+  (get-trimmed-content (enlive/html-resource (StringReader. html)) selector))
 
 (defn full-scrape
   "Processes crawl results with the provided crawl-tag and

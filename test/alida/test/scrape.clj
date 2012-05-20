@@ -123,6 +123,25 @@
               "Powered by Vixu.com "
               "© 2012, Dummy Store Incorporated. All rights reserved."))))
 
+(deftest test-get-trimmed-content
+  (let [html (slurp "resources/test-data/dummy-shop/glp-westminster.html")
+        resource (enlive/html-resource (StringReader. html))]
+    (is (= (get-trimmed-content html [:#description])
+           (get-trimmed-content resource [:#description])
+           "Flavorful English mixture with a healthy dose of Latakia."))
+
+    (is (= (get-trimmed-content html [[:#content]
+                                      [:div]
+                                      [:span (enlive/nth-of-type 2)]])
+           (get-trimmed-content resource [[:#content]
+                                          [:div]
+                                          [:span (enlive/nth-of-type 2)]])
+           ["Heirloom Collection: Westminster"
+            "G. L. Pease"
+            "Gregory L. Pease"
+            "Virginia, Latakia and Oriental"
+            "Ribbon"]))))
+
 (deftest test-full-scrape
   (with-test-db
     (with-redefs [util/make-timestamp #(str "2012-05-19T22:08:56.250Z")]
