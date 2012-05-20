@@ -123,7 +123,7 @@
               "Powered by Vixu.com "
               "© 2012, Dummy Store Incorporated. All rights reserved."))))
 
-(deftest test-full-crawl
+(deftest test-full-scrape
   (with-test-db
     (with-redefs [util/make-timestamp #(str "2012-05-19T22:08:56.250Z")]
       (do
@@ -132,7 +132,7 @@
           (db/add-batched-documents
            +test-db+
            @(crawl/directed-crawl
-             "full-crawl-test"
+             "full-scrape-test"
              0
              "http://www.dummyhealthfoodstore.com/index.html"
              [{:selector [:ul#menu :a]
@@ -140,7 +140,7 @@
                :next [{:selector [[:div#content] [:a]]}]}]))))
 
       (is (nil? (full-scrape +test-db+
-                             "full-crawl-test"
+                             "full-scrape-test"
                              "2012-05-19T22:08:56.250Z"
                              (fn [raw-page]
                                {:page-title
@@ -157,89 +157,89 @@
       (is (= (map #(dissoc % :fulltext :_id :_rev)
                   (:documents
                    (db/get-scrape-results +test-db+
-                                          "full-crawl-test"
+                                          "full-scrape-test"
                                           "2012-05-19T22:08:56.250Z"
                                           1000)))
              [{:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri (str "http://www.dummyhealthfoodstore.com/"
                           "products/whisky.html"),
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: whisky overview"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri (str "http://www.dummyhealthfoodstore.com/"
                           "products/pipe-tobacco.html"),
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: pipe tobacco overview"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri "http://www.dummyhealthfoodstore.com/port-ellen.html",
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: Port Ellen 30yo"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri "http://www.dummyhealthfoodstore.com/navy-rolls.html",
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: Dunhill De Luxe Navy Rolls"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri "http://www.dummyhealthfoodstore.com/macallan.html",
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: Macallan 30yo"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri (str "http://www.dummyhealthfoodstore.com"
                           "/london-mixture.html"),
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: Dunhill London Mixture"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri "http://www.dummyhealthfoodstore.com/index.html",
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri (str "http://www.dummyhealthfoodstore.com"
                           "/glp-westminster.html"),
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: GLP Westminster"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri "http://www.dummyhealthfoodstore.com/glp-meridian.html",
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: GLP Meridian"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri "http://www.dummyhealthfoodstore.com/clynelish.html",
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: Clynelish 30yo"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri "http://www.dummyhealthfoodstore.com/brora.html",
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: Brora 30yo"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri (str "http://www.dummyhealthfoodstore.com"
                           "/blackwoods-flake.html"),
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: McClelland Blackwoods Flake"}
                {:crawled-at "2012-05-19T22:08:56.250Z",
                 :uri "http://www.dummyhealthfoodstore.com/ardbeg.html",
                 :type "scrape-result",
-                :crawl-tag "full-crawl-test",
+                :crawl-tag "full-scrape-test",
                 :crawl-timestamp "2012-05-19T22:08:56.250Z",
                 :page-title "Dummy Shop: Ardbeg 10yo"}])))))
