@@ -17,13 +17,13 @@
 (ns alida.test.db
   (:use [clojure.test]
         [clj-http.fake]
-        [alida.test.helpers :only [with-test-db +test-db+ +test-server+]]
+        [alida.test.helpers
+         :only [with-test-db +test-db+ +test-server+ dummy-routes]]
         [alida.db] :reload)
   (:require [clojure.data.json :as json]
             [clj-http.client :as http-client]
             [com.ashafa.clutch :as clutch]
             [alida.util :as util]
-            [alida.test.crawl :as test-crawl]
             [alida.crawl :as crawl]))
 
 (defn couchdb-id? [s]
@@ -54,7 +54,7 @@
                                 "/_design/views")))))))
 
 (def dummy-crawled-pages
-  (with-fake-routes test-crawl/dummy-routes
+  (with-fake-routes dummy-routes
     (with-redefs [util/make-timestamp #(str "2012-05-13T21:52:58.114Z")]
       @(crawl/directed-crawl
         "fake-routes"
@@ -201,3 +201,79 @@
         (is (= (sort-by :uri (:documents pages-a-result-2))
                [p1a p10a p2a p3a p4a]))
         (is (= (:next pages-a-result-2) nil))))))
+
+(deftest test-get-scrape-results
+  (create-views +test-db+)
+  (let [dummy-scrape
+        (map (fn [n]
+               {:type "scrape-result"
+                :uri (str "http://www.vixu.com/" n)
+                :crawled-at "2012-05-19T23:30:09.021Z"
+                :crawl-tag "get-scrape-results-test"
+                :crawl-timestamp "2012-05-19T04:18:50.678Z"
+                :title (str "Page " (inc n))
+                :fulltext (str n " is an interesting number!")})
+             (range 10))
+        old-dummy-scrape
+        (map (fn [n]
+               {:type "scrape-result"
+                :uri (str "http://www.vixu.com/" n)
+                :crawled-at "2012-05-19T23:30:09.021Z"
+                :crawl-tag "get-scrape-results-test"
+                :crawl-timestamp "2012-05-18T04:18:50.678Z"
+                :title (str "Page " (inc n))
+                :fulltext (str n " is an interesting number!")})
+             (range 10))
+        dummy-docs (map (fn [x {:keys [id rev]}]
+                          (merge x {:_id id :_rev rev}))
+                        dummy-scrape
+                        (add-batched-documents +test-db+ dummy-scrape))]
+
+    (do
+      (add-batched-documents +test-db+ old-dummy-scrape))
+    
+    (is (= (count
+            (:documents
+             (get-scrape-results
+              +test-db+
+              "get-scrape-results-test"
+              "2012-05-19T04:18:50.678Z"
+              100)))
+           10))
+
+    (is (= (count
+            (:documents
+             (get-scrape-results
+              +test-db+
+              "get-scrape-results-test"
+              "2012-05-18T04:18:50.678Z"
+              100)))
+           10))
+
+    (let [scrape-results-a (get-scrape-results
+                            +test-db+
+                            "get-scrape-results-test"
+                            "2012-05-19T04:18:50.678Z"
+                            5)]
+      (is (= (count (:documents scrape-results-a)) 5))
+      
+      (is (=  (:documents scrape-results-a)
+              (take 5 (reverse dummy-docs))))
+      
+      (is (= (:next scrape-results-a)
+             {:uri (:uri (nth dummy-docs 4))
+              :id (:_id (nth dummy-docs 4))}))
+
+      (let [scrape-results-b (get-scrape-results
+                              +test-db+
+                              "get-scrape-results-test"
+                              "2012-05-19T04:18:50.678Z"
+                              5
+                              (:uri (:next scrape-results-a))
+                              (:id (:next scrape-results-a)))]
+        (is (= (count (:documents scrape-results-b)) 5))
+      
+        (is (=  (:documents scrape-results-b)
+                (take-last 5 (reverse dummy-docs))))
+      
+        (is (= (:next scrape-results-b) nil))))))

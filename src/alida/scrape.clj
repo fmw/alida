@@ -16,7 +16,8 @@
 
 (ns alida.scrape
   (:require [net.cgrand.enlive-html :as enlive]
-            [alida.util :as util])
+            [alida.util :as util]
+            [alida.db :as db])
   (:import [java.io StringReader]
            [org.jsoup Jsoup]))
 
@@ -82,3 +83,33 @@
    also includes img attributes."
   [html]
   (.text (Jsoup/parse html)))
+
+(defn full-scrape
+  "Processes crawl results with the provided crawl-tag and
+   crawl-timestamp that are stored in the database by running
+   scraping-fn over them. The scraping-fn should always return a map
+   or nil. This fn requests and stores documents in quantities of
+   batch-size (optional)."
+  [database crawl-tag crawl-timestamp scraping-fn & [batch-size]]
+  (let [limit (or batch-size 1000)]
+    (loop [raw (db/get-pages-for-crawl-tag-and-timestamp database
+                                                         crawl-tag
+                                                         crawl-timestamp
+                                                         limit)]
+      (db/add-batched-documents database
+                                (map (fn [raw-page]
+                                       (assoc (scraping-fn raw-page)
+                                         :type "scrape-result"
+                                         :uri (:uri raw-page)
+                                         :crawled-at (:crawled-at raw-page)
+                                         :crawl-tag crawl-tag
+                                         :crawl-timestamp crawl-timestamp))
+                                     (:documents raw)))
+      (when-let [{:keys [uri timestamp id]} (:next raw)]
+        (recur (db/get-pages-for-crawl-tag-and-timestamp database
+                                                         crawl-tag
+                                                         crawl-timestamp
+                                                         limit
+                                                         uri
+                                                         timestamp
+                                                         id))))))
