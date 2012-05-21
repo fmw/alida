@@ -206,16 +206,42 @@
                   (util/rfc3339-to-long rfc3339-date-string))
          options))
 
+(defmulti #^NumericRangeQuery create-numeric-range-query
+  "Creates a Lucene NumericRangeQuery between the min and max value."
+  (fn [field-name min max]
+    (class min)))
+
+(defmethod create-numeric-range-query java.lang.Long [field-name min max]
+  (when (and (= (class min) java.lang.Long)
+             (= (class max) java.lang.Long)
+             (>= max min))
+    (NumericRangeQuery/newLongRange field-name min max true true)))
+
+(defmethod create-numeric-range-query java.lang.Float [field-name min max]
+  (when (and (= (class min) java.lang.Float)
+             (= (class max) java.lang.Float)
+             (>= max min))
+    (NumericRangeQuery/newFloatRange field-name min max true true)))
+
+(defmethod create-numeric-range-query java.lang.Double [field-name min max]
+  (when (and (= (class min) java.lang.Double)
+             (= (class max) java.lang.Double)
+             (>= max min))
+    (NumericRangeQuery/newDoubleRange field-name min max true true)))
+
+(defmethod create-numeric-range-query java.lang.Integer [field-name min max]
+  (when (and (= (class min) java.lang.Integer)
+             (= (class max) java.lang.Integer)
+             (>= max min))
+    (NumericRangeQuery/newIntRange field-name min max true true)))
+
 (defn #^NumericRangeQuery create-date-range-query
   "Creates a NumericRangeQuery for field-name using start and end date
    string arguments."
   [field-name start-date-rfc3339 end-date-rfc3339]
-  (let [min (util/rfc3339-to-long start-date-rfc3339)
-        max (util/rfc3339-to-long end-date-rfc3339)]
-    (when (and (= (class min) java.lang.Long)
-               (= (class max) java.lang.Long)
-               (>= max min))
-      (NumericRangeQuery/newLongRange field-name min max true true))))
+  (create-numeric-range-query field-name
+                              (util/rfc3339-to-long start-date-rfc3339)
+                              (util/rfc3339-to-long end-date-rfc3339)))
 
 (defn #^Document get-doc
   "Reads the document with the provided doc-id from the index."

@@ -274,6 +274,49 @@
     (is (.indexed (.fieldType date-field)))
     (is (.stored (.fieldType date-field)))))
 
+(deftest test-create-numeric-range-query
+  (let [long-query (create-numeric-range-query "long-query" 3 42)]
+    (is (= (class long-query)
+           org.apache.lucene.search.NumericRangeQuery))
+
+    (is (= (.getMin long-query) 3))
+    (is (= (.getMax long-query) 42)))
+
+  (let [int-query (create-numeric-range-query "int-query" (int 3) (int 42))]
+    (is (= (class int-query)
+           org.apache.lucene.search.NumericRangeQuery))
+
+    (is (= (.getMin int-query) (int 3)))
+    (is (= (.getMax int-query) (int 42))))
+
+  (let [float-query (create-numeric-range-query "float-query"
+                                                (float 3.01)
+                                                (float 42.01))]
+    (is (= (class float-query)
+           org.apache.lucene.search.NumericRangeQuery))
+
+    (is (= (.getMin float-query) (float 3.01)))
+    (is (= (.getMax float-query) (float 42.01))))
+
+  (let [double-query (create-numeric-range-query "double-query" 3.03 42.03)]
+    (is (= (class double-query)
+           org.apache.lucene.search.NumericRangeQuery))
+
+    (is (= (.getMin double-query) 3.03))
+    (is (= (.getMax double-query) 42.03)))
+
+  (is (= (create-numeric-range-query "bad-query" 42 3) nil))
+  (is (= (create-numeric-range-query "bad-query" 42 nil) nil))
+  (is (= (create-numeric-range-query "bad-query" 42.03 3.03) nil))
+  (is (= (create-numeric-range-query "bad-query" 42.03 nil) nil))
+  (is (= (create-numeric-range-query "bad-query" (int 42) (int 3)) nil))
+  (is (= (create-numeric-range-query "bad-query" (int 42) nil) nil))
+  (is (= (create-numeric-range-query "bad-query"
+                                     (float 42.5)
+                                     (float 3.5))
+         nil))
+  (is (= (create-numeric-range-query "bad-query" (float 42.5) nil) nil)))
+
 (deftest test-create-date-range-query
   (let [query (create-date-range-query "42"
                                        "1985-08-04T09:00:00.0Z"
