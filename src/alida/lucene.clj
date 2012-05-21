@@ -111,7 +111,7 @@
 (defmulti #^Field set-field-value!
   "Sets the value of the Lucene Field object to the provided value.
    The Lucene documentation recommends this approach over creating
-   new fields for every document for performance reasons."
+   new fields for every document (for performance reasons)."
   (fn [field value]
     (class value)))
 
@@ -141,9 +141,9 @@
    values for the document. Creates a Lucene Document object with the
    Field instances from the fields-map set to the values provided in
    the value-map. This fn shouldn't be called directly, but from the
-   add-documents-to-index! instead, because Field instances are
+   add-documents-to-index! fn instead, because the Field instances are
    reused. Since they are mutable they will be updated to the value
-   for the last document, until written immediately."
+   for the last document, unless written to the index immediately."
   [fields-map values-map]
   (let [doc (Document.)]
     (doseq [[k field] fields-map]
@@ -197,6 +197,14 @@
   [writer fields-map document-value-maps]
   (doseq [doc document-value-maps]
     (.addDocument writer (create-document- fields-map doc))))
+
+(defn #^LongField create-date-field
+  "Creates a Lucene LongField for the provided rfc3339-date-string.."
+  [name rfc3339-date-string & options]
+  (apply (partial create-field
+                  name
+                  (util/rfc3339-to-long rfc3339-date-string))
+         options))
 
 (defn #^NumericRangeQuery create-date-range-query
   "Creates a NumericRangeQuery for field-name using start and end date

@@ -263,6 +263,17 @@
                   (get-docs reader (map #(ScoreDoc. % 1.0) (range 11))))
              (map str (range 1 12)))))))
 
+(deftest test-create-date-field
+  (let [date-field (create-date-field "published"
+                                 "2012-05-21T04:21:33.248Z"
+                                 :indexed
+                                 :stored)]
+    (is (= (.name date-field) "published"))
+    (is (= (.numericValue date-field) 1337574093248))
+    (is (not (.tokenized (.fieldType date-field))))
+    (is (.indexed (.fieldType date-field)))
+    (is (.stored (.fieldType date-field)))))
+
 (deftest test-create-date-range-query
   (let [query (create-date-range-query "42"
                                        "1985-08-04T09:00:00.0Z"
