@@ -36,11 +36,15 @@
             Term
             IndexNotFoundException]
            [org.apache.lucene.search
+            ScoreDoc
             NumericRangeQuery
             TermQuery
             BooleanQuery
             BooleanClause$Occur
-            QueryWrapperFilter]
+            QueryWrapperFilter
+            IndexSearcher]
+           [org.apache.lucene.queryparser.flexible.standard
+            StandardQueryParser]
            [org.apache.lucene.util Version]))
 
 
@@ -294,3 +298,47 @@
    array."
   [reader score-docs]
   (map #(get-doc reader (.doc %)) score-docs))
+
+(defn search
+  "Returns search results for the provided query and filter, using
+   the fulltext-field as the main field to query against. Results
+   are capped by the limit argument. Search is performed using the
+   provided reader and analyzer. Also accepts optional after-doc-id
+   and after-score arguments for pagination."
+  [query
+   filter
+   fulltext-field
+   limit
+   reader
+   analyzer
+   & [after-doc-id after-score]] 
+  (if (and reader
+           (not-empty query)
+           (not-any? #(= (first query) %) #{\*\?}))
+    (let [searcher (IndexSearcher. reader)
+          q (.parse (StandardQueryParser. analyzer) query fulltext-field)
+          top-docs (if (nil? after-doc-id)
+                     (if (nil? filter)
+                       (.search searcher q limit)
+                       (.search searcher q filter limit))
+                     (if (nil? filter)
+                       (.searchAfter searcher
+                                     (ScoreDoc. after-doc-id
+                                                after-score)
+                                     q
+                                     limit)
+                       (.searchAfter searcher
+                                     (ScoreDoc. after-doc-id
+                                                after-score)
+                                     q
+                                     filter
+                                     limit)))]
+      {:total-hits (.totalHits top-docs)
+       :docs (map (fn [score-doc doc]
+                    (assoc (document-to-map doc)
+                      :index {:doc-id (.doc score-doc)
+                              :score (.score score-doc)}))
+                  (.scoreDocs top-docs)
+                  (get-docs reader (.scoreDocs top-docs)))})
+    {:total-hits 0
+     :docs nil}))

@@ -428,3 +428,291 @@
                                     (ScoreDoc. 1 1.0)
                                     (ScoreDoc. 2 1.0)]))
              ["Hic sunt dracones" "Brora!" "Caol Ila"])))))
+
+(deftest test-search
+  (is (= (search "whisky"
+                 nil
+                 "fulltext"
+                 10
+                 (create-index-reader (create-directory :RAM))
+                 (create-analyzer))
+         {:total-hits 0
+          :docs nil}))
+  
+  (let [analyzer (create-analyzer)
+        dir (create-directory :RAM)
+        documents [{:name "Ardbeg 10"
+                    :distillery "Ardbeg"
+                    :bottler "Distillery Bottling"
+                    :volume 70
+                    :abv 46.0
+                    :vintage -1
+                    :price 9.9
+                    :fulltext (str "Ardbeg 10yo\n"
+                                   "Ardbeg whisky")}
+                   {:name "Brora 30yo"
+                    :distillery "Brora"
+                    :bottler "Distillery Bottling"
+                    :volume 70
+                    :abv 54.30
+                    :vintage 1972
+                    :price 25.0
+                    :fulltext (str "Brora 30yo\n"
+                                   "Brora whisky")}
+                   {:name "Clynelish 30yo"
+                    :distillery "Clynelish"
+                    :bottler "Distillery Bottling"
+                    :volume 70
+                    :abv 49.30
+                    :vintage 1980
+                    :price 15.0
+                    :fulltext (str "Clynelish 30yo\n"
+                                   "Clynelish whisky")}
+                   {:name "Port Ellen 30yo"
+                    :distillery "Port Ellen"
+                    :bottler "Distillery Bottling"
+                    :volume 70
+                    :abv 56.40
+                    :vintage 1979
+                    :price 35.0
+                    :fulltext (str "Port Ellen 30yo\n"
+                                   "Port Ellen whisky")}
+                   {:name "Macallan 30yo"
+                    :distillery "Macallan"
+                    :bottler "Distillery Bottling"
+                    :volume 70
+                    :abv 41.30
+                    :vintage 1970
+                    :price 10.0
+                    :fulltext (str "Macallan 30yo\n"
+                                   "Macallan whisky")}]
+        fields-map {:name (create-field "name"
+                                        ""
+                                        :stored
+                                        :indexed)
+                    :distillery (create-field "distillery"
+                                              ""
+                                              :stored
+                                              :indexed)
+                    :bottler (create-field "bottler"
+                                           ""
+                                           :stored
+                                           :indexed)
+                    :volume (create-field "volume"
+                                          0
+                                          :stored
+                                          :indexed)
+                    :abv (create-field "abv"
+                                       0.0
+                                       :stored
+                                       :indexed)
+                    :vintage (create-field "vintage"
+                                           0
+                                           :stored
+                                           :indexed)
+                    :price (create-field "price"
+                                         0.0
+                                         :stored
+                                         :indexed)
+                    :fulltext (create-field "fulltext"
+                                            ""
+                                            :indexed
+                                            :tokenized)}]
+    (with-open [writer (create-index-writer analyzer dir :create)]
+      (add-documents-to-index! writer
+                               fields-map
+                               documents))
+
+    (let [reader (create-index-reader dir)]
+      (is (= (search "whisky"
+                     nil
+                     "fulltext"
+                     10
+                     reader
+                     analyzer)
+             {:total-hits 5
+              :docs
+              [{:name "Ardbeg 10"
+                :bottler "Distillery Bottling"
+                :index {:score (float 0.40883923), :doc-id 0}
+                :price 9.9
+                :distillery "Ardbeg"
+                :abv 46.0
+                :vintage -1
+                :volume 70}
+               {:name "Brora 30yo"
+                :bottler "Distillery Bottling"
+                :index {:score (float 0.40883923), :doc-id 1}
+                :price 25.0
+                :distillery "Brora"
+                :abv 54.3
+                :vintage 1972
+                :volume 70}
+               {:name "Clynelish 30yo"
+                :bottler "Distillery Bottling"
+                :index {:score (float 0.40883923), :doc-id 2}
+                :price 15.0
+                :distillery "Clynelish"
+                :abv 49.3
+                :vintage 1980
+                :volume 70}
+               {:name "Macallan 30yo"
+                :bottler "Distillery Bottling"
+                :index {:score (float 0.40883923), :doc-id 4}
+                :price 10.0
+                :distillery "Macallan"
+                :abv 41.3
+                :vintage 1970
+                :volume 70}
+               {:name "Port Ellen 30yo"
+                :bottler "Distillery Bottling"
+                :index {:score (float 0.30662942), :doc-id 3}
+                :price 35.0
+                :distillery "Port Ellen"
+                :abv 56.4
+                :vintage 1979
+                :volume 70}]}))
+
+      (is (= (search "whisky"
+                     (create-query-wrapper-filter
+                      (create-numeric-range-query "price" 5.0 20.0))
+                     "fulltext"
+                     10
+                     reader
+                     analyzer)
+             {:total-hits 3
+              :docs
+              [{:name "Ardbeg 10"
+                :bottler "Distillery Bottling"
+                :index {:score (float 0.40883923), :doc-id 0}
+                :price 9.9
+                :distillery "Ardbeg"
+                :abv 46.0
+                :vintage -1
+                :volume 70}
+               {:name "Clynelish 30yo"
+                :bottler "Distillery Bottling"
+                :index {:score (float 0.40883923), :doc-id 2}
+                :price 15.0
+                :distillery "Clynelish"
+                :abv 49.3
+                :vintage 1980
+                :volume 70}
+               {:name "Macallan 30yo"
+                :bottler "Distillery Bottling"
+                :index {:score (float 0.40883923), :doc-id 4}
+                :price 10.0
+                :distillery "Macallan"
+                :abv 41.3
+                :vintage 1970
+                :volume 70}]}))))
+
+  (let [dir (create-directory :RAM)
+        analyzer (create-analyzer)]
+    (with-open [writer (create-index-writer analyzer dir :create)]
+      (add-documents-to-index!
+       writer
+       {:n (create-field "title"
+                         ""
+                         :stored
+                         :indexed)
+        :fulltext (create-field "fulltext"
+                                ""
+                                :indexed
+                                :tokenized)}
+       (map (fn [n]
+              {:n (str n)
+               :fulltext "test"})
+            (range 30))))
+
+    (let [reader (create-index-reader dir)]
+      (is (= (search "test"
+                     nil
+                     "fulltext"
+                     10
+                     reader
+                     analyzer)
+             {:total-hits 30,
+              :docs
+              [{:title "0"
+                :index {:score (float 0.9672102) :doc-id 0}}
+               {:title "1"
+                :index {:score (float 0.9672102) :doc-id 1}}
+               {:title "2"
+                :index {:score (float 0.9672102) :doc-id 2}}
+               {:title "3"
+                :index {:score (float 0.9672102) :doc-id 3}}
+               {:title "4"
+                :index {:score (float 0.9672102) :doc-id 4}}
+               {:title "5"
+                :index {:score (float 0.9672102) :doc-id 5}}
+               {:title "6"
+                :index {:score (float 0.9672102) :doc-id 6}}
+               {:title "7"
+                :index {:score (float 0.9672102) :doc-id 7}}
+               {:title "8"
+                :index {:score (float 0.9672102) :doc-id 8}}
+               {:title "9"
+                :index {:score (float 0.9672102) :doc-id 9}}]}))
+
+      (is (= (search "test"
+                     nil
+                     "fulltext"
+                     10
+                     reader
+                     analyzer
+                     9
+                     0.9672102)
+             {:total-hits 30,
+              :docs
+              [{:title "10"
+                :index {:score (float 0.9672102), :doc-id 10}}
+               {:title "11"
+                :index {:score (float 0.9672102), :doc-id 11}}
+               {:title "12"
+                :index {:score (float 0.9672102), :doc-id 12}}
+               {:title "13"
+                :index {:score (float 0.9672102), :doc-id 13}}
+               {:title "14"
+                :index {:score (float 0.9672102), :doc-id 14}}
+               {:title "15"
+                :index {:score (float 0.9672102), :doc-id 15}}
+               {:title "16"
+                :index {:score (float 0.9672102), :doc-id 16}}
+               {:title "17"
+                :index {:score (float 0.9672102), :doc-id 17}}
+               {:title "18"
+                :index {:score (float 0.9672102), :doc-id 18}}
+               {:title "19"
+                :index {:score (float 0.9672102), :doc-id 19}}]}))
+
+      (is (= (search "test"
+                     nil
+                     "fulltext"
+                     10
+                     reader
+                     analyzer
+                     19
+                     0.9672102)
+             {:total-hits 30,
+              :docs
+              [{:title "20"
+                :index {:score (float 0.9672102), :doc-id 20}}
+               {:title "21"
+                :index {:score (float 0.9672102), :doc-id 21}}
+               {:title "22"
+                :index {:score (float 0.9672102), :doc-id 22}}
+               {:title "23"
+                :index {:score (float 0.9672102), :doc-id 23}}
+               {:title "24"
+                :index {:score (float 0.9672102), :doc-id 24}}
+               {:title "25"
+                :index {:score (float 0.9672102), :doc-id 25}}
+               {:title "26"
+                :index {:score (float 0.9672102), :doc-id 26}}
+               {:title "27"
+                :index {:score (float 0.9672102), :doc-id 27}}
+               {:title "28"
+                :index {:score (float 0.9672102), :doc-id 28}}
+               {:title "29"
+                :index {:score (float 0.9672102), :doc-id 29}}]})))))
