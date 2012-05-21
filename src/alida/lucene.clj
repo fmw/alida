@@ -125,6 +125,11 @@
     (.setDoubleValue value)))
 
 (defn #^Document create-document
+  "Takes two hash maps, fields-map with a Lucene Field instance
+   for every key, and values-map with the same keys mapped to
+   the desired values for the document. Creates a Lucene Document
+   object with the Field instances from the fields-map set to the
+   values provided in the value-map."
   [fields-map values-map]
   (let [doc (Document.)]
     (doseq [[k field] fields-map]
