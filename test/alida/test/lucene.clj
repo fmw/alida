@@ -176,6 +176,35 @@
     (is (= (.stringValue fulltext-field) "Hello, world! Hic sunt dracones."))
     (is (= (.numericValue amount-field) 1))))
 
+(deftest test-document-to-map
+  (is (= (document-to-map
+          (create-document-
+           (sorted-map :title (create-field "title"
+                                            ""
+                                            :stored
+                                            :indexed
+                                            :tokenized)
+                       :fulltext (create-field "fulltext"
+                                               ""
+                                               :indexed
+                                               :tokenized)
+                       :amount (create-field "amount"
+                                             0
+                                             :indexed
+                                             :stored)
+                       :double (create-field "double"
+                                             0.0
+                                             :indexed
+                                             :stored))
+           {:title "Hello, world!"
+            :fulltext "Hello, world! Hic sunt dracones."
+            :amount 1
+            :double 0.3}))
+         {:title "Hello, world!"
+          :fulltext "Hello, world! Hic sunt dracones."
+          :amount 1
+          :double 0.3})))
+
 (deftest test-create-analyzer
     (testing "test if Lucene analyzers are created correctly."
       (is (= (class (create-analyzer))

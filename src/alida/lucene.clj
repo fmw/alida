@@ -162,6 +162,15 @@
       (.add doc (set-field-value! field (get values-map k))))
     doc))
 
+(defn document-to-map
+  "Converts a Lucene Document to a Clojure map."
+  [doc]
+  (apply merge
+         (map (fn [field]
+                {(keyword (.name field))
+                 (or (.numericValue field) (.stringValue field))})
+              (.getFields doc))))
+
 (defn #^StandardAnalyzer create-analyzer
   "Creates a StandardAnalyzer that tokenizes fulltext fields."
   []
