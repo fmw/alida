@@ -274,6 +274,12 @@
     (is (.indexed (.fieldType date-field)))
     (is (.stored (.fieldType date-field)))))
 
+(deftest test-create-term-query
+  (let [tq (create-term-query "foo" "bar")
+        term (.getTerm tq)]
+    (is (= (.field term) "foo"))
+    (is (= (.text term) "bar"))))
+
 (deftest test-create-numeric-range-query
   (let [long-query (create-numeric-range-query "long-query" 3 42)]
     (is (= (class long-query)

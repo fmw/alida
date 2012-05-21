@@ -35,8 +35,7 @@
             IndexReader
             Term
             IndexNotFoundException]
-           [org.apache.lucene.search
-            NumericRangeQuery]
+           [org.apache.lucene.search NumericRangeQuery TermQuery]
            [org.apache.lucene.util Version]))
 
 
@@ -107,6 +106,14 @@
   (DoubleField. name
                 (or value 0.0)
                 (apply (partial create-field-type :double) options)))
+
+(defn #^LongField create-date-field
+  "Creates a Lucene LongField for the provided rfc3339-date-string.."
+  [name rfc3339-date-string & options]
+  (apply (partial create-field
+                  name
+                  (util/rfc3339-to-long rfc3339-date-string))
+         options))
 
 (defmulti #^Field set-field-value!
   "Sets the value of the Lucene Field object to the provided value.
@@ -198,13 +205,10 @@
   (doseq [doc document-value-maps]
     (.addDocument writer (create-document- fields-map doc))))
 
-(defn #^LongField create-date-field
-  "Creates a Lucene LongField for the provided rfc3339-date-string.."
-  [name rfc3339-date-string & options]
-  (apply (partial create-field
-                  name
-                  (util/rfc3339-to-long rfc3339-date-string))
-         options))
+(defn #^TermQuery create-term-query
+  "Creates a Lucene TermQuery for the provided field and value."
+  [field value]
+  (TermQuery. (Term. field value)))
 
 (defmulti #^NumericRangeQuery create-numeric-range-query
   "Creates a Lucene NumericRangeQuery between the min and max value."
