@@ -134,17 +134,18 @@
   "Crawling fn that stores results tagged with the crawl-tag and
    crawl-timestamp directly into the provided database, pauses between
    requests to the same host for sleep-for seconds and starts with the
-   seed-uri. The page-scoring-fn should accept the active uri and
-   clj-http request map as its only arguments and determines how the
-   crawler will treat the active page. The page-scoring-fn should
-   return a positive number if it is relevant, zero if it isn't
-   interesting enough to store but still worth following links from
-   and a negative number if it should be ignored altogether. Also
-   accepts a link-checker-fn as an optional fifth argument, which
-   should return a boolean value or nil. The link-checker-fn is useful
-   to filter the crawling process on a URI basis (e.g. to limit the
-   crawl to a specific domain or subset of pages with a marker in the
-   URI to check for).
+   seed-uri. Stops going deeper when max-depth is reached, with the
+   seed-uri being depth level 0. The page-scoring-fn should accept the
+   active uri and clj-http request map as its only arguments and
+   determines how the crawler will treat the active page. The
+   page-scoring-fn should return a positive number if it is relevant,
+   zero if it isn't interesting enough to store but still worth
+   following links from and a negative number if it should be ignored
+   altogether. Also accepts a link-checker-fn as an optional fifth
+   argument, which should return a boolean value or nil. The
+   link-checker-fn is useful to filter the crawling process on a URI
+   basis (e.g. to limit the crawl to a specific domain or subset of
+   pages with a marker in the URI to check for).
 
    This fn is a starting point for a more scalable crawling mechanism.
    It spawns a new thread for every domain that is being
@@ -168,13 +169,15 @@
    crawl-timestamp
    sleep-for
    seed-uri
+   max-depth
    page-scoring-fn
    & [link-checker-fn]]
   (future
-    (loop [todo-links [seed-uri]
+    (loop [todo-links [[seed-uri 0]]
            crawled-links #{}]
-      (when-let [active-uri (first todo-links)]
+      (when-let [[active-uri depth] (first todo-links)]
         (if (and (not (contains? crawled-links active-uri))
+                 (<= depth max-depth)
                  (or (not link-checker-fn) (link-checker-fn active-uri))
                  (not (crawled-in-last-hour? (db/get-page database
                                                           crawl-tag
@@ -183,7 +186,7 @@
             (if-let [req (get-page active-uri)]
               (do
                 (Thread/sleep sleep-for)
-                (let [score (page-scoring-fn active-uri req)]
+                (let [score (page-scoring-fn active-uri depth req)]
                   (when (pos? score)
                     (db/store-page database
                                    crawl-tag
@@ -194,8 +197,10 @@
                   (recur (if (neg? score)
                            (rest todo-links)
                            (concat (rest todo-links)
-                                   (scrape/get-links-jsoup active-uri
-                                                           (:body req))))
+                                   (map (fn [uri]
+                                          [uri (inc depth)])
+                                    (scrape/get-links-jsoup active-uri
+                                                            (:body req)))))
                          (conj crawled-links active-uri))))
               (recur (rest todo-links) (conj crawled-links active-uri)))
             (do
@@ -204,6 +209,7 @@
                               crawl-timestamp
                               sleep-for
                               active-uri
+                              max-depth
                               page-scoring-fn
                               link-checker-fn)
               (recur (rest todo-links) (conj crawled-links active-uri))))

@@ -154,5 +154,6 @@ Weighted crawl function
                     (util/make-timestamp)      ;; crawl-timestamp 
                     1000                       ;; delay in ms
                     "http://www.vixu.com/"     ;; seed-uri
+                    100                        ;; max-depth
                     page-scoring-fn
                     link-checker-fn)

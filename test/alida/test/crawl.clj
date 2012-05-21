@@ -212,7 +212,7 @@
         (with-test-db
           (db/create-views +test-db+)
           (let [page-scoring-fn
-                (fn [uri request-data]
+                (fn [uri depth request-data]
                   (float 0.1))
                 link-checker-fn
                 (fn [uri]
@@ -224,6 +224,7 @@
                              "2012-05-13T21:52:58.114Z"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
+                             1000
                              page-scoring-fn
                              link-checker-fn)
 
@@ -273,7 +274,7 @@
         (with-redefs [util/make-timestamp #(str "2012-05-13T21:52:58.114Z")]
           (db/create-views +test-db+)
           (let [page-scoring-fn
-                (fn [uri request-data]
+                (fn [uri depth request-data]
                   (if (= (first
                           (:content
                            (first (enlive/select
@@ -288,6 +289,7 @@
                              "2012-05-13T21:52:58.114Z"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
+                             1000
                              page-scoring-fn)
 
             (let [results (map :value
@@ -335,7 +337,7 @@
         (with-redefs [util/make-timestamp #(str "2012-05-13T21:52:58.114Z")]
           (db/create-views +test-db+)
           (let [page-scoring-fn
-                (fn [uri request-data]
+                (fn [uri depth request-data]
                   (if (some
                        #{(first
                           (:content
@@ -356,6 +358,7 @@
                              "2012-05-13T21:52:58.114Z"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
+                             1000
                              page-scoring-fn)
 
             (let [results (map :value
@@ -393,7 +396,7 @@
         (with-redefs [util/make-timestamp #(str "2012-05-13T21:52:58.114Z")]
           (db/create-views +test-db+)
           (let [page-scoring-fn
-                (fn [uri request-data]
+                (fn [uri depth request-data]
                   (float 0.1))
                 link-checker-fn
                 (fn [uri]
@@ -416,6 +419,7 @@
                              "2012-05-13T21:52:58.114Z"
                              0
                              "http://www.deeply-nested-dummy.com/index.html"
+                             1000
                              page-scoring-fn
                              link-checker-fn)
 
@@ -453,7 +457,7 @@
       (with-test-db
         (db/create-views +test-db+)
         (let [page-scoring-fn
-              (fn [uri request-data]
+              (fn [uri depth request-data]
                 (float 0.1))]
                
           @(weighted-crawl +test-db+
@@ -461,6 +465,7 @@
                            (util/make-timestamp)
                            0
                            "http://www.deeply-nested-dummy.com/index.html"
+                           1000
                            page-scoring-fn)
 
           @(weighted-crawl +test-db+
@@ -468,6 +473,7 @@
                            (util/make-timestamp)
                            0
                            "http://www.deeply-nested-dummy.com/index.html"
+                           1000
                            page-scoring-fn)
             
           (is (= (count (clutch/get-view +test-db+ "views" "pages")) 21)))))
@@ -476,7 +482,7 @@
       (with-test-db
         (db/create-views +test-db+)
         (let [page-scoring-fn
-              (fn [uri request-data]
+              (fn [uri depth request-data]
                 (float 0.1))]
                
           @(weighted-crawl +test-db+
@@ -484,6 +490,7 @@
                            (util/make-timestamp)
                            100
                            "http://www.deeply-nested-dummy.com/index.html"
+                           1000
                            page-scoring-fn)
 
           (let [crawled-times
@@ -523,7 +530,7 @@
       (with-test-db
         (db/create-views +test-db+)
         (let [page-scoring-fn
-              (fn [uri request-data]
+              (fn [uri depth request-data]
                 (float 0.1))]
                
           @(weighted-crawl +test-db+
@@ -531,6 +538,7 @@
                            (util/make-timestamp)
                            0
                            "http://www.dummyhealthfoodstore.com/index.html"
+                           1000
                            page-scoring-fn)
 
           ;; give the second thread some time to catch up
@@ -553,4 +561,31 @@
              "http://www.dummyhealthfoodstore.com/port-ellen.html"
              "http://www.dummyhealthfoodstore.com/products/pipe-tobacco.html"
              "http://www.dummyhealthfoodstore.com/products/whisky.html"
-             "http://www.vixu.com/"])))))))
+             "http://www.vixu.com/"])))))
+
+    (testing "test if max-depth is respected"
+      (with-test-db
+        (db/create-views +test-db+)
+        (let [page-scoring-fn
+              (fn [uri depth request-data]
+                (float 0.1))]
+               
+          @(weighted-crawl +test-db+
+                           "test-weighted-crawl"
+                           (util/make-timestamp)
+                           0
+                           "http://www.deeply-nested-dummy.com/index.html"
+                           3
+                           page-scoring-fn)
+
+          (is
+           (=
+            (map #(:uri (:value %))
+                 (clutch/get-view +test-db+ "views" "pages"))
+            ["http://www.deeply-nested-dummy.com/index.html"
+             "http://www.deeply-nested-dummy.com/nested-0a.html"
+             "http://www.deeply-nested-dummy.com/nested-0b.html"
+             "http://www.deeply-nested-dummy.com/nested-1a.html"
+             "http://www.deeply-nested-dummy.com/nested-1b.html"
+             "http://www.deeply-nested-dummy.com/nested-2a.html"
+             "http://www.deeply-nested-dummy.com/nested-2b.html"])))))))
