@@ -39,7 +39,8 @@
             NumericRangeQuery
             TermQuery
             BooleanQuery
-            BooleanClause$Occur]
+            BooleanClause$Occur
+            QueryWrapperFilter]
            [org.apache.lucene.util Version]))
 
 
@@ -267,6 +268,12 @@
                (= clause :should) BooleanClause$Occur/SHOULD)))
       (when (pos? (alength (.getClauses bq)))
         bq))))
+
+(defn #^QueryWrapperFilter create-query-wrapper-filter
+  "Creates a Lucene QueryWrapperFilter (i.e. a Query made into a Filter)."
+  [query]
+  (when query
+    (QueryWrapperFilter. query)))
 
 (defn #^Document get-doc
   "Reads the document with the provided doc-id from the index."

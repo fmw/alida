@@ -357,6 +357,13 @@
     (is (= (.getQuery x-clause) x-query))
     (is (= (.getOccur x-clause) BooleanClause$Occur/SHOULD))))
 
+(deftest test-create-query-wrapper-filter
+  (is (= (create-query-wrapper-filter nil) nil))
+  (let [query (create-term-query "foo" "bar")
+        qwf (create-query-wrapper-filter query)]
+    (is (= (class qwf) org.apache.lucene.search.QueryWrapperFilter))
+    (is (= (.getQuery qwf) query))))
+
 (deftest test-get-doc
   (let [analyzer (create-analyzer)
         dir (create-directory :RAM)
