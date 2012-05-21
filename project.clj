@@ -13,6 +13,7 @@
                  [clj-time "0.3.7"]
                  [org.apache.lucene/lucene-core "4.0-SNAPSHOT"]
                  [org.apache.lucene/lucene-queries "4.0-SNAPSHOT"]
+                 [org.apache.lucene/lucene-analyzers-common "4.0-SNAPSHOT"]
                  [clj-http-fake "0.3.0"]]
   :exclusions [lein-swank swank-clojure]
   :repositories {"apache-snapshots"

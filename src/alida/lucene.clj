@@ -15,7 +15,9 @@
 ;; limitations under the License.
 
 (ns alida.lucene
-  (:import [org.apache.lucene.document
+  (:require [alida.util :as util])
+  (:import [java.io File]
+           [org.apache.lucene.document
             Document
             Field
             FieldType
@@ -23,10 +25,19 @@
             DoubleField
             FloatField
             IntField
-            LongField
-            StoredField
-            StringField
-            TextField]))
+            LongField]
+           [org.apache.lucene.analysis.standard StandardAnalyzer]
+           [org.apache.lucene.store Directory NIOFSDirectory RAMDirectory]
+           [org.apache.lucene.index
+            IndexWriter
+            IndexWriterConfig
+            IndexWriterConfig$OpenMode
+            IndexReader
+            Term
+            IndexNotFoundException]
+           [org.apache.lucene.search
+            NumericRangeQuery]
+           [org.apache.lucene.util Version]))
 
 
 (defn #^FieldType create-field-type [data-type & options]
@@ -97,41 +108,114 @@
                 (or value 0.0)
                 (apply (partial create-field-type :double) options)))
 
-(defmulti #^Field set-field-value
+(defmulti #^Field set-field-value!
   "Sets the value of the Lucene Field object to the provided value.
    The Lucene documentation recommends this approach over creating
    new fields for every document for performance reasons."
   (fn [field value]
     (class value)))
 
-(defmethod set-field-value java.lang.String [field value]
+(defmethod set-field-value! java.lang.String [field value]
   (doto field
     (.setStringValue value)))
 
-(defmethod set-field-value java.lang.Long [field value]
+(defmethod set-field-value! java.lang.Long [field value]
   (doto field
     (.setLongValue value)))
 
-(defmethod set-field-value java.lang.Integer [field value]
+(defmethod set-field-value! java.lang.Integer [field value]
   (doto field
     (.setIntValue value)))
 
-(defmethod set-field-value java.lang.Float [field value]
+(defmethod set-field-value! java.lang.Float [field value]
   (doto field
     (.setFloatValue value)))
 
-(defmethod set-field-value java.lang.Double [field value]
+(defmethod set-field-value! java.lang.Double [field value]
   (doto field
     (.setDoubleValue value)))
 
-(defn #^Document create-document
-  "Takes two hash maps, fields-map with a Lucene Field instance
-   for every key, and values-map with the same keys mapped to
-   the desired values for the document. Creates a Lucene Document
-   object with the Field instances from the fields-map set to the
-   values provided in the value-map."
+(defn #^Document create-document-
+  "Takes two hash maps, fields-map with a Lucene Field instance for
+   every key, and values-map with the same keys mapped to the desired
+   values for the document. Creates a Lucene Document object with the
+   Field instances from the fields-map set to the values provided in
+   the value-map. This fn shouldn't be called directly, but from the
+   add-documents-to-index! instead, because Field instances are
+   reused. Since they are mutable they will be updated to the value
+   for the last document, until written immediately."
   [fields-map values-map]
   (let [doc (Document.)]
     (doseq [[k field] fields-map]
-      (.add doc (set-field-value field (get values-map k))))
+      (.add doc (set-field-value! field (get values-map k))))
     doc))
+
+(defn #^StandardAnalyzer create-analyzer
+  "Creates a StandardAnalyzer that tokenizes fulltext fields."
+  []
+  (StandardAnalyzer. (. Version LUCENE_40)))
+
+(defn create-directory
+  "Create a directory with either :RAM or a directory as the path argument."
+  [path]
+  (if (= path :RAM)
+    (RAMDirectory.)
+    (NIOFSDirectory. (File. path))))
+
+(defn #^IndexReader create-index-reader
+  "Creates IndexReader for the specified directory, but returns nil if
+   the provided directory exists but doesn't contain a valid index."
+  [#^Directory directory]
+  (try
+    (. IndexReader open directory)
+    (catch IndexNotFoundException e
+      nil)))
+
+(defn #^IndexWriter create-index-writer
+  "Creates an IndexWriter with the provided analyzer and directory.
+   The mode has three options: :create, :append or :create-or-append."
+  [analyzer directory mode]
+  (let [config (IndexWriterConfig. (Version/LUCENE_40) analyzer)]
+
+    (doto config
+      (.setRAMBufferSizeMB 49)
+      (.setOpenMode (cond
+                     (= mode :create)
+                     (IndexWriterConfig$OpenMode/CREATE)
+                     (= mode :append)
+                     (IndexWriterConfig$OpenMode/APPEND)
+                     (= mode :create-or-append)
+                     (IndexWriterConfig$OpenMode/CREATE_OR_APPEND))))
+    
+    (IndexWriter. directory config)))
+
+(defn add-documents-to-index!
+  "Converts the provided document-value-maps to Lucene Document
+   objects using the fields from the given fields-map and writes them
+   to an index through the provided writer.  Wrap this in with-open to
+   close the writer and flush the changes."
+  [writer fields-map document-value-maps]
+  (doseq [doc document-value-maps]
+    (.addDocument writer (create-document- fields-map doc))))
+
+(defn #^NumericRangeQuery create-date-range-query
+  "Creates a NumericRangeQuery for field-name using start and end date
+   string arguments."
+  [field-name start-date-rfc3339 end-date-rfc3339]
+  (let [min (util/rfc3339-to-long start-date-rfc3339)
+        max (util/rfc3339-to-long end-date-rfc3339)]
+    (when (and (= (class min) java.lang.Long)
+               (= (class max) java.lang.Long)
+               (>= max min))
+      (NumericRangeQuery/newLongRange field-name min max true true))))
+
+(defn #^Document get-doc
+  "Reads the document with the provided doc-id from the index."
+  [reader doc-id]
+  (.document reader doc-id))
+
+(defn get-docs
+  "Returns a sequence of the individual documents for a Lucene ScoreDoc[]
+   array."
+  [reader score-docs]
+  (map #(get-doc reader (.doc %)) score-docs))

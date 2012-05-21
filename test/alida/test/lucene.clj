@@ -17,7 +17,12 @@
 (ns alida.test.lucene
   (:use [clojure.test]
         [alida.lucene] :reload)
-  (:import [org.apache.lucene.document FieldType$NumericType]))
+  (:require [alida.util :as util])
+  (:import [org.apache.lucene.document FieldType$NumericType]
+           [org.apache.lucene.search QueryWrapperFilter]
+           [org.apache.lucene.index
+            IndexWriter IndexWriterConfig$OpenMode]
+           [org.apache.lucene.search ScoreDoc]))
 
 (deftest test-create-field-type
   (let [field-type (create-field-type :int :stored :indexed :tokenized)]
@@ -125,32 +130,32 @@
     (is (not (.indexed (.fieldType field))))
     (is (.stored (.fieldType field)))))
 
-(deftest test-set-field-value
+(deftest test-set-field-value!
   (is (= (.stringValue
-          (set-field-value (create-field "test" "foo" :stored) "bar"))
+          (set-field-value! (create-field "test" "foo" :stored) "bar"))
          "bar"))
 
   (is (= (.numericValue
-          (set-field-value (create-field "test" 1 :stored) 42))
+          (set-field-value! (create-field "test" 1 :stored) 42))
          42))
 
   (is (= (.numericValue
-          (set-field-value (create-field "test" 1.0 :stored) 2.0))
+          (set-field-value! (create-field "test" 1.0 :stored) 2.0))
          2.0))
 
   (is (= (.numericValue
-          (set-field-value (create-field "test" (float 1.0) :stored)
-                           (float 2.0)))
+          (set-field-value! (create-field "test" (float 1.0) :stored)
+                            (float 2.0)))
          (float 2.0)))
 
   (is (= (.numericValue
-          (set-field-value (create-field "test" (int 3) :stored) (int 42)))
+          (set-field-value! (create-field "test" (int 3) :stored) (int 42)))
          (int 42))))
 
-(deftest test-create-document
+(deftest test-create-document-
   (let [[amount-field fulltext-field title-field]
         (.getFields
-         (create-document
+         (create-document-
           (sorted-map :title (create-field "title"
                                            ""
                                            :stored
@@ -169,5 +174,139 @@
            :amount 1}))]
     (is (= (.stringValue title-field) "Hello, world!"))
     (is (= (.stringValue fulltext-field) "Hello, world! Hic sunt dracones."))
-    (is (= (.numericValue amount-field) 1))
-    ))
+    (is (= (.numericValue amount-field) 1))))
+
+(deftest test-create-analyzer
+    (testing "test if Lucene analyzers are created correctly."
+      (is (= (class (create-analyzer))
+             org.apache.lucene.analysis.standard.StandardAnalyzer))))
+
+(deftest test-create-directory
+    (testing "test if Lucene directories are created correctly."
+      (is (= (class (create-directory :RAM))
+             org.apache.lucene.store.RAMDirectory))
+      (let [directory (create-directory "/tmp/test")]
+        (is (= (class directory) org.apache.lucene.store.NIOFSDirectory))
+        (is (or 
+              (= (str (.getDirectory directory)) "/tmp/test")
+              (= (str (.getDirectory directory)) "/private/tmp/test"))))))
+
+(deftest test-create-index-reader
+  (testing "test if Lucene IndexReaders are created correctly."
+    (let [dir (create-directory :RAM)]
+      ;; before an index is written to the directory, expect nil
+      (is (= (create-index-reader dir) nil))
+      ;; write to index to get an actual IndexReader
+      (with-open  [writer (create-index-writer (create-analyzer)
+                                               dir
+                                               :create)]
+        (add-documents-to-index! writer
+                                 {:title (create-field "title"
+                                                       ""
+                                                       :stored
+                                                       :indexed
+                                                       :tokenized)}
+                                 [{:title "1"}]))
+      (is (= (class (create-index-reader dir)) 
+             org.apache.lucene.index.StandardDirectoryReader)))))
+
+(deftest test-create-index-writer
+  (testing "test if index writers are created correctly"
+    (let [directory (create-directory :RAM)
+          analyzer (create-analyzer)]
+      
+      (with-open [writer (create-index-writer analyzer directory :create)]
+        (is (= (class writer) IndexWriter))
+        (is (= (.getAnalyzer writer) analyzer))
+        (is (= (.getDirectory writer) directory))
+          
+        (let [config (.getConfig writer)]
+          (is (= (.getRAMBufferSizeMB config) 49.0))
+          (is (= (.getOpenMode config) IndexWriterConfig$OpenMode/CREATE))))
+
+      
+      (with-open [writer (create-index-writer analyzer directory :append)]
+        (is (= (.getOpenMode (.getConfig writer))
+               IndexWriterConfig$OpenMode/APPEND)))
+      
+      (with-open [writer (create-index-writer analyzer
+                                              directory
+                                              :create-or-append)]
+        (is (= (.getOpenMode (.getConfig writer))
+               IndexWriterConfig$OpenMode/CREATE_OR_APPEND))))))
+
+(deftest test-add-documents-to-index!
+  (let [analyzer (create-analyzer)
+        dir (create-directory :RAM)
+        fields-map {:title (create-field "title"
+                                         ""
+                                         :stored
+                                         :indexed
+                                         :tokenized)}]
+    (with-open [writer (create-index-writer analyzer dir :create)]
+      (add-documents-to-index! writer
+                               fields-map
+                               [{:title "1"}
+                                {:title "2"}
+                                {:title "3"}
+                                {:title "4"}
+                                {:title "5"}
+                                {:title "6"}
+                                {:title "7"}
+                                {:title "8"}
+                                {:title "9"}
+                                {:title "10"}
+                                {:title "11"}]))
+
+    (let [reader (create-index-reader dir)]
+      (is (= (map #(.get % "title")
+                  (get-docs reader (map #(ScoreDoc. % 1.0) (range 11))))
+             (map str (range 1 12)))))))
+
+(deftest test-create-date-range-query
+  (let [query (create-date-range-query "42"
+                                       "1985-08-04T09:00:00.0Z"
+                                       "2012-01-15T17:54:45.0Z")]
+    (is (= (class query)
+           org.apache.lucene.search.NumericRangeQuery))
+
+    (is (= (.getMin query)
+           (util/rfc3339-to-long "1985-08-04T09:00:00.0Z")))
+    (is (= (.getMax query)
+           (util/rfc3339-to-long "2012-01-15T17:54:45.0Z")))))
+
+(deftest test-get-doc
+  (let [analyzer (create-analyzer)
+        dir (create-directory :RAM)
+        fields-map {:title (create-field "title"
+                                         ""
+                                         :stored
+                                         :indexed
+                                         :tokenized)}]
+    (with-open [writer (create-index-writer analyzer dir :create)]
+      (add-documents-to-index! writer fields-map [{:title "bar"}]))
+
+    (let [reader (create-index-reader dir)]
+      (is (= (.get (get-doc reader 0) "title") "bar")))))
+
+(deftest test-get-docs
+  (let [analyzer (create-analyzer)
+        dir (create-directory :RAM)
+        fields-map {:title (create-field "title"
+                                         ""
+                                         :stored
+                                         :indexed
+                                         :tokenized)}]
+    (with-open [writer (create-index-writer analyzer dir :create)]
+      (add-documents-to-index! writer
+                               fields-map
+                               [{:title "Hic sunt dracones"}
+                                {:title "Brora!"}
+                                {:title "Caol Ila"}]))
+
+    (let [reader (create-index-reader dir)]
+      (is (= (map #(.get % "title")
+                  (get-docs reader [(ScoreDoc. 0 1.0)
+                                    (ScoreDoc. 1 1.0)
+                                    (ScoreDoc. 2 1.0)]))
+             ["Hic sunt dracones" "Brora!" "Caol Ila"])))))

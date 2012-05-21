@@ -37,6 +37,14 @@
 
   (is (= (rfc3339-to-jodatime nil "GMT") nil)))
 
+(deftest test-rfc3339-to-long
+  (is (= (rfc3339-to-long "2011-11-04T09:16:52.253Z")
+         1320398212253))
+  (is (= (rfc3339-to-long "2012-01-12T15:40:07+01:00")
+         1326379207000))
+  (is (= (rfc3339-to-long nil) nil))
+  (is (= (rfc3339-to-long 10) nil)))
+
 (deftest test-get-absolute-uri
   (are [base-uri link expected-uri]
        (= (get-absolute-uri base-uri link) expected-uri)

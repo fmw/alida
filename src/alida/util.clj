@@ -16,7 +16,8 @@
 
 (ns alida.util
   (:require [clj-time.format :as time-format]
-            [clj-time.core :as time-core])
+            [clj-time.core :as time-core]
+            [clj-time.coerce :as time-coerce])
   (:import [java.net URL]))
 
 (defn make-timestamp
@@ -35,6 +36,13 @@
      (time-format/parse
       (time-format/formatters :date-time) date-string)
      (time-core/time-zone-for-id timezone))))
+
+(defn rfc3339-to-long
+  [date-string]
+  "Converts RFC3339 formatted date string to microseconds since UNIX epoch.
+   Throws NullPointerException on incorrect input."
+  (when (and (string? date-string) (not (= date-string "")))
+    (time-coerce/to-long (time-format/parse date-string))))
 
 (defn get-absolute-uri
   "Returns the absolute URI of a link using the provided current-uri."
