@@ -22,7 +22,7 @@
            [org.apache.lucene.search QueryWrapperFilter]
            [org.apache.lucene.index
             IndexWriter IndexWriterConfig$OpenMode]
-           [org.apache.lucene.search ScoreDoc]))
+           [org.apache.lucene.search BooleanClause$Occur ScoreDoc]))
 
 (deftest test-create-field-type
   (let [field-type (create-field-type :int :stored :indexed :tokenized)]
@@ -334,6 +334,28 @@
            (util/rfc3339-to-long "1985-08-04T09:00:00.0Z")))
     (is (= (.getMax query)
            (util/rfc3339-to-long "2012-01-15T17:54:45.0Z")))))
+
+(deftest test-create-boolean-query
+  (is (= (create-boolean-query) nil))
+  (is (= (create-boolean-query (create-term-query "foo" "bar")) nil))
+
+  (let [foo-query (create-term-query "foo" "bar")
+        a-query (create-term-query "a" "b")
+        x-query (create-term-query "x" "y")
+        bq (create-boolean-query foo-query :must
+                                 a-query :must-shot
+                                 x-query :should)
+        [foo-clause a-clause x-clause] (.getClauses bq)]
+    (is (= (class bq) org.apache.lucene.search.BooleanQuery))
+
+    (is (= (.getQuery foo-clause) foo-query))
+    (is (= (.getOccur foo-clause) BooleanClause$Occur/MUST))
+    
+    (is (= (.getQuery a-clause) a-query))
+    (is (= (.getOccur a-clause) nil))
+    
+    (is (= (.getQuery x-clause) x-query))
+    (is (= (.getOccur x-clause) BooleanClause$Occur/SHOULD))))
 
 (deftest test-get-doc
   (let [analyzer (create-analyzer)

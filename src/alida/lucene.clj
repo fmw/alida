@@ -35,7 +35,11 @@
             IndexReader
             Term
             IndexNotFoundException]
-           [org.apache.lucene.search NumericRangeQuery TermQuery]
+           [org.apache.lucene.search
+            NumericRangeQuery
+            TermQuery
+            BooleanQuery
+            BooleanClause$Occur]
            [org.apache.lucene.util Version]))
 
 
@@ -210,6 +214,7 @@
   [field value]
   (TermQuery. (Term. field value)))
 
+
 (defmulti #^NumericRangeQuery create-numeric-range-query
   "Creates a Lucene NumericRangeQuery between the min and max value."
   (fn [field-name min max]
@@ -246,6 +251,22 @@
   (create-numeric-range-query field-name
                               (util/rfc3339-to-long start-date-rfc3339)
                               (util/rfc3339-to-long end-date-rfc3339)))
+
+(defn #^BooleanQuery create-boolean-query
+  "Creates a Lucene BooleanQuery for the provided pairs of queries
+  and occur clauses (i.e. :must, :must-not, :should)."
+  [& pairs]
+  (when (even? (count pairs))
+    (let [bq (BooleanQuery.)]
+      (doseq [[query clause] (partition 2 pairs)]
+        (.add bq
+              query
+              (cond
+               (= clause :must) BooleanClause$Occur/MUST
+               (= clause :must-not) BooleanClause$Occur/MUST_NOT
+               (= clause :should) BooleanClause$Occur/SHOULD)))
+      (when (pos? (alength (.getClauses bq)))
+        bq))))
 
 (defn #^Document get-doc
   "Reads the document with the provided doc-id from the index."
