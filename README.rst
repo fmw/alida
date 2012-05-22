@@ -42,6 +42,11 @@ can experiment with. I've you are less inclined towards diving
 straight into the code and want to see a hosted example you can find
 one at http://clojure-blog-search.vixu.com/.
 
+You can use this code as a library in your own project by adding the
+following to the :dependencies in your project.clj file::
+
+    [alida "0.1.2"]
+
 
 Questions?
 ----------
