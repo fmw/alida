@@ -354,8 +354,3 @@
         nil))
     {:total-hits 0
      :docs nil}))
-
-(comment
-  (catch ParseException 
-        {:total-hits 0
-         :docs nil}))
