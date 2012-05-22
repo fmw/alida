@@ -45,6 +45,11 @@
             IndexSearcher]
            [org.apache.lucene.queryparser.flexible.standard
             StandardQueryParser]
+           [org.apache.lucene.queryparser.flexible.standard.parser
+            ParseException
+            TokenMgrError]
+           [org.apache.lucene.queryparser.flexible.core
+            QueryNodeParseException]
            [org.apache.lucene.util Version]))
 
 
@@ -315,30 +320,42 @@
   (if (and reader
            (not-empty query)
            (not-any? #(= (first query) %) #{\*\?}))
-    (let [searcher (IndexSearcher. reader)
-          q (.parse (StandardQueryParser. analyzer) query fulltext-field)
-          top-docs (if (nil? after-doc-id)
-                     (if (nil? filter)
-                       (.search searcher q limit)
-                       (.search searcher q filter limit))
-                     (if (nil? filter)
-                       (.searchAfter searcher
-                                     (ScoreDoc. after-doc-id
-                                                after-score)
-                                     q
-                                     limit)
-                       (.searchAfter searcher
-                                     (ScoreDoc. after-doc-id
-                                                after-score)
-                                     q
-                                     filter
-                                     limit)))]
-      {:total-hits (.totalHits top-docs)
-       :docs (map (fn [score-doc doc]
-                    (assoc (document-to-map doc)
-                      :index {:doc-id (.doc score-doc)
-                              :score (.score score-doc)}))
-                  (.scoreDocs top-docs)
-                  (get-docs reader (.scoreDocs top-docs)))})
+    (try
+      (let [searcher (IndexSearcher. reader)
+            q (.parse (StandardQueryParser. analyzer) query fulltext-field)
+            top-docs (if (nil? after-doc-id)
+                       (if (nil? filter)
+                         (.search searcher q limit)
+                         (.search searcher q filter limit))
+                       (if (nil? filter)
+                         (.searchAfter searcher
+                                       (ScoreDoc. after-doc-id
+                                                  after-score)
+                                       q
+                                       limit)
+                         (.searchAfter searcher
+                                       (ScoreDoc. after-doc-id
+                                                  after-score)
+                                       q
+                                       filter
+                                       limit)))]
+        {:total-hits (.totalHits top-docs)
+         :docs (map (fn [score-doc doc]
+                      (assoc (document-to-map doc)
+                        :index {:doc-id (.doc score-doc)
+                                :score (.score score-doc)}))
+                    (.scoreDocs top-docs)
+                    (get-docs reader (.scoreDocs top-docs)))})
+      (catch ParseException e
+        nil)
+      (catch TokenMgrError e
+        nil)
+      (catch QueryNodeParseException e
+        nil))
     {:total-hits 0
      :docs nil}))
+
+(comment
+  (catch ParseException 
+        {:total-hits 0
+         :docs nil}))

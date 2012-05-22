@@ -524,6 +524,15 @@
                                documents))
 
     (let [reader (create-index-reader dir)]
+      (testing "Invalid query shouldn't raise an exception."
+        (is (= (search "\"'foo"
+                       nil
+                       "fulltext"
+                       10
+                       reader
+                       analyzer)
+               nil)))
+      
       (is (= (search "whisky"
                      nil
                      "fulltext"
