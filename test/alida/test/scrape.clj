@@ -26,6 +26,13 @@
             [clojure.pprint])
   (:import [java.io StringReader]))
 
+(deftest test-content-type-is-html?
+  (is (content-type-is-html?
+       {:headers {"content-type" "text/html;charset=UTF-8"}}))
+
+  (is (false? (content-type-is-html?
+               {:headers {"content-type" "text/plain;charset=UTF-8"}}))))
+
 (deftest test-get-links-enlive
   (let [html (slurp "resources/test-data/dummy-shop/whisky.html")]
     (is (= (get-links-enlive "http://www.dummyhealthfoodstore.com/index.html"

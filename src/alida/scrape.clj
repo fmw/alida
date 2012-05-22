@@ -22,6 +22,12 @@
   (:import [java.io StringReader]
            [org.jsoup Jsoup]))
 
+(defn content-type-is-html? [request]
+  "Checks if the Content-Type header for the specified request map
+   says the document is text/html."
+  (not (nil? (re-matches #"^text/html.*"
+                         (get (:headers request) "content-type")))))
+
 (defn get-links-enlive
   "Returns the set of unique href attribute values from
   the elements that match the provided enlive selector
