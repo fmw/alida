@@ -48,12 +48,18 @@
 (deftest test-get-absolute-uri
   (are [base-uri link expected-uri]
        (= (get-absolute-uri base-uri link) expected-uri)
-       "http://www.dummyhealthfoodstore.com/index.html"
+       "http://www.dummyhealthfoodstore.com/"
        "/products/whisky.html"
        "http://www.dummyhealthfoodstore.com/products/whisky.html"
        "http://www.dummyhealthfoodstore.com/products/whisky.html"
        "../brora.html"
-       "http://www.dummyhealthfoodstore.com/brora.html"))
+       "http://www.dummyhealthfoodstore.com/brora.html"
+       "http://www.dummyhealthfoodstore.com/"
+       "/brora.html#fragment"
+       "http://www.dummyhealthfoodstore.com/brora.html"
+       "http://www.dummyhealthfoodstore.com:8080/"
+       "/brora.html"
+       "http://www.dummyhealthfoodstore.com:8080/brora.html"))
 
 (deftest test-get-uri-segments
   (is (= (get-uri-segments "http://www.dummyhealthfoodstore.com/brora.html")

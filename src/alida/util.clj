@@ -18,7 +18,7 @@
   (:require [clj-time.format :as time-format]
             [clj-time.core :as time-core]
             [clj-time.coerce :as time-coerce])
-  (:import [java.net URL]))
+  (:import [java.net URL URI]))
 
 (defn make-timestamp
   "Returns a string with the RFC 3339 timestamp for the current date/time.
@@ -45,9 +45,17 @@
     (time-coerce/to-long (time-format/parse date-string))))
 
 (defn get-absolute-uri
-  "Returns the absolute URI of a link using the provided current-uri."
+  "Returns the absolute URI of a link using the provided current-uri.
+   Also removes the fragment (e.g. #foo)."
   [current-uri link]
-  (str (URL. (URL. current-uri) link)))
+  (let [raw-uri (URI. (str (URL. (URL. current-uri) link)))]
+    (str (URI. (.getScheme raw-uri)
+               (.getUserInfo raw-uri)
+               (.getHost raw-uri)
+               (.getPort raw-uri)
+               (.getPath raw-uri)
+               (.getQuery raw-uri)
+               nil))))
 
 (defn get-uri-segments [uri]
   "Returns a map with the :scheme, :host and :path for the given URI."
