@@ -31,6 +31,17 @@ looking at `Apache Nutch`_, which also includes a web crawler. That
 being said, one of the goals for Alida is to be able to power a
 real-world search engine project.
 
+Check the docs/ directory for the slides. I've also created two
+sub-projects. `clojure-blog-search`_ is a very basic example of how
+you could use Alida to crawl the web. Please remember that it does an
+actual crawl on the personal blogs of fellow Clojurians, so please
+don't run the it unless you have a very good reason to do so. I've
+also created `clojure-blog-search-www`, which is a little front-end
+web application that also includes a pre-built Lucene index that you
+can experiment with. I've you are less inclined towards diving
+straight into the code and want to see a hosted example you can find
+one at http://clojure-blog-search.vixu.com/.
+
 
 Questions?
 ----------
