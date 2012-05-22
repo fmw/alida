@@ -36,6 +36,14 @@
                          (aget doc "crawl-tag")
                          (aget doc "crawled-at")])
                        doc)))}
+    :pages-sans-doc
+    {:map (fn [doc]
+            (if (= (aget doc "type") "crawled-page")
+              (js/emit (to-array
+                        [(aget doc "uri")
+                         (aget doc "crawl-tag")
+                         (aget doc "crawled-at")])
+                       nil)))}
     :pages-by-crawl-tag-and-timestamp
     {:map (fn [doc]
             (if (= (aget doc "type") "crawled-page")
@@ -44,6 +52,13 @@
                          (aget doc "crawl-timestamp")
                          (aget doc "uri")
                          (aget doc "crawled-at")])
+                       doc)))}
+    :by-crawl-date
+    {:map (fn [doc]
+            (if (= (aget doc "type") "crawled-page")
+              (js/emit (to-array
+                        [(aget doc "crawled-at")
+                         (aget doc "uri")])
                        doc)))}
     :scrape-results
     {:map (fn [doc]
