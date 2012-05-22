@@ -36,7 +36,7 @@ sub-projects. `clojure-blog-search`_ is a very basic example of how
 you could use Alida to crawl the web. Please remember that it does an
 actual crawl on the personal blogs of fellow Clojurians, so please
 don't run the it unless you have a very good reason to do so. I've
-also created `clojure-blog-search-www`, which is a little front-end
+also created `clojure-blog-search-www`_, which is a little front-end
 web application that also includes a pre-built Lucene index that you
 can experiment with. I've you are less inclined towards diving
 straight into the code and want to see a hosted example you can find
@@ -65,6 +65,8 @@ License
 Copyright 2012, F.M. de Waard / `Vixu.com`_.
 All code is covered by the `Apache License, version 2.0`_.
 
+.. _`clojure-blog-search`: https://github.com/fmw/clojure-blog-search
+.. _`clojure-blog-search-www`: https://github.com/fmw/clojure-blog-search-www
 .. _`EuroClojure 2012`: http://euroclojure.com/2012/
 .. _`Apache CouchDB`: http://couchdb.apache.org/
 .. _`Apache Lucene`: http://lucene.apache.org/core/
