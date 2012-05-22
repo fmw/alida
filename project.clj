@@ -1,4 +1,4 @@
-(defproject alida "0.1.0-SNAPSHOT"
+(defproject alida "0.1.1"
   :description "Crawling, scraping and indexing application."
   :url "https://github.com/fmw/alida"
   :license {:name "Apache License, version 2.0"
