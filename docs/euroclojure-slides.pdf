@@ -802,7 +802,7 @@ endobj
 % 'R48': class PDFInfo 
 48 0 obj
 << /Author ()
- /CreationDate (D:20120523024334-01'00')
+ /CreationDate (D:20120523130752-01'00')
  /Creator (\(unspecified\))
  /Keywords ()
  /Producer (ReportLab PDF Library - www.reportlab.com)
@@ -1412,7 +1412,7 @@ endobj
 % 'R85': class PDFStream 
 85 0 obj
 % page stream
-<< /Length 1636 >>
+<< /Length 1635 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -1514,7 +1514,7 @@ q
 1 0 0 1 23 -3 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (be faster than the competition at implementing new features..) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (be faster than the competition at implementing new features.) Tj T* ET
 Q
 Q
 q
@@ -4128,7 +4128,7 @@ endobj
 % 'R109': class PDFStream 
 109 0 obj
 % page stream
-<< /Length 4699 >>
+<< /Length 4715 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -4141,7 +4141,7 @@ q
 1 0 0 1 6 371.0315 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .85873 Tw (The Lucene documentation recommends mutating existing Field objects over creating them from scratch for every Document for performance reasons. This is less kosher in) Tj T* 0 Tw (terms of functional programming, but pragmatism. It means that documents need to be written immediately, however, otherwise the Field values could change!) Tj T* ET
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .85873 Tw (The Lucene documentation recommends mutating existing Field objects over creating them from scratch for every Document for performance reasons. This is less kosher in) Tj T* 0 Tw (terms of functional programming, but still the pragmatic option. It means that documents need to be written immediately, however, otherwise the Field values could change!) Tj T* ET
 Q
 Q
 q
@@ -4173,7 +4173,7 @@ endobj
 % 'R110': class PDFStream 
 110 0 obj
 % page stream
-<< /Length 1289 >>
+<< /Length 1254 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -4183,14 +4183,14 @@ BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Lucene TermQuery) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 371.0315 cm
+1 0 0 1 6 383.0315 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 1.141953 Tw (Lucene implements a plethora of query types. The most basic and ubiquitous one is probably the TermQuery, which searches documents for the provided value in a given) Tj T* 0 Tw (provided field:) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Lucene implements a plethora of query types. The most basic and ubiquitous one is probably the TermQuery, which searches documents for the provided value in a given field:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 313.8315 cm
+1 0 0 1 6 325.8315 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4210,7 +4210,7 @@ Q
 Q
 Q
 q
-1 0 0 1 6 305.8315 cm
+1 0 0 1 6 317.8315 cm
 Q
  
 endstream
@@ -4263,7 +4263,7 @@ endobj
 % 'R112': class PDFStream 
 112 0 obj
 % page stream
-<< /Length 3187 >>
+<< /Length 3213 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -4273,7 +4273,7 @@ BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Chaining Query instances with a 
 Q
 Q
 q
-1 0 0 1 6 199.8315 cm
+1 0 0 1 6 187.8315 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4283,17 +4283,17 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 780.5008 192 re B*
+n -6 -6 780.5008 204 re B*
 Q
 q
-BT 1 0 0 1 0 170 Tm 12 TL /F3 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (defn ) Tj /F3 10 Tf .4 .4 .4 rg (#) Tj .098039 .090196 .486275 rg (^BooleanQuery) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (create-boolean-query) Tj 0 0 0 rg  T* (  ) Tj ([) Tj .098039 .090196 .486275 rg (&) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (pairs) Tj 0 0 0 rg (]) Tj  T* (  ) Tj (\() Tj 0 .501961 0 rg (when ) Tj 0 0 0 rg (\() Tj 0 0 1 rg (even?) Tj 0 0 0 rg ( ) Tj (\() Tj 0 .501961 0 rg (count ) Tj .098039 .090196 .486275 rg (pairs) Tj 0 0 0 rg (\)\)) Tj  T* (    ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (let ) Tj /F3 10 Tf 0 0 0 rg ([) Tj .098039 .090196 .486275 rg (bq) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (BooleanQuery) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg (\)]) Tj  T* (      ) Tj (\() Tj 0 .501961 0 rg (doseq ) Tj 0 0 0 rg ([[) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (clause) Tj 0 0 0 rg (]) Tj ( ) Tj (\() Tj 0 0 1 rg (partition) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (2) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (pairs) Tj 0 0 0 rg (\)]) Tj  T* (        ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (add) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (bq) Tj 0 0 0 rg  T* (              ) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg  T* (              ) Tj (\() Tj 0 0 1 rg (cond) Tj 0 0 0 rg  T* (                ) Tj (\() Tj 0 .501961 0 rg (= ) Tj .098039 .090196 .486275 rg (clause) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:must) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (BooleanClause$Occur/MUST) Tj 0 0 0 rg  T* (                ) Tj (\() Tj 0 .501961 0 rg (= ) Tj .098039 .090196 .486275 rg (clause) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:must-not) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (BooleanClause$Occur/MUST_NOT) Tj 0 0 0 rg  T* (                ) Tj (\() Tj 0 .501961 0 rg (= ) Tj .098039 .090196 .486275 rg (clause) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:should) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (BooleanClause$Occur/SHOULD) Tj 0 0 0 rg (\)\)\)) Tj  T* (      ) Tj (\() Tj 0 .501961 0 rg (when ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (pos? ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (alength ) Tj 0 0 0 rg (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (getClauses) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (bq) Tj 0 0 0 rg (\)\)\)) Tj  T* (        ) Tj .098039 .090196 .486275 rg (bq) Tj 0 0 0 rg (\)\)\)\)) Tj  T*  T* ( ) Tj (\() Tj 0 0 1 rg (create-boolean-query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (my-term-query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:must) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (my-numeric-range-query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:must) Tj 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 182 Tm 12 TL /F3 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (defn ) Tj /F3 10 Tf .4 .4 .4 rg (#) Tj .098039 .090196 .486275 rg (^BooleanQuery) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (create-boolean-query) Tj 0 0 0 rg  T* (  ) Tj ([) Tj .098039 .090196 .486275 rg (&) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (pairs) Tj 0 0 0 rg (]) Tj  T* (  ) Tj (\() Tj 0 .501961 0 rg (when ) Tj 0 0 0 rg (\() Tj 0 0 1 rg (even?) Tj 0 0 0 rg ( ) Tj (\() Tj 0 .501961 0 rg (count ) Tj .098039 .090196 .486275 rg (pairs) Tj 0 0 0 rg (\)\)) Tj  T* (    ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (let ) Tj /F3 10 Tf 0 0 0 rg ([) Tj .098039 .090196 .486275 rg (bq) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (BooleanQuery) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg (\)]) Tj  T* (      ) Tj (\() Tj 0 .501961 0 rg (doseq ) Tj 0 0 0 rg ([[) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (clause) Tj 0 0 0 rg (]) Tj ( ) Tj (\() Tj 0 0 1 rg (partition) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (2) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (pairs) Tj 0 0 0 rg (\)]) Tj  T* (        ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (add) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (bq) Tj 0 0 0 rg  T* (              ) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg  T* (              ) Tj (\() Tj 0 0 1 rg (cond) Tj 0 0 0 rg  T* (                ) Tj (\() Tj 0 .501961 0 rg (= ) Tj .098039 .090196 .486275 rg (clause) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:must) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (BooleanClause$Occur/MUST) Tj 0 0 0 rg  T* (                ) Tj (\() Tj 0 .501961 0 rg (= ) Tj .098039 .090196 .486275 rg (clause) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:must-not) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (BooleanClause$Occur/MUST_NOT) Tj 0 0 0 rg  T* (                ) Tj (\() Tj 0 .501961 0 rg (= ) Tj .098039 .090196 .486275 rg (clause) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:should) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (BooleanClause$Occur/SHOULD) Tj 0 0 0 rg (\)\)\)) Tj  T* (      ) Tj (\() Tj 0 .501961 0 rg (when ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (pos? ) Tj 0 0 0 rg (\() Tj 0 .501961 0 rg (alength ) Tj 0 0 0 rg (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (getClauses) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (bq) Tj 0 0 0 rg (\)\)\)) Tj  T* (        ) Tj .098039 .090196 .486275 rg (bq) Tj 0 0 0 rg (\)\)\)\)) Tj  T*  T* ( ) Tj (\() Tj 0 0 1 rg (create-boolean-query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (my-term-query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:must) Tj 0 0 0 rg  T* (                       ) Tj .098039 .090196 .486275 rg (my-numeric-range-query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (:must) Tj 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 6 191.8315 cm
+1 0 0 1 6 179.8315 cm
 Q
  
 endstream
@@ -4353,7 +4353,7 @@ endobj
 % 'R114': class PDFStream 
 114 0 obj
 % page stream
-<< /Length 7323 >>
+<< /Length 6875 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -4363,7 +4363,7 @@ BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Lucene search) Tj T* ET
 Q
 Q
 q
-1 0 0 1 6 55.8315 cm
+1 0 0 1 6 79.8315 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4373,10 +4373,10 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 780.5008 336 re B*
+n -6 -6 780.5008 312 re B*
 Q
 q
-BT 1 0 0 1 0 314 Tm 12 TL /F3 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (defn ) Tj /F3 10 Tf .098039 .090196 .486275 rg (search) Tj 0 0 0 rg  T* (  ) Tj ([) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (fulltext-field) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (reader) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (analyzer) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (&) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (after-doc-id) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-score) Tj 0 0 0 rg (]]) Tj  T* (  ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (if ) Tj /F3 10 Tf 0 0 0 rg (\() Tj 0 .501961 0 rg (and ) Tj .098039 .090196 .486275 rg (reader) Tj 0 0 0 rg  T* (           ) Tj (\() Tj 0 0 1 rg (not-empty) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg (\)) Tj  T* (           ) Tj (\() Tj 0 .501961 0 rg (not-any? ) Tj .4 .4 .4 rg (#) Tj 0 0 0 rg (\() Tj .098039 .090196 .486275 rg (=) Tj 0 0 0 rg ( ) Tj (\() Tj 0 .501961 0 rg (first ) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (%) Tj 0 0 0 rg (\)) Tj ( ) Tj .4 .4 .4 rg (#) Tj 0 0 0 rg ({) Tj (\\) Tj .098039 .090196 .486275 rg (*) Tj .729412 .129412 .129412 rg (\\?) Tj 0 0 0 rg (}\)\)) Tj  T* (    ) Tj (\() Tj 0 0 1 rg (try) Tj 0 0 0 rg  T* (      ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (let ) Tj /F3 10 Tf 0 0 0 rg ([) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (IndexSearcher) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (reader) Tj 0 0 0 rg (\)) Tj  T* (            ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (parse) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (StandardQueryParser) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (analyzer) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (fulltext-field) Tj 0 0 0 rg (\)) Tj  T* (            ) Tj .098039 .090196 .486275 rg (top-docs) Tj 0 0 0 rg ( ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (if ) Tj /F3 10 Tf 0 0 0 rg (\() Tj 0 .501961 0 rg (nil? ) Tj .098039 .090196 .486275 rg (after-doc-id) Tj 0 0 0 rg (\)) Tj  T* (                       ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (if ) Tj /F3 10 Tf 0 0 0 rg (\() Tj 0 .501961 0 rg (nil? ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg (\)) Tj  T* (                         ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (search) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg (\)) Tj  T* (                         ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (search) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg (\)\)) Tj  T* (                       ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (if ) Tj /F3 10 Tf 0 0 0 rg (\() Tj 0 .501961 0 rg (nil? ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg (\)) Tj  T* (                         ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (searchAfter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (ScoreDoc) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-doc-id) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-score) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg (\)) Tj  T* (                         ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (searchAfter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (ScoreDoc) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-doc-id) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-score) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg (\)\)\)]) Tj  T* (        ) Tj ({) Tj .098039 .090196 .486275 rg (:total-hits) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (totalHits) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (top-docs) Tj 0 0 0 rg (\)) Tj  T* (         ) Tj .098039 .090196 .486275 rg (:docs) Tj 0 0 0 rg ( ) Tj (\() Tj 0 .501961 0 rg (map ) Tj 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (fn ) Tj /F3 10 Tf 0 0 0 rg ([) Tj .098039 .090196 .486275 rg (score-doc) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (doc) Tj 0 0 0 rg (]) Tj  T* (                      ) Tj (\() Tj 0 .501961 0 rg (assoc ) Tj 0 0 0 rg (\() Tj 0 0 1 rg (document-to-map) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (doc) Tj 0 0 0 rg (\)) Tj  T* (                        ) Tj .098039 .090196 .486275 rg (:index) Tj 0 0 0 rg ( ) Tj ({) Tj .098039 .090196 .486275 rg (:doc-id) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (doc) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (score-doc) Tj 0 0 0 rg (\)) Tj  T* (                                ) Tj .098039 .090196 .486275 rg (:score) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (score) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (score-doc) Tj 0 0 0 rg (\)}\)\)) Tj  T* (                        ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (scoreDocs) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (top-docs) Tj 0 0 0 rg (\)) Tj  T* (                     ) Tj (\() Tj 0 0 1 rg (get-docs) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (reader) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (scoreDocs) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (top-docs) Tj 0 0 0 rg (\)\)\)}\)) Tj  T* (      ) Tj (\() Tj 0 0 1 rg (catch) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (ParseException) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (e) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (nil) Tj 0 0 0 rg (\)) Tj  T* (      ) Tj (\() Tj 0 0 1 rg (catch) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (TokenMgrError) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (e) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (nil) Tj 0 0 0 rg (\)) Tj  T* (      ) Tj (\() Tj 0 0 1 rg (catch) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (QueryNodeParseException) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (e) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (nil) Tj 0 0 0 rg (\)\)) Tj  T* (    ) Tj ({) Tj .098039 .090196 .486275 rg (:total-hits) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (0) Tj 0 0 0 rg  T* (     ) Tj .098039 .090196 .486275 rg (:docs) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (nil) Tj 0 0 0 rg (}\)\)) Tj T* ET
+BT 1 0 0 1 0 290 Tm 12 TL /F3 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (defn ) Tj /F3 10 Tf .098039 .090196 .486275 rg (search) Tj 0 0 0 rg  T* (  ) Tj ([) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (fulltext-field) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (reader) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (analyzer) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (&) Tj 0 0 0 rg ( ) Tj ([) Tj .098039 .090196 .486275 rg (after-doc-id) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-score) Tj 0 0 0 rg (]]) Tj  T* (  ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (if ) Tj /F3 10 Tf 0 0 0 rg (\() Tj 0 .501961 0 rg (and ) Tj .098039 .090196 .486275 rg (reader) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (not-empty) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg (\)\)) Tj  T* (    ) Tj (\() Tj 0 0 1 rg (try) Tj 0 0 0 rg  T* (      ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (let ) Tj /F3 10 Tf 0 0 0 rg ([) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (IndexSearcher) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (reader) Tj 0 0 0 rg (\)) Tj  T* (            ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (parse) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (StandardQueryParser) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (analyzer) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (query) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (fulltext-field) Tj 0 0 0 rg (\)) Tj  T* (            ) Tj .098039 .090196 .486275 rg (top-docs) Tj 0 0 0 rg ( ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (if ) Tj /F3 10 Tf 0 0 0 rg (\() Tj 0 .501961 0 rg (nil? ) Tj .098039 .090196 .486275 rg (after-doc-id) Tj 0 0 0 rg (\)) Tj  T* (                       ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (if ) Tj /F3 10 Tf 0 0 0 rg (\() Tj 0 .501961 0 rg (nil? ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg (\)) Tj  T* (                         ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (search) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg (\)) Tj  T* (                         ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (search) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg (\)\)) Tj  T* (                       ) Tj (\() Tj /F5 10 Tf 0 .501961 0 rg (if ) Tj /F3 10 Tf 0 0 0 rg (\() Tj 0 .501961 0 rg (nil? ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg (\)) Tj  T* (                         ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (searchAfter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (ScoreDoc) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-doc-id) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-score) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg (\)) Tj  T* (                         ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (searchAfter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (searcher) Tj 0 0 0 rg ( ) Tj (\() Tj 0 0 1 rg (ScoreDoc) Tj .4 .4 .4 rg (.) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-doc-id) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (after-score) Tj 0 0 0 rg (\)) Tj ( ) Tj .098039 .090196 .486275 rg (q) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (filter) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (limit) Tj 0 0 0 rg (\)\)\)]) Tj  T* (        ) Tj ({) Tj .098039 .090196 .486275 rg (:total-hits) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (totalHits) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (top-docs) Tj 0 0 0 rg (\)) Tj  T* (         ) Tj .098039 .090196 .486275 rg (:docs) Tj 0 0 0 rg ( ) Tj (\() Tj 0 .501961 0 rg (map ) Tj 0 0 0 rg (\() Tj /F5 10 Tf 0 .501961 0 rg (fn ) Tj /F3 10 Tf 0 0 0 rg ([) Tj .098039 .090196 .486275 rg (score-doc) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (doc) Tj 0 0 0 rg (]) Tj  T* (                      ) Tj (\() Tj 0 .501961 0 rg (assoc ) Tj 0 0 0 rg (\() Tj 0 0 1 rg (document-to-map) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (doc) Tj 0 0 0 rg (\)) Tj  T* (                        ) Tj .098039 .090196 .486275 rg (:index) Tj 0 0 0 rg ( ) Tj ({) Tj .098039 .090196 .486275 rg (:doc-id) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (doc) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (score-doc) Tj 0 0 0 rg (\)) Tj  T* (                                ) Tj .098039 .090196 .486275 rg (:score) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (score) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (score-doc) Tj 0 0 0 rg (\)}\)\)) Tj  T* (                     ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (scoreDocs) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (top-docs) Tj 0 0 0 rg (\)) Tj  T* (                     ) Tj (\() Tj 0 0 1 rg (get-docs) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (reader) Tj 0 0 0 rg ( ) Tj (\() Tj .4 .4 .4 rg (.) Tj .098039 .090196 .486275 rg (scoreDocs) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (top-docs) Tj 0 0 0 rg (\)\)\)}\)) Tj  T* (      ) Tj (\() Tj 0 0 1 rg (catch) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (ParseException) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (e) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (nil) Tj 0 0 0 rg (\)) Tj  T* (      ) Tj (\() Tj 0 0 1 rg (catch) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (TokenMgrError) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (e) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (nil) Tj 0 0 0 rg (\)) Tj  T* (      ) Tj (\() Tj 0 0 1 rg (catch) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (QueryNodeParseException) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (e) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (nil) Tj 0 0 0 rg (\)\)) Tj  T* (    ) Tj ({) Tj .098039 .090196 .486275 rg (:total-hits) Tj 0 0 0 rg ( ) Tj .4 .4 .4 rg (0) Tj 0 0 0 rg  T* (     ) Tj .098039 .090196 .486275 rg (:docs) Tj 0 0 0 rg ( ) Tj .098039 .090196 .486275 rg (nil) Tj 0 0 0 rg (}\)\)) Tj T* ET
 Q
 Q
 Q
@@ -4733,76 +4733,76 @@ xref
 0000019201 00000 n
 0000019808 00000 n
 0000021950 00000 n
-0000023685 00000 n
-0000025929 00000 n
-0000028845 00000 n
-0000031393 00000 n
-0000033866 00000 n
-0000037034 00000 n
-0000040055 00000 n
-0000043210 00000 n
-0000047889 00000 n
-0000050010 00000 n
-0000053623 00000 n
-0000061306 00000 n
-0000063971 00000 n
-0000066634 00000 n
-0000068688 00000 n
-0000073518 00000 n
-0000076565 00000 n
-0000078106 00000 n
-0000081540 00000 n
-0000083376 00000 n
-0000088130 00000 n
-0000091639 00000 n
-0000095887 00000 n
-0000103360 00000 n
-0000108160 00000 n
-0000109550 00000 n
-0000118497 00000 n
-0000121785 00000 n
-0000123219 00000 n
-0000130647 00000 n
-0000131199 00000 n
-0000131278 00000 n
-0000131357 00000 n
-0000131436 00000 n
-0000131515 00000 n
-0000131594 00000 n
-0000131673 00000 n
-0000131752 00000 n
-0000131831 00000 n
-0000131910 00000 n
-0000131990 00000 n
-0000132070 00000 n
-0000132150 00000 n
-0000132230 00000 n
-0000132310 00000 n
-0000132390 00000 n
-0000132470 00000 n
-0000132550 00000 n
-0000132630 00000 n
-0000132710 00000 n
-0000132790 00000 n
-0000132870 00000 n
-0000132950 00000 n
-0000133030 00000 n
-0000133110 00000 n
-0000133190 00000 n
-0000133270 00000 n
-0000133350 00000 n
-0000133430 00000 n
-0000133510 00000 n
-0000133590 00000 n
-0000133670 00000 n
+0000023684 00000 n
+0000025928 00000 n
+0000028844 00000 n
+0000031392 00000 n
+0000033865 00000 n
+0000037033 00000 n
+0000040054 00000 n
+0000043209 00000 n
+0000047888 00000 n
+0000050009 00000 n
+0000053622 00000 n
+0000061305 00000 n
+0000063970 00000 n
+0000066633 00000 n
+0000068687 00000 n
+0000073517 00000 n
+0000076564 00000 n
+0000078105 00000 n
+0000081539 00000 n
+0000083375 00000 n
+0000088129 00000 n
+0000091638 00000 n
+0000095886 00000 n
+0000103359 00000 n
+0000108175 00000 n
+0000109530 00000 n
+0000118477 00000 n
+0000121791 00000 n
+0000123225 00000 n
+0000130205 00000 n
+0000130757 00000 n
+0000130836 00000 n
+0000130915 00000 n
+0000130994 00000 n
+0000131073 00000 n
+0000131152 00000 n
+0000131231 00000 n
+0000131310 00000 n
+0000131389 00000 n
+0000131468 00000 n
+0000131548 00000 n
+0000131628 00000 n
+0000131708 00000 n
+0000131788 00000 n
+0000131868 00000 n
+0000131948 00000 n
+0000132028 00000 n
+0000132108 00000 n
+0000132188 00000 n
+0000132268 00000 n
+0000132348 00000 n
+0000132428 00000 n
+0000132508 00000 n
+0000132588 00000 n
+0000132668 00000 n
+0000132748 00000 n
+0000132828 00000 n
+0000132908 00000 n
+0000132988 00000 n
+0000133068 00000 n
+0000133148 00000 n
+0000133228 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\237rl\315\3748D\324d\202\031$\364m\237\303) (\237rl\315\3748D\324d\202\031$\364m\237\303)] 
+ [(\253\311u{\232\201\205K%@\356\343"\251V\262) (\253\311u{\232\201\205K%@\356\343"\251V\262)] 
 
  /Info 48 0 R
  /Root 47 0 R
  /Size 148 >>
 startxref
-133719
+133277
 %%EOF

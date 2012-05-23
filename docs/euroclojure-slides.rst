@@ -22,7 +22,7 @@ Why Clojure?
   code,
 - functional programming and search are a good fit,
 - no unnecessary concurrency headaches,
-- be faster than the competition at implementing new features..
+- be faster than the competition at implementing new features.
 
 What does a search engine need to do?
 -------------------------------------
@@ -510,8 +510,8 @@ Mutating existing Field objects
 The Lucene documentation recommends mutating existing Field objects
 over creating them from scratch for every Document for performance
 reasons. This is less kosher in terms of functional programming, but
-pragmatism. It means that documents need to be written immediately,
-however, otherwise the Field values could change!
+still the pragmatic option. It means that documents need to be written
+immediately, however, otherwise the Field values could change!
 
 .. code-block:: clojure
 
@@ -544,7 +544,7 @@ Lucene TermQuery
 
 Lucene implements a plethora of query types. The most basic and
 ubiquitous one is probably the TermQuery, which searches documents for
-the provided value in a given provided field:
+the provided value in a given field:
 
 .. code-block:: clojure
 
@@ -606,7 +606,8 @@ Chaining Query instances with a BooleanQuery
          (when (pos? (alength (.getClauses bq)))
            bq))))
 
-    (create-boolean-query my-term-query :must my-numeric-range-query :must)
+    (create-boolean-query my-term-query :must
+                          my-numeric-range-query :must)
 
 Lucene filters
 --------------
@@ -631,9 +632,7 @@ Lucene search
 
    (defn search
      [query filter fulltext-field limit reader analyzer & [after-doc-id after-score]] 
-     (if (and reader
-              (not-empty query)
-              (not-any? #(= (first query) %) #{\*\?}))
+     (if (and reader (not-empty query))
        (try
          (let [searcher (IndexSearcher. reader)
                q (.parse (StandardQueryParser. analyzer) query fulltext-field)
@@ -649,7 +648,7 @@ Lucene search
                          (assoc (document-to-map doc)
                            :index {:doc-id (.doc score-doc)
                                    :score (.score score-doc)}))
-                           (.scoreDocs top-docs)
+                        (.scoreDocs top-docs)
                         (get-docs reader (.scoreDocs top-docs)))})
          (catch ParseException e nil)
          (catch TokenMgrError e nil)
