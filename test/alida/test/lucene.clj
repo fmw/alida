@@ -309,6 +309,12 @@
     (is (= (.field term) "foo"))
     (is (= (.text term) "bar"))))
 
+(deftest test-valid-range-of-type?
+  (is (true? (valid-range-of-type? 1 2 java.lang.Long)))
+  (is (true? (valid-range-of-type? 1.0 2.0 java.lang.Double)))
+  (is (false? (valid-range-of-type? 2 1 java.lang.Long)))
+  (is (false? (valid-range-of-type? 1 2 java.lang.Float))))
+
 (deftest test-create-numeric-range-query
   (let [long-query (create-numeric-range-query "long-query" 3 42)]
     (is (= (class long-query)

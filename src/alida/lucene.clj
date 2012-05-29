@@ -70,19 +70,16 @@
 
    Nota bene: a field needs to be either :stored or :indexed.
    Also, it doesn't make sense to tokenize numeric values."
-  (let [field-type (FieldType.)]
+  (let [field-type (FieldType.)
+        types {:double FieldType$NumericType/DOUBLE
+               :float FieldType$NumericType/FLOAT
+               :int FieldType$NumericType/INT
+               :long FieldType$NumericType/LONG}]
     ;; note - if only used for sorting (and not querying/filtering)
     ;; setting precisionStep to Integer.MAX_VALUE is more efficient
     ;; for numeric fields (this will minimize disk space consumed).
-    (cond
-     (= data-type :double)
-     (.setNumericType field-type FieldType$NumericType/DOUBLE)
-     (= data-type :float)
-     (.setNumericType field-type FieldType$NumericType/FLOAT)
-     (= data-type :int)
-     (.setNumericType field-type FieldType$NumericType/INT)
-     (= data-type :long)
-     (.setNumericType field-type FieldType$NumericType/LONG))
+    (when (contains? types data-type)
+      (.setNumericType field-type (get types data-type)))
     
     (doto field-type
       (.setIndexed (not (nil? (some #{:indexed} options))))
@@ -108,8 +105,8 @@
 
 (defmethod create-field java.lang.Integer [name value & options]
   (IntField. name
-                 (or value (int 0))
-                 (apply (partial create-field-type :int)  options)))
+             (or value (int 0))
+             (apply (partial create-field-type :int)  options)))
 
 (defmethod create-field java.lang.Float [name value & options]
   (FloatField. name
@@ -205,17 +202,17 @@
   "Creates an IndexWriter with the provided analyzer and directory.
    The mode has three options: :create, :append or :create-or-append."
   [analyzer directory mode]
-  (let [config (IndexWriterConfig. (Version/LUCENE_40) analyzer)]
+  (let [config (IndexWriterConfig. (Version/LUCENE_40) analyzer)
+        open-modes {:create
+                    IndexWriterConfig$OpenMode/CREATE
+                    :append
+                    IndexWriterConfig$OpenMode/APPEND
+                    :create-or-append
+                    IndexWriterConfig$OpenMode/CREATE_OR_APPEND}]
 
     (doto config
       (.setRAMBufferSizeMB 49)
-      (.setOpenMode (cond
-                     (= mode :create)
-                     (IndexWriterConfig$OpenMode/CREATE)
-                     (= mode :append)
-                     (IndexWriterConfig$OpenMode/APPEND)
-                     (= mode :create-or-append)
-                     (IndexWriterConfig$OpenMode/CREATE_OR_APPEND))))
+      (.setOpenMode (get open-modes mode)))
     
     (IndexWriter. directory config)))
 
@@ -234,33 +231,31 @@
   (TermQuery. (Term. field value)))
 
 
+(defn valid-range-of-type? [min max type]
+  "Checks if min is lower than max and both are of the given Java class."
+  (and (= (class min) type)
+       (= (class max) type)
+       (>= max min)))
+
 (defmulti #^NumericRangeQuery create-numeric-range-query
   "Creates a Lucene NumericRangeQuery between the min and max value."
   (fn [field-name min max]
     (class min)))
 
 (defmethod create-numeric-range-query java.lang.Long [field-name min max]
-  (when (and (= (class min) java.lang.Long)
-             (= (class max) java.lang.Long)
-             (>= max min))
+  (when (valid-range-of-type? min max java.lang.Long)
     (NumericRangeQuery/newLongRange field-name min max true true)))
 
 (defmethod create-numeric-range-query java.lang.Float [field-name min max]
-  (when (and (= (class min) java.lang.Float)
-             (= (class max) java.lang.Float)
-             (>= max min))
+  (when (valid-range-of-type? min max java.lang.Float)
     (NumericRangeQuery/newFloatRange field-name min max true true)))
 
 (defmethod create-numeric-range-query java.lang.Double [field-name min max]
-  (when (and (= (class min) java.lang.Double)
-             (= (class max) java.lang.Double)
-             (>= max min))
+  (when (valid-range-of-type? min max java.lang.Double)
     (NumericRangeQuery/newDoubleRange field-name min max true true)))
 
 (defmethod create-numeric-range-query java.lang.Integer [field-name min max]
-  (when (and (= (class min) java.lang.Integer)
-             (= (class max) java.lang.Integer)
-             (>= max min))
+  (when (valid-range-of-type? min max java.lang.Integer)
     (NumericRangeQuery/newIntRange field-name min max true true)))
 
 (defn #^NumericRangeQuery create-date-range-query
@@ -276,14 +271,13 @@
   and occur clauses (i.e. :must, :must-not, :should)."
   [& pairs]
   (when (even? (count pairs))
-    (let [bq (BooleanQuery.)]
+    (let [bq (BooleanQuery.)
+          occur-reqs {:must BooleanClause$Occur/MUST
+                      :must-not BooleanClause$Occur/MUST_NOT
+                      :should BooleanClause$Occur/SHOULD}]
       (doseq [[query clause] (partition 2 pairs)]
-        (.add bq
-              query
-              (cond
-               (= clause :must) BooleanClause$Occur/MUST
-               (= clause :must-not) BooleanClause$Occur/MUST_NOT
-               (= clause :should) BooleanClause$Occur/SHOULD)))
+        (.add bq query (get occur-reqs clause)))
+      
       (when (pos? (alength (.getClauses bq)))
         bq))))
 
