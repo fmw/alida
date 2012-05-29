@@ -35,12 +35,12 @@ Check the docs/ directory for the slides. I've also created two
 sub-projects. `clojure-blog-search`_ is a very basic example of how
 you could use Alida to crawl the web. Please remember that it does an
 actual crawl on the personal blogs of fellow Clojurians, so please
-don't run the it unless you have a very good reason to do so. I've
-also created `clojure-blog-search-www`_, which is a little front-end
-web application that also includes a pre-built Lucene index that you
-can experiment with. I've you are less inclined towards diving
-straight into the code and want to see a hosted example you can find
-one at http://clojure-blog-search.vixu.com/.
+don't run it unless you have a very good reason to do so. I've also
+created `clojure-blog-search-www`_, which is a little front-end web
+application that also includes a pre-built Lucene index that you can
+experiment with. If you are less inclined towards diving straight into
+the code and want to see a hosted example you can find one at
+http://clojure-blog-search.vixu.com/.
 
 You can use this code as a library in your own project by adding the
 following to the :dependencies in your project.clj file::
