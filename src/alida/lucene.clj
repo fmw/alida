@@ -79,7 +79,7 @@
     ;; setting precisionStep to Integer.MAX_VALUE is more efficient
     ;; for numeric fields (this will minimize disk space consumed).
     (when (contains? types data-type)
-      (.setNumericType field-type (get types data-type)))
+      (.setNumericType field-type (types data-type)))
     
     (doto field-type
       (.setIndexed (not (nil? (some #{:indexed} options))))
@@ -165,7 +165,7 @@
   [fields-map values-map]
   (let [doc (Document.)]
     (doseq [[k field] fields-map]
-      (.add doc (set-field-value! field (get values-map k))))
+      (.add doc (set-field-value! field (values-map k))))
     doc))
 
 (defn document-to-map
@@ -212,7 +212,7 @@
 
     (doto config
       (.setRAMBufferSizeMB 49)
-      (.setOpenMode (get open-modes mode)))
+      (.setOpenMode (open-modes mode)))
     
     (IndexWriter. directory config)))
 
@@ -230,11 +230,9 @@
   [field value]
   (TermQuery. (Term. field value)))
 
-
 (defn valid-range-of-type? [min max type]
   "Checks if min is lower than max and both are of the given Java class."
-  (and (= (class min) type)
-       (= (class max) type)
+  (and (= (class min) (class max) type)
        (>= max min)))
 
 (defmulti #^NumericRangeQuery create-numeric-range-query
@@ -276,7 +274,7 @@
                       :must-not BooleanClause$Occur/MUST_NOT
                       :should BooleanClause$Occur/SHOULD}]
       (doseq [[query clause] (partition 2 pairs)]
-        (.add bq query (get occur-reqs clause)))
+        (.add bq query (occur-reqs clause)))
       
       (when (pos? (alength (.getClauses bq)))
         bq))))
