@@ -287,10 +287,52 @@
                                 {:title "10"}
                                 {:title "11"}]))
 
-    (let [reader (create-index-reader dir)]
+    (with-open [reader (create-index-reader dir)]
       (is (= (map #(.get % "title")
                   (get-docs reader (map #(ScoreDoc. % 1.0) (range 11))))
              (map str (range 1 12)))))))
+
+(deftest test-update-document-in-index!
+  (let [analyzer (create-analyzer)
+        dir (create-directory :RAM)
+        fields-map {:title (create-field "title"
+                                         ""
+                                         :stored
+                                         :indexed
+                                         :tokenized)}]
+    (with-open [writer (create-index-writer analyzer dir :create)]
+      (add-documents-to-index! writer
+                               fields-map
+                               [{:title "1"}
+                                {:title "2"}
+                                {:title "3"}
+                                {:title "4"}
+                                {:title "5"}
+                                {:title "6"}
+                                {:title "7"}
+                                {:title "8"}]))
+
+    (with-open [reader (create-index-reader dir)]
+      (is (= (.get (get-doc reader 2) "title") "3"))
+      (is (= (.get (get-doc reader 3) "title") "4")))
+
+    (with-open [writer (create-index-writer analyzer dir :append)]
+      (update-document-in-index! writer
+                                 "title"
+                                 "3"
+                                 fields-map
+                                 {:title "three"}
+                                 (create-analyzer))
+      
+      (update-document-in-index! writer
+                                 "title"
+                                 "4"
+                                 fields-map
+                                 {:title "four"}))
+
+    (with-open [reader (create-index-reader dir)]
+      (is (= (.get (get-doc reader 2) "title") "33"))
+      (is (= (.get (get-doc reader 3) "title") "43")))))
 
 (deftest test-create-date-field
   (let [date-field (create-date-field "published"
@@ -410,7 +452,7 @@
     (with-open [writer (create-index-writer analyzer dir :create)]
       (add-documents-to-index! writer fields-map [{:title "bar"}]))
 
-    (let [reader (create-index-reader dir)]
+    (with-open [reader (create-index-reader dir)]
       (is (= (.get (get-doc reader 0) "title") "bar")))))
 
 (deftest test-get-docs
@@ -428,7 +470,7 @@
                                 {:title "Brora!"}
                                 {:title "Caol Ila"}]))
 
-    (let [reader (create-index-reader dir)]
+    (with-open [reader (create-index-reader dir)]
       (is (= (map #(.get % "title")
                   (get-docs reader [(ScoreDoc. 0 1.0)
                                     (ScoreDoc. 1 1.0)
@@ -529,7 +571,7 @@
                                fields-map
                                documents))
 
-    (let [reader (create-index-reader dir)]
+    (with-open [reader (create-index-reader dir)]
       (testing "Invalid query shouldn't raise an exception."
         (is (= (search "\"'foo"
                        nil
@@ -640,7 +682,7 @@
                :fulltext "test"})
             (range 30))))
 
-    (let [reader (create-index-reader dir)]
+    (with-open [reader (create-index-reader dir)]
       (is (= (search "test"
                      nil
                      "fulltext"

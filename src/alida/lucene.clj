@@ -52,7 +52,6 @@
             QueryNodeParseException]
            [org.apache.lucene.util Version]))
 
-
 (defn #^FieldType create-field-type [data-type & options]
   "Creates a Lucene FieldType object given a data-type
    (either :string, :double, :float, :int or :long) and options
@@ -224,6 +223,23 @@
   [writer fields-map document-value-maps]
   (doseq [doc document-value-maps]
     (.addDocument writer (create-document- fields-map doc))))
+
+(defn update-document-in-index!
+  "Updates a document by first deleting the document(s) matching the
+   provided term-value in the term-field and then adding the new
+   document. The delete and then add are atomic as seen by a reader on
+   the same index (flush may happen only after the add). Uses the
+   provided fields-map with Lucene Field instances for each field and
+   regular Clojure doc map which contains the values to construct the
+   new Lucene Document object. Optionally accepts an analyzer (using
+   (create-analyzer) by default). Wrap this in a with-open that
+   constructs the writer, because changes are flushed when the writer
+   is closed."
+  [writer term-field term-value fields-map doc & [analyzer]]
+  (.updateDocument writer
+                   (Term. term-field term-value)
+                   (create-document- fields-map doc)
+                   (or analyzer (create-analyzer))))
 
 (defn #^TermQuery create-term-query
   "Creates a Lucene TermQuery for the provided field and value."
