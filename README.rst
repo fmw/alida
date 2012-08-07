@@ -4,7 +4,7 @@
 Alida: a crawling, scraping and indexing tool written in Clojure
 ================================================================
 
-A video for the talk is up at: http://vimeo.com/45132055/
+**A video for the talk is up at: http://vimeo.com/45132055/**
 
 The Alida project was started as companion code to my talk at
 `EuroClojure 2012`_ on the topic of "Building a search engine with
