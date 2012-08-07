@@ -11,10 +11,8 @@
                  [org.jsoup/jsoup "1.6.1"]
                  [com.ashafa/clutch "0.4.0-SNAPSHOT"]
                  [clj-time "0.3.7"]
-                 [org.apache.lucene/lucene-core "4.0-SNAPSHOT"]
-                 [org.apache.lucene/lucene-queryparser "4.0-SNAPSHOT"]
-                 [org.apache.lucene/lucene-analyzers-common "4.0-SNAPSHOT"]
+                 [org.apache.lucene/lucene-core "4.0.0-ALPHA"]
+                 [org.apache.lucene/lucene-queryparser "4.0.0-ALPHA"]
+                 [org.apache.lucene/lucene-analyzers-common "4.0.0-ALPHA"]
                  [clj-http-fake "0.3.0"]]
-  :exclusions [lein-swank swank-clojure]
-  :repositories {"apache-snapshots"
-                 "https://repository.apache.org/content/groups/snapshots/"})
+  :exclusions [lein-swank swank-clojure])
