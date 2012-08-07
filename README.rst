@@ -47,7 +47,7 @@ http://clojure-blog-search.vixu.com/.
 You can use this code as a library in your own project by adding the
 following to the :dependencies in your project.clj file::
 
-    [alida "0.1.2"]
+    [alida "0.1.3"]
 
 
 Questions?
