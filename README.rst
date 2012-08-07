@@ -4,12 +4,14 @@
 Alida: a crawling, scraping and indexing tool written in Clojure
 ================================================================
 
+A video for the talk is up at: http://vimeo.com/45132055/
+
 The Alida project was started as companion code to my talk at
 `EuroClojure 2012`_ on the topic of "Building a search engine with
 Clojure". The goal of this application is to provide the back-end for
 a simple search engine, while the front-end (i.e. the part that
 performs the actual searches and displays the results to the visitor)
-is separate. Alida will provide the following functionality:
+is separate. Alida provides the following functionality:
 
 1. Data retrieval (web crawling).
 2. Storage (storing the crawled pages).
