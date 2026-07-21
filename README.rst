@@ -1,10 +1,16 @@
-.. image:: https://secure.travis-ci.org/fmw/alida.png
-
 ================================================================
 Alida: a crawling, scraping and indexing tool written in Clojure
 ================================================================
 
-**A video for the talk is up at: http://vimeo.com/45132055/**
+Project status
+--------------
+
+This repository is preserved for archival purposes only and is no longer
+actively developed. A new version of Alida, specifically tailored for crawling
+data for vector databases, is available as `Alida Vector`_. See `alida.dev`_
+for an overview.
+
+A recording of the original talk is available from `ClojureTV on YouTube`_.
 
 The Alida project was started as companion code to my talk at
 `EuroClojure 2012`_ on the topic of "Building a search engine with
@@ -40,9 +46,7 @@ actual crawl on the personal blogs of fellow Clojurians, so please
 don't run it unless you have a very good reason to do so. I've also
 created `clojure-blog-search-www`_, which is a little front-end web
 application that also includes a pre-built Lucene index that you can
-experiment with. If you are less inclined towards diving straight into
-the code and want to see a hosted example you can find one at
-http://clojure-blog-search.vixu.com/.
+experiment with.
 
 You can use this code as a library in your own project by adding the
 following to the :dependencies in your project.clj file::
@@ -50,20 +54,13 @@ following to the :dependencies in your project.clj file::
     [alida "0.1.3"]
 
 
-Questions?
-----------
+About and contact
+-----------------
 
-Don't hesitate to contact me if you have any questions or
-feedback. You can email me at fmw@vixu.com.
-
-About me
---------
-
-My name is Filip de Waard. As the founder of `Vixu.com`_ I write
-Clojure code for a living. The main focus of `Vixu.com`_ is providing
-website-management software as a service. Under the hood we use the
-free, open source `Vix`_ application to power the service. My company
-is also working on a product search application written in Clojure.
+You can read more `about me <https://filipdewaard.com/about.html>`_ on my
+personal homepage, which also includes `contact information
+<https://filipdewaard.com/contact.html>`_. Feel free to reach out if you have
+any questions or feedback!
 
 
 License
@@ -74,6 +71,9 @@ All code is covered by the `Apache License, version 2.0`_.
 
 .. _`clojure-blog-search`: https://github.com/fmw/clojure-blog-search
 .. _`clojure-blog-search-www`: https://github.com/fmw/clojure-blog-search-www
+.. _`Alida Vector`: https://github.com/fmw/alida-vector
+.. _`alida.dev`: https://alida.dev/
+.. _`ClojureTV on YouTube`: https://www.youtube.com/watch?v=OezmEuxTQhM
 .. _`EuroClojure 2012`: http://euroclojure.com/2012/
 .. _`Apache CouchDB`: http://couchdb.apache.org/
 .. _`Apache Lucene`: http://lucene.apache.org/core/
@@ -85,5 +85,4 @@ All code is covered by the `Apache License, version 2.0`_.
 .. _`HDFS`: http://hadoop.apache.org/hdfs/
 .. _`Apache Nutch`: http://nutch.apache.org/
 .. _`Vixu.com`: http://www.vixu.com/
-.. _`Vix`: https://github.com/fmw/vix
 .. _`Apache License, version 2.0`: http://www.apache.org/licenses/LICENSE-2.0.html
